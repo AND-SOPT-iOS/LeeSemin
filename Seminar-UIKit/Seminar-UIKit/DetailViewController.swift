@@ -18,15 +18,12 @@ class DetailViewController: UIViewController {
     private let resultLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 35, weight: .regular)
-        label.numberOfLines = 0
-        label.textAlignment = .left
         return label
     }()
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "good.jpg")
         return imageView
     }()
     
@@ -81,8 +78,8 @@ class DetailViewController: UIViewController {
                     constant: 20
                 ),
                 imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                imageView.widthAnchor.constraint(equalToConstant: 200),
-                imageView.heightAnchor.constraint(equalToConstant: 200),
+                imageView.widthAnchor.constraint(equalToConstant: 300),
+                imageView.heightAnchor.constraint(equalToConstant: 300),
                 
                 backButton.topAnchor.constraint(
                     equalTo: imageView.bottomAnchor,
@@ -101,7 +98,7 @@ class DetailViewController: UIViewController {
             self.resultLabel.text = "축하합니다"
             self.imageView.image = UIImage(named: "good.jpg")
         } else {
-            self.resultLabel.text = "엥"
+            self.resultLabel.text = "분발하세요"
             self.imageView.image = UIImage(named: "icecream.jpg")
         }
     }
