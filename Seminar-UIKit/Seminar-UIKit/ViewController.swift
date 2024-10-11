@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
     
@@ -208,71 +209,65 @@ class ViewController: UIViewController {
         }
     }
     
-    private func setLayout(){
-        NSLayoutConstraint.activate(
-            [
-                titleLabel.topAnchor.constraint(
-                    equalTo: view.safeAreaLayoutGuide.topAnchor,
-                    constant: 15
-                ),
-                titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                
-                modeLabel.topAnchor.constraint(
-                    equalTo: titleLabel.bottomAnchor,
-                    constant: 10
-                ),
-                modeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                
-                nameTextField.topAnchor.constraint(
-                    equalTo: modeLabel.bottomAnchor,
-                    constant: 20
-                ),
-                nameTextField.leadingAnchor.constraint(
-                    equalTo: view.leadingAnchor,
-                    constant: 20
-                ),
-                nameTextField.trailingAnchor.constraint(
-                    equalTo: view.trailingAnchor,
-                    constant: -20
-                ),
-                nameTextField.heightAnchor.constraint(equalToConstant: 40),
-                
-                button1.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 25),
-                button1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                button1.widthAnchor.constraint(equalToConstant: (view.frame.width - 60) / 2),
-                button1.heightAnchor.constraint(equalToConstant: 180),
-                
-                button2.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 25),
-                button2.leadingAnchor.constraint(equalTo: button1.trailingAnchor, constant: 10),
-                button2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-                button2.heightAnchor.constraint(equalToConstant: 180),
-                
-                button3.topAnchor.constraint(equalTo: button1.bottomAnchor, constant: 10),
-                button3.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                button3.widthAnchor.constraint(equalToConstant: (view.frame.width - 60) / 2),
-                button3.heightAnchor.constraint(equalToConstant: 180),
-                
-                button4.topAnchor.constraint(equalTo: button2.bottomAnchor, constant: 10),
-                button4.leadingAnchor.constraint(equalTo: button3.trailingAnchor, constant: 10),
-                button4.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-                button4.heightAnchor.constraint(equalToConstant: 180),
-                
-                nextButton.topAnchor.constraint(
-                    equalTo: button3.bottomAnchor,
-                    constant: 30
-                ),
-                nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                nextButton.heightAnchor.constraint(equalToConstant: 44),
-                nextButton.widthAnchor.constraint(equalToConstant: 300),
-                
-                pushModeToggleButton.topAnchor.constraint(
-                    equalTo: nextButton.bottomAnchor,
-                    constant: 20
-                ),
-                pushModeToggleButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                pushModeToggleButton.heightAnchor.constraint(equalToConstant: 44),
-                pushModeToggleButton.widthAnchor.constraint(equalToConstant: 300),
-            ]
-        )
+    private func setLayout() {
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(15)
+            $0.centerX.equalToSuperview()
+        }
+        
+        modeLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
+            $0.centerX.equalToSuperview()
+        }
+        
+        nameTextField.snp.makeConstraints {
+            $0.top.equalTo(modeLabel.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalTo(40)
+        }
+        
+        button1.snp.makeConstraints {
+            $0.top.equalTo(nameTextField.snp.bottom).offset(25)
+            $0.leading.equalToSuperview().offset(20)
+            $0.width.equalTo((view.frame.width - 60) / 2)
+            $0.height.equalTo(180)
+        }
+        
+        button2.snp.makeConstraints {
+            $0.top.equalTo(nameTextField.snp.bottom).offset(25)
+            $0.leading.equalTo(button1.snp.trailing).offset(10)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalTo(180)
+        }
+        
+        button3.snp.makeConstraints {
+            $0.top.equalTo(button1.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(20)
+            $0.width.equalTo((view.frame.width - 60) / 2)
+            $0.height.equalTo(180)
+        }
+        
+        button4.snp.makeConstraints {
+            $0.top.equalTo(button2.snp.bottom).offset(10)
+            $0.leading.equalTo(button3.snp.trailing).offset(10)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalTo(180)
+        }
+        
+        nextButton.snp.makeConstraints {
+            $0.top.equalTo(button3.snp.bottom).offset(30)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(44)
+            $0.width.equalTo(300)
+        }
+        
+        pushModeToggleButton.snp.makeConstraints {
+            $0.top.equalTo(nextButton.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(44)
+            $0.width.equalTo(300)
+        }
     }
+    
 }

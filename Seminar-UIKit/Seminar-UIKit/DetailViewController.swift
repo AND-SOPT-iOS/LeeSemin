@@ -59,38 +59,31 @@ class DetailViewController: UIViewController {
     }
     
     private func setLayout() {
-        NSLayoutConstraint.activate(
-            [
-                nameLabel.topAnchor.constraint(
-                    equalTo: view.safeAreaLayoutGuide.topAnchor,
-                    constant: 20
-                ),
-                nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                
-                resultLabel.topAnchor.constraint(
-                    equalTo: nameLabel.bottomAnchor,
-                    constant: 20
-                ),
-                resultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                
-                imageView.topAnchor.constraint(
-                    equalTo: resultLabel.bottomAnchor,
-                    constant: 20
-                ),
-                imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                imageView.widthAnchor.constraint(equalToConstant: 300),
-                imageView.heightAnchor.constraint(equalToConstant: 300),
-                
-                backButton.topAnchor.constraint(
-                    equalTo: imageView.bottomAnchor,
-                    constant: 20
-                ),
-                backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                backButton.heightAnchor.constraint(equalToConstant: 44),
-                backButton.widthAnchor.constraint(equalToConstant: 300),
-            ]
-        )
+        nameLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+            $0.centerX.equalToSuperview()
+        }
+        
+        resultLabel.snp.makeConstraints {
+            $0.top.equalTo(nameLabel.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+        }
+        
+        imageView.snp.makeConstraints {
+            $0.top.equalTo(resultLabel.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(300)
+            $0.height.equalTo(300)
+        }
+        
+        backButton.snp.makeConstraints {
+            $0.top.equalTo(imageView.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+            $0.height.equalTo(44)
+            $0.width.equalTo(300)
+        }
     }
+    
     
     func updateUI() {
         self.nameLabel.text = receivedName
