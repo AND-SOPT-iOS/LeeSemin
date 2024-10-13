@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class DetailViewController: UIViewController {
     
@@ -53,7 +54,6 @@ class DetailViewController: UIViewController {
     
     private func setUI() {
         [nameLabel, resultLabel, imageView, backButton].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview($0)
         }
     }

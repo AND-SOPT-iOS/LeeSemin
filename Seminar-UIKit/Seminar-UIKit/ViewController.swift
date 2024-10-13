@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 10
         return button
     }
-
+    
     private lazy var button1: UIButton = createButton(title: "대한민국만세")
     private lazy var button2: UIButton = createButton(title: "대한민국만세")
     private lazy var button3: UIButton = createButton(title: "대한민국민세")
@@ -176,7 +176,6 @@ class ViewController: UIViewController {
             button3,
             button4
         ].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview($0)
         }
     }
