@@ -37,49 +37,21 @@ class ViewController: UIViewController {
         return textField
     }()
     
-    private let button1: UIButton = {
+    private func createButton(title: String) -> UIButton {
         let button = UIButton()
-        button.setTitle("대한민국만세", for: .normal)
+        button.setTitle(title, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .white
         button.layer.borderColor = UIColor.darkGray.cgColor
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 10
         return button
-    }()
-    
-    private let button2: UIButton = {
-        let button = UIButton()
-        button.setTitle("대한민국만세", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .white
-        button.layer.borderColor = UIColor.darkGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.cornerRadius = 10
-        return button
-    }()
-    
-    private let button3: UIButton = {
-        let button = UIButton()
-        button.setTitle("대한민국민세", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .white
-        button.layer.borderColor = UIColor.darkGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.cornerRadius = 10
-        return button
-    }()
-    
-    private let button4: UIButton = {
-        let button = UIButton()
-        button.setTitle("대한민국만세", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .white
-        button.layer.borderColor = UIColor.darkGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.cornerRadius = 10
-        return button
-    }()
+    }
+
+    private lazy var button1: UIButton = createButton(title: "대한민국만세")
+    private lazy var button2: UIButton = createButton(title: "대한민국만세")
+    private lazy var button3: UIButton = createButton(title: "대한민국민세")
+    private lazy var button4: UIButton = createButton(title: "대한민국만세")
     
     private lazy var nextButton: UIButton = {
         let button = UIButton()
