@@ -74,81 +74,6 @@ class ViewController: UIViewController {
     private var pushMode = true
     private var selectedButton: UIButton?
     
-    private func setupTextFieldActions() {
-        nameTextField.addTarget(self, action: #selector(updateNextButtonState), for: .editingChanged)
-    }
-    
-    private func setupButtonActions() {
-        button1.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        button2.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        button3.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        button4.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-    }
-    
-    @objc private func buttonTapped(_ sender: UIButton) {
-        selectedButton?.layer.borderColor = UIColor.darkGray.cgColor
-        
-        if selectedButton != sender {
-            selectedButton = sender
-            sender.layer.borderColor = UIColor.blue.cgColor
-        } else {
-            selectedButton = nil
-            sender.layer.borderColor = UIColor.darkGray.cgColor
-        }
-        
-        updateNextButtonState()
-    }
-    
-    @objc private func updateNextButtonState() {
-        if let name = nameTextField.text, !name.isEmpty, selectedButton != nil {
-            nextButton.alpha = 1.0
-        } else {
-            nextButton.alpha = 0.5
-        }
-    }
-    
-    @objc func nextButtonTapped() {
-        guard let name = nameTextField.text, !name.isEmpty, selectedButton != nil else {
-            return
-        }
-        
-        transitionToNextViewController()
-    }
-    
-    private func transitionToNextViewController() {
-        let nextViewController = DetailViewController()
-        
-        guard let name = nameTextField.text
-        else{
-            return
-        }
-        
-        let isAnswerSelected = (selectedButton == button3)
-        
-        nextViewController.dataBind(name: name, isAnswerSelected: isAnswerSelected)
-        if pushMode {
-            self.navigationController?.pushViewController(
-                nextViewController,
-                animated: true
-            )
-        } else {
-            self.present(
-                nextViewController,
-                animated: true
-            )
-        }
-    }
-    
-    private func updateUI() {
-        let modeText = pushMode ? "네비게이션" : "모달"
-        self.modeLabel.text = "현재 모드 : \(modeText)"
-    }
-    
-    @objc func toggleButtonTapped() {
-        self.pushMode.toggle()
-        self.updateUI()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
@@ -238,6 +163,80 @@ class ViewController: UIViewController {
             $0.centerX.equalToSuperview()
             $0.height.equalTo(44)
             $0.width.equalTo(300)
+        }
+    }
+    
+    private func setupButtonActions() {
+        let buttons = [button1, button2, button3, button4]
+        for button in buttons {
+            button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        }
+    }
+    
+    private func setupTextFieldActions() {
+        nameTextField.addTarget(self, action: #selector(updateNextButtonState), for: .editingChanged)
+    }
+    
+    @objc private func buttonTapped(_ sender: UIButton) {
+        selectedButton?.layer.borderColor = UIColor.darkGray.cgColor
+        
+        if selectedButton == sender {
+            selectedButton = nil
+        } else {
+            selectedButton = sender
+        }
+        sender.layer.borderColor = selectedButton == nil ? UIColor.darkGray.cgColor : UIColor.blue.cgColor
+        
+        updateNextButtonState()
+    }
+    
+    @objc func toggleButtonTapped() {
+        self.pushMode.toggle()
+        self.updateUI()
+    }
+    
+    private func updateUI() {
+        let modeText = pushMode ? "네비게이션" : "모달"
+        self.modeLabel.text = "현재 모드 : \(modeText)"
+    }
+    
+    @objc private func updateNextButtonState() {
+        if let name = nameTextField.text, !name.isEmpty, selectedButton != nil {
+            nextButton.alpha = 1.0
+        } else {
+            nextButton.alpha = 0.5
+        }
+    }
+    
+    @objc func nextButtonTapped() {
+        guard let name = nameTextField.text, !name.isEmpty, selectedButton != nil else {
+            return
+        }
+        
+        transitionToNextViewController()
+    }
+    
+    private func transitionToNextViewController() {
+        let nextViewController = DetailViewController()
+        
+        guard let name = nameTextField.text
+        else{
+            return
+        }
+        
+        let isAnswerSelected = (selectedButton == button3)
+        
+        nextViewController.dataBind(name: name, isAnswerSelected: isAnswerSelected)
+        if pushMode {
+            self.navigationController?.pushViewController(
+                nextViewController,
+                animated: true
+            )
+        } else {
+            self.present(
+                nextViewController,
+                animated: true
+            )
         }
     }
     
