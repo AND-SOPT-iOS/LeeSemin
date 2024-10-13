@@ -72,8 +72,7 @@ class DetailViewController: UIViewController {
         imageView.snp.makeConstraints {
             $0.top.equalTo(resultLabel.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(300)
-            $0.height.equalTo(300)
+            $0.width.height.equalTo(300)
         }
         
         backButton.snp.makeConstraints {
