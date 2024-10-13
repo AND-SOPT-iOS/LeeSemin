@@ -38,7 +38,7 @@ class DetailViewController: UIViewController {
     }()
     
     private var receivedName: String?
-    private var isButton3Selected: Bool = false
+    private var isAnswerSelected: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,13 +86,13 @@ class DetailViewController: UIViewController {
     func updateUI() {
         self.nameLabel.text = receivedName
         
-        self.resultLabel.text = isButton3Selected ? "축하합니다" : "분발하세요"
-        self.imageView.image = UIImage(named: isButton3Selected ? "good.jpg" : "icecream.jpg")
+        self.resultLabel.text = isAnswerSelected ? "축하합니다" : "분발하세요"
+        self.imageView.image = UIImage(named: isAnswerSelected ? "good.jpg" : "icecream.jpg")
     }
     
-    func dataBind(name: String, isButton3Selected: Bool) {
+    func dataBind(name: String, isAnswerSelected: Bool) {
         self.receivedName = name
-        self.isButton3Selected = isButton3Selected
+        self.isAnswerSelected = isAnswerSelected
         updateUI()
     }
     

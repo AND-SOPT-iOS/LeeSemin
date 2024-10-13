@@ -123,9 +123,9 @@ class ViewController: UIViewController {
             return
         }
         
-        let isButton3Selected = (selectedButton == button3)
+        let isAnswerSelected = (selectedButton == button3)
         
-        nextViewController.dataBind(name: name, isButton3Selected: isButton3Selected)
+        nextViewController.dataBind(name: name, isAnswerSelected: isAnswerSelected)
         if pushMode {
             self.navigationController?.pushViewController(
                 nextViewController,
