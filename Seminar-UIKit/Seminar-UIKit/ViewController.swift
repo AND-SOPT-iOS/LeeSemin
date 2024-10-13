@@ -166,15 +166,15 @@ class ViewController: UIViewController {
         }
     }
     
+    private func setupTextFieldActions() {
+        nameTextField.addTarget(self, action: #selector(updateNextButtonState), for: .editingChanged)
+    }
+    
     private func setupButtonActions() {
         let buttons = [button1, button2, button3, button4]
         for button in buttons {
             button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         }
-    }
-    
-    private func setupTextFieldActions() {
-        nameTextField.addTarget(self, action: #selector(updateNextButtonState), for: .editingChanged)
     }
     
     @objc private func buttonTapped(_ sender: UIButton) {
@@ -201,19 +201,13 @@ class ViewController: UIViewController {
     }
     
     @objc private func updateNextButtonState() {
-        if let name = nameTextField.text, !name.isEmpty, selectedButton != nil {
-            nextButton.alpha = 1.0
-        } else {
-            nextButton.alpha = 0.5
-        }
+        nextButton.alpha = (nameTextField.text?.isEmpty == false && selectedButton != nil) ? 1.0 : 0.5
     }
-    
+
     @objc func nextButtonTapped() {
-        guard let name = nameTextField.text, !name.isEmpty, selectedButton != nil else {
-            return
+        if nameTextField.text?.isEmpty == false && selectedButton != nil {
+            transitionToNextViewController()
         }
-        
-        transitionToNextViewController()
     }
     
     private func transitionToNextViewController() {
