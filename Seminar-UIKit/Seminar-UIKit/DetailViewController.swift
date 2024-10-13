@@ -83,16 +83,11 @@ class DetailViewController: UIViewController {
         }
     }
     
-    
     func updateUI() {
         self.nameLabel.text = receivedName
-        if isButton3Selected {
-            self.resultLabel.text = "축하합니다"
-            self.imageView.image = UIImage(named: "good.jpg")
-        } else {
-            self.resultLabel.text = "분발하세요"
-            self.imageView.image = UIImage(named: "icecream.jpg")
-        }
+        
+        self.resultLabel.text = isButton3Selected ? "축하합니다" : "분발하세요"
+        self.imageView.image = UIImage(named: isButton3Selected ? "good.jpg" : "icecream.jpg")
     }
     
     func dataBind(name: String, isButton3Selected: Bool) {
