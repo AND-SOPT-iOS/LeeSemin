@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FindDifferentButtonViewController.swift
 //  Seminar-UIKit
 //
 //  Created by 이세민 on 10/11/24.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class FindDifferentButtonViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -211,7 +211,7 @@ class ViewController: UIViewController {
     }
     
     private func transitionToNextViewController() {
-        let nextViewController = DetailViewController()
+        let nextViewController = ResultViewController()
         
         guard let name = nameTextField.text
         else{
