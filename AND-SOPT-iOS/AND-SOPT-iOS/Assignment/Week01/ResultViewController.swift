@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  ResultViewController.swift
 //  Seminar-UIKit
 //
 //  Created by 이세민 on 10/11/24.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class DetailViewController: UIViewController {
+class ResultViewController: UIViewController {
     
     private let nameLabel: UILabel = {
         let label = UILabel()

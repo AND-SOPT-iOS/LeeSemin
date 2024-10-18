@@ -7,24 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7641BCF42CBC51AE003D99CE /* FirstMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641BCF32CBC51AE003D99CE /* FirstMainViewController.swift */; };
+		7641BCF62CBC526E003D99CE /* ReceivedDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641BCF52CBC526E003D99CE /* ReceivedDataViewController.swift */; };
 		7692BC4B2CB9608400CF5176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC4A2CB9608400CF5176 /* AppDelegate.swift */; };
 		7692BC4D2CB9608400CF5176 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC4C2CB9608400CF5176 /* SceneDelegate.swift */; };
-		7692BC4F2CB9608400CF5176 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC4E2CB9608400CF5176 /* ViewController.swift */; };
+		7692BC4F2CB9608400CF5176 /* FindDifferentButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC4E2CB9608400CF5176 /* FindDifferentButtonViewController.swift */; };
 		7692BC542CB9608500CF5176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7692BC532CB9608500CF5176 /* Assets.xcassets */; };
 		7692BC572CB9608500CF5176 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7692BC562CB9608500CF5176 /* Base */; };
-		7692BC5F2CB9619B00CF5176 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC5E2CB9619B00CF5176 /* DetailViewController.swift */; };
+		7692BC5F2CB9619B00CF5176 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC5E2CB9619B00CF5176 /* ResultViewController.swift */; };
 		76C19BC92CB98F9800745588 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 76C19BC82CB98F9800745588 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7692BC472CB9608400CF5176 /* Seminar-UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seminar-UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7641BCF32CBC51AE003D99CE /* FirstMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMainViewController.swift; sourceTree = "<group>"; };
+		7641BCF52CBC526E003D99CE /* ReceivedDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedDataViewController.swift; sourceTree = "<group>"; };
+		7692BC472CB9608400CF5176 /* AND-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AND-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7692BC4A2CB9608400CF5176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7692BC4C2CB9608400CF5176 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7692BC4E2CB9608400CF5176 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7692BC4E2CB9608400CF5176 /* FindDifferentButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDifferentButtonViewController.swift; sourceTree = "<group>"; };
 		7692BC532CB9608500CF5176 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7692BC562CB9608500CF5176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7692BC582CB9608500CF5176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7692BC5E2CB9619B00CF5176 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		7692BC5E2CB9619B00CF5176 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,10 +43,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7641BCE52CBC479A003D99CE /* Assignment */ = {
+			isa = PBXGroup;
+			children = (
+				7641BCF72CBE1FF2003D99CE /* Week01 */,
+			);
+			path = Assignment;
+			sourceTree = "<group>";
+		};
+		7641BCE82CBC48EA003D99CE /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				7641BCE92CBC48F0003D99CE /* Week01 */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+		7641BCE92CBC48F0003D99CE /* Week01 */ = {
+			isa = PBXGroup;
+			children = (
+				7641BCF32CBC51AE003D99CE /* FirstMainViewController.swift */,
+				7641BCF52CBC526E003D99CE /* ReceivedDataViewController.swift */,
+			);
+			path = Week01;
+			sourceTree = "<group>";
+		};
+		7641BCF72CBE1FF2003D99CE /* Week01 */ = {
+			isa = PBXGroup;
+			children = (
+				7692BC5E2CB9619B00CF5176 /* ResultViewController.swift */,
+				7692BC4E2CB9608400CF5176 /* FindDifferentButtonViewController.swift */,
+			);
+			path = Week01;
+			sourceTree = "<group>";
+		};
 		7692BC3E2CB9608400CF5176 = {
 			isa = PBXGroup;
 			children = (
-				7692BC492CB9608400CF5176 /* Seminar-UIKit */,
+				7692BC492CB9608400CF5176 /* AND-SOPT-iOS */,
 				7692BC482CB9608400CF5176 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,31 +88,31 @@
 		7692BC482CB9608400CF5176 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7692BC472CB9608400CF5176 /* Seminar-UIKit.app */,
+				7692BC472CB9608400CF5176 /* AND-SOPT-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7692BC492CB9608400CF5176 /* Seminar-UIKit */ = {
+		7692BC492CB9608400CF5176 /* AND-SOPT-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				7692BC5E2CB9619B00CF5176 /* DetailViewController.swift */,
+				7641BCE82CBC48EA003D99CE /* Practice */,
+				7641BCE52CBC479A003D99CE /* Assignment */,
 				7692BC4A2CB9608400CF5176 /* AppDelegate.swift */,
 				7692BC4C2CB9608400CF5176 /* SceneDelegate.swift */,
-				7692BC4E2CB9608400CF5176 /* ViewController.swift */,
 				7692BC532CB9608500CF5176 /* Assets.xcassets */,
 				7692BC552CB9608500CF5176 /* LaunchScreen.storyboard */,
 				7692BC582CB9608500CF5176 /* Info.plist */,
 			);
-			path = "Seminar-UIKit";
+			path = "AND-SOPT-iOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7692BC462CB9608400CF5176 /* Seminar-UIKit */ = {
+		7692BC462CB9608400CF5176 /* AND-SOPT-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7692BC5B2CB9608500CF5176 /* Build configuration list for PBXNativeTarget "Seminar-UIKit" */;
+			buildConfigurationList = 7692BC5B2CB9608500CF5176 /* Build configuration list for PBXNativeTarget "AND-SOPT-iOS" */;
 			buildPhases = (
 				7692BC432CB9608400CF5176 /* Sources */,
 				7692BC442CB9608400CF5176 /* Frameworks */,
@@ -84,12 +122,12 @@
 			);
 			dependencies = (
 			);
-			name = "Seminar-UIKit";
+			name = "AND-SOPT-iOS";
 			packageProductDependencies = (
 				76C19BC82CB98F9800745588 /* SnapKit */,
 			);
 			productName = "Seminar-UIKit";
-			productReference = 7692BC472CB9608400CF5176 /* Seminar-UIKit.app */;
+			productReference = 7692BC472CB9608400CF5176 /* AND-SOPT-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -107,7 +145,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7692BC422CB9608400CF5176 /* Build configuration list for PBXProject "Seminar-UIKit" */;
+			buildConfigurationList = 7692BC422CB9608400CF5176 /* Build configuration list for PBXProject "AND-SOPT-iOS" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -123,7 +161,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7692BC462CB9608400CF5176 /* Seminar-UIKit */,
+				7692BC462CB9608400CF5176 /* AND-SOPT-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -145,10 +183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7692BC4F2CB9608400CF5176 /* ViewController.swift in Sources */,
+				7641BCF42CBC51AE003D99CE /* FirstMainViewController.swift in Sources */,
+				7692BC4F2CB9608400CF5176 /* FindDifferentButtonViewController.swift in Sources */,
 				7692BC4B2CB9608400CF5176 /* AppDelegate.swift in Sources */,
 				7692BC4D2CB9608400CF5176 /* SceneDelegate.swift in Sources */,
-				7692BC5F2CB9619B00CF5176 /* DetailViewController.swift in Sources */,
+				7641BCF62CBC526E003D99CE /* ReceivedDataViewController.swift in Sources */,
+				7692BC5F2CB9619B00CF5176 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Seminar-UIKit/Info.plist";
+				INFOPLIST_FILE = "AND-SOPT-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -304,7 +344,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.semin.Seminar-UIKit";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.semin.AND-SOPT-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -320,7 +360,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Seminar-UIKit/Info.plist";
+				INFOPLIST_FILE = "AND-SOPT-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -331,7 +371,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.semin.Seminar-UIKit";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.semin.AND-SOPT-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -342,7 +382,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7692BC422CB9608400CF5176 /* Build configuration list for PBXProject "Seminar-UIKit" */ = {
+		7692BC422CB9608400CF5176 /* Build configuration list for PBXProject "AND-SOPT-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7692BC592CB9608500CF5176 /* Debug */,
@@ -351,7 +391,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7692BC5B2CB9608500CF5176 /* Build configuration list for PBXNativeTarget "Seminar-UIKit" */ = {
+		7692BC5B2CB9608500CF5176 /* Build configuration list for PBXNativeTarget "AND-SOPT-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7692BC5C2CB9608500CF5176 /* Debug */,
