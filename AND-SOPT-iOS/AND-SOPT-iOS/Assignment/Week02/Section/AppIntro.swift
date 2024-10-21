@@ -39,8 +39,8 @@ class AppIntro: UIViewController {
         let button = UIButton()
         button.setTitle("열기", for: .normal)
         button.backgroundColor = .tintColor
-        button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 15
+        button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .heavy)
         return button
     }()
@@ -78,7 +78,7 @@ class AppIntro: UIViewController {
         
         subtitleLabel.snp.makeConstraints {
             $0.leading.equalTo(titleLabel.snp.leading)
-            $0.top.equalTo(titleLabel.snp.bottom).offset(5)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(3)
         }
         
         openButton.snp.makeConstraints {

@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import SnapKit
 
 class AppstoreMainViewController: UIViewController {
-
+    
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     
@@ -19,19 +20,14 @@ class AppstoreMainViewController: UIViewController {
     private let developerInfo = DeveloperInfo()
     private let review = Review()
     
-    private var backButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "chevron.left", withConfiguration: UIImage.SymbolConfiguration(weight: .bold)), for: .normal)
-        button.tintColor = .systemBlue
+    private let backButton: UIButton = {
+        let button = UIButton()
+        let icon = UIImage(systemName: "chevron.left", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
+        button.setImage(icon, for: .normal)
+        button.setTitle(" 앱", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.semanticContentAttribute = .forceLeftToRight
         return button
-    }()
-    
-    private let backLabel: UILabel = {
-        let label = UILabel()
-        label.text = "앱"
-        label.font = .systemFont(ofSize: 18)
-        label.textColor = .systemBlue
-        return label
     }()
     
     private func createDividerLine() -> UIView {
@@ -40,11 +36,10 @@ class AppstoreMainViewController: UIViewController {
         return view
     }
     
-    private lazy var divider1: UIView = createDividerLine()
-    private lazy var divider2: UIView = createDividerLine()
-    private lazy var divider3: UIView = createDividerLine()
-    private lazy var divider4: UIView = createDividerLine()
-    
+    private lazy var firstDividerLine: UIView = createDividerLine()
+    private lazy var secondDividerLine: UIView = createDividerLine()
+    private lazy var thirdDividerLine: UIView = createDividerLine()
+    private lazy var fourthDividerLine: UIView = createDividerLine()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,45 +48,26 @@ class AppstoreMainViewController: UIViewController {
         setLayout()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        print("AppIntroView Height: \(appIntro.view.frame.height)")
-    }
-    
     private func setStyle() {
         self.view.backgroundColor = .black
     }
     
     private func setUI() {
-        view.addSubview(backButton)
-        view.addSubview(backLabel)
+        [backButton, scrollView].forEach {
+            view.addSubview($0)
+        }
         
-        view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
-        contentView.addSubview(appIntro.view)
-        contentView.addSubview(divider1)
-        contentView.addSubview(appInfo.view)
-        contentView.addSubview(divider2)
-        contentView.addSubview(whatsNew.view)
-        contentView.addSubview(divider3)
-        contentView.addSubview(preview.view)
-        contentView.addSubview(developerInfo.view)
-        contentView.addSubview(divider4)
-        contentView.addSubview(review.view)
+        [appIntro.view, firstDividerLine, appInfo.view, secondDividerLine, whatsNew.view, thirdDividerLine, preview.view, developerInfo.view, fourthDividerLine, review.view].forEach {
+            contentView.addSubview($0)
+        }
     }
-    
     
     private func setLayout() {
         backButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(60)
             $0.leading.equalToSuperview().offset(10)
-        }
-        
-        backLabel.snp.makeConstraints {
-            $0.leading.equalTo(backButton.snp.trailing).offset(5)
-            $0.centerY.equalTo(backButton)
         }
         
         scrollView.snp.makeConstraints {
@@ -102,17 +78,16 @@ class AppstoreMainViewController: UIViewController {
         contentView.snp.makeConstraints {
             $0.edges.equalToSuperview()
             $0.width.equalTo(scrollView)
-            
             $0.height.greaterThanOrEqualToSuperview().priority(.low)
         }
         
         appIntro.view.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(5)
+            $0.top.equalToSuperview()
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(120)
         }
         
-        divider1.snp.makeConstraints {
+        firstDividerLine.snp.makeConstraints {
             $0.top.equalTo(appIntro.view.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
@@ -120,12 +95,12 @@ class AppstoreMainViewController: UIViewController {
         }
         
         appInfo.view.snp.makeConstraints {
-            $0.top.equalTo(divider1.snp.bottom).offset(10)
+            $0.top.equalTo(firstDividerLine.snp.bottom).offset(10)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(70)
         }
         
-        divider2.snp.makeConstraints {
+        secondDividerLine.snp.makeConstraints {
             $0.top.equalTo(appInfo.view.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
@@ -133,7 +108,7 @@ class AppstoreMainViewController: UIViewController {
         }
         
         whatsNew.view.snp.makeConstraints {
-            $0.top.equalTo(divider2.snp.bottom).offset(10)
+            $0.top.equalTo(secondDividerLine.snp.bottom).offset(10)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(150)
         }
@@ -144,7 +119,7 @@ class AppstoreMainViewController: UIViewController {
             $0.height.equalTo(570)
         }
         
-        divider3.snp.makeConstraints {
+        thirdDividerLine.snp.makeConstraints {
             $0.top.equalTo(preview.view.snp.bottom).offset(15)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
@@ -152,12 +127,12 @@ class AppstoreMainViewController: UIViewController {
         }
         
         developerInfo.view.snp.makeConstraints{
-            $0.top.equalTo(divider3.snp.bottom).offset(15)
+            $0.top.equalTo(thirdDividerLine.snp.bottom).offset(15)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(130)
         }
         
-        divider4.snp.makeConstraints {
+        fourthDividerLine.snp.makeConstraints {
             $0.top.equalTo(developerInfo.view.snp.bottom).offset(15)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
@@ -165,12 +140,10 @@ class AppstoreMainViewController: UIViewController {
         }
         
         review.view.snp.makeConstraints{
-            $0.top.equalTo(divider4.snp.bottom).offset(20)
+            $0.top.equalTo(fourthDividerLine.snp.bottom).offset(20)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(480)
             $0.bottom.equalToSuperview()
         }
-    
-        
     }
 }
