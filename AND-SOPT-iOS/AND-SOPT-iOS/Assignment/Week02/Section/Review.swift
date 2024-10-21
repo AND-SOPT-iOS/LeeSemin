@@ -38,7 +38,7 @@ class Review: UIViewController {
         return label
     }()
     
-    private let mostHelpfulLabel: UILabel = {
+    private let mostHelpfulReviewLabel: UILabel = {
         let label = UILabel()
         label.text = "가장 도움이 되는 리뷰"
         label.font = .boldSystemFont(ofSize: 16)
@@ -166,7 +166,7 @@ class Review: UIViewController {
     }
     
     private func setUI() {
-        [reviewButton, ratingsLabel, totalRatingsLabel, mostHelpfulLabel, reviewContentView, reviewTitleLabel, reviewRatingLabel, reviewDateLabel, reviewerLabel, reviewContentLabel, developerLabel, answerDateLabel, answerContentLabel, tapToRateLabel, starStackView, writeReviewButton, appSupportButton].forEach {
+        [reviewButton, ratingsLabel, totalRatingsLabel, mostHelpfulReviewLabel, reviewContentView, reviewTitleLabel, reviewRatingLabel, reviewDateLabel, reviewerLabel, reviewContentLabel, developerLabel, answerDateLabel, answerContentLabel, tapToRateLabel, starStackView, writeReviewButton, appSupportButton].forEach {
             view.addSubview($0)
         }
     }
@@ -187,20 +187,20 @@ class Review: UIViewController {
             $0.centerY.equalTo(ratingsLabel)
         }
         
-        mostHelpfulLabel.snp.makeConstraints{
+        mostHelpfulReviewLabel.snp.makeConstraints{
             $0.top.equalTo(ratingsLabel.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(20)
         }
         
         reviewContentView.snp.makeConstraints {
-            $0.top.equalTo(mostHelpfulLabel.snp.bottom).offset(15)
+            $0.top.equalTo(mostHelpfulReviewLabel.snp.bottom).offset(15)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(345)
             $0.height.equalTo(200)
         }
         
         reviewTitleLabel.snp.makeConstraints{
-            $0.top.equalTo(mostHelpfulLabel.snp.bottom).offset(30)
+            $0.top.equalTo(mostHelpfulReviewLabel.snp.bottom).offset(30)
             $0.leading.equalToSuperview().offset(50)
         }
         
