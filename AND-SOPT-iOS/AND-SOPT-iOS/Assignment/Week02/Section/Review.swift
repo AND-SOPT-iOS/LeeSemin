@@ -9,7 +9,7 @@ import UIKit
 
 class Review: UIViewController {
     
-    private let reviewButton: UIButton = {
+    private let moreReviewButton: UIButton = {
         let button = UIButton()
         let icon = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
         button.setImage(icon, for: .normal)
@@ -21,7 +21,7 @@ class Review: UIViewController {
         return button
     }()
     
-    private let ratingsLabel: UILabel = {
+    private let ratingLabel: UILabel = {
         let label = UILabel()
         label.text = "4.4"
         label.font = .systemFont(ofSize: 55, weight: .heavy)
@@ -29,11 +29,18 @@ class Review: UIViewController {
         return label
     }()
     
+    private let starRatingLabel: UILabel = {
+        let label = UILabel()
+        label.text = "★ ★ ★ ★ ☆"
+        label.font = .systemFont(ofSize: 20, weight: .heavy)
+        label.textColor = .white
+        return label
+    }()
+    
     private let totalRatingsLabel: UILabel = {
         let label = UILabel()
-        label.text = "★ ★ ★ ★ ★ \n8.4만개의 평가"
-        label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 18)
+        label.text = "8.4만개의 평가"
+        label.font = .systemFont(ofSize: 16)
         label.textColor = .lightGray
         return label
     }()
@@ -166,29 +173,34 @@ class Review: UIViewController {
     }
     
     private func setUI() {
-        [reviewButton, ratingsLabel, totalRatingsLabel, mostHelpfulReviewLabel, reviewContentView, reviewTitleLabel, reviewRatingLabel, reviewDateLabel, reviewerLabel, reviewContentLabel, developerLabel, answerDateLabel, answerContentLabel, tapToRateLabel, starStackView, writeReviewButton, appSupportButton].forEach {
+        [moreReviewButton, ratingLabel, starRatingLabel, totalRatingsLabel, mostHelpfulReviewLabel, reviewContentView, reviewTitleLabel, reviewRatingLabel, reviewDateLabel, reviewerLabel, reviewContentLabel, developerLabel, answerDateLabel, answerContentLabel, tapToRateLabel, starStackView, writeReviewButton, appSupportButton].forEach {
             view.addSubview($0)
         }
     }
     
     private func setLayout() {
-        reviewButton.snp.makeConstraints {
+        moreReviewButton.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.equalToSuperview().offset(20)
         }
         
-        ratingsLabel.snp.makeConstraints {
-            $0.top.equalTo(reviewButton.snp.bottom).offset(5)
+        ratingLabel.snp.makeConstraints {
+            $0.top.equalTo(moreReviewButton.snp.bottom).offset(5)
             $0.leading.equalToSuperview().offset(20)
         }
         
-        totalRatingsLabel.snp.makeConstraints{
+        starRatingLabel.snp.makeConstraints {
+            $0.top.equalTo(moreReviewButton.snp.bottom).offset(20)
             $0.trailing.equalToSuperview().offset(-20)
-            $0.centerY.equalTo(ratingsLabel)
+        }
+        
+        totalRatingsLabel.snp.makeConstraints{
+            $0.top.equalTo(moreReviewButton.snp.bottom).offset(45)
+            $0.trailing.equalToSuperview().offset(-20)
         }
         
         mostHelpfulReviewLabel.snp.makeConstraints{
-            $0.top.equalTo(ratingsLabel.snp.bottom).offset(10)
+            $0.top.equalTo(ratingLabel.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(20)
         }
         
