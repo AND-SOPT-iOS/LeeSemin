@@ -48,7 +48,7 @@ class Review: UIViewController {
     
     private let reviewContentView: UIView = {
         let view = UIView()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .tertiarySystemGroupedBackground
         view.layer.cornerRadius = 15
         view.clipsToBounds = true
         return view
@@ -145,7 +145,7 @@ class Review: UIViewController {
         button.setImage(icon, for: .normal)
         button.setTitle("  \(title)", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
-        button.backgroundColor = .darkGray
+        button.backgroundColor = .tertiarySystemGroupedBackground
         button.layer.cornerRadius = 18
         button.clipsToBounds = true
         button.tintColor = .systemBlue

@@ -48,7 +48,7 @@ class AppstoreMainViewController: UIViewController {
     }
     
     private func setStyle() {
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = UIColor.systemBackground
     }
     
     private func setUI() {
