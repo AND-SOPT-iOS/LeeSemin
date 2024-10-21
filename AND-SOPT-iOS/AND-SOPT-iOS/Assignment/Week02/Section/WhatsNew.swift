@@ -10,33 +10,22 @@ import SnapKit
 
 class WhatsNew: UIViewController {
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "새로운 소식"
-        label.font = .systemFont(ofSize: 22, weight: .heavy)
-        label.textColor = .white
-        return label
-    }()
-    
-    private var nextButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(weight: .bold)), for: .normal)
-        button.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+    private let whatsNewButton: UIButton = {
+        let button = UIButton()
+        let icon = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
+        button.setImage(icon, for: .normal)
         button.tintColor = .systemGray
+        button.setTitle("새로운 소식 ", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.semanticContentAttribute = .forceRightToLeft
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
         return button
     }()
-    
-//    private let versionHistoryButton: UIButton = {
-//        let button = UIButton()
-//        button.setTitle("버전 기록", for: .normal)
-//        button.setTitleColor(.systemBlue, for: .normal)
-//        return button
-//    }()
     
     private let versionLabel: UILabel = {
         let label = UILabel()
         label.text = "버전 5.185.0"
-        label.font = .systemFont(ofSize: 16)
+        label.font = .systemFont(ofSize: 15)
         label.textColor = .lightGray
         return label
     }()
@@ -65,30 +54,20 @@ class WhatsNew: UIViewController {
     }
     
     private func setUI() {
-        [titleLabel, nextButton, /*versionHistoryButton,*/ versionLabel, dateLabel, updateContentLabel].forEach {
+        [whatsNewButton, versionLabel, dateLabel, updateContentLabel].forEach {
             view.addSubview($0)
         }
     }
     
     private func setLayout() {
-        titleLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(20)
+        whatsNewButton.snp.makeConstraints {
             $0.top.equalToSuperview()
+            $0.leading.equalToSuperview().offset(20)
         }
-        
-        nextButton.snp.makeConstraints {
-            $0.leading.equalTo(titleLabel.snp.trailing).offset(3)
-            $0.centerY.equalTo(titleLabel)
-        }
-        
-//        versionHistoryButton.snp.makeConstraints{
-//            $0.trailing.equalToSuperview().offset(-20)
-//            $0.centerY.equalTo(titleLabel)
-//        }
         
         versionLabel.snp.makeConstraints {
+            $0.top.equalTo(whatsNewButton.snp.bottom).offset(8)
             $0.leading.equalToSuperview().offset(20)
-            $0.top.equalTo(titleLabel.snp.bottom).offset(8)
         }
         
         dateLabel.snp.makeConstraints {
@@ -97,8 +76,8 @@ class WhatsNew: UIViewController {
         }
         
         updateContentLabel.snp.makeConstraints {
+            $0.top.equalTo(versionLabel.snp.bottom).offset(15)
             $0.leading.equalToSuperview().offset(20)
-            $0.top.equalTo(versionLabel.snp.bottom).offset(20)
         }
     }
 }
