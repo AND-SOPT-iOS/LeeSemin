@@ -9,6 +9,8 @@ import UIKit
 
 class DeveloperInfo: UIViewController {
     
+    private var isExpanded: Bool = false
+    
     private let fullText: String = """
     토스뱅크, 토스증권 서비스를 이용하시려면 토스 앱
     설치가 필요합니다.
@@ -26,20 +28,18 @@ class DeveloperInfo: UIViewController {
     • 매달 고정적으로 나가는 보험비, 생활요금, 구독료 등도
     쉽게 확인할 수 있어요.
     
-    
     ● 평생 무료로 간편하고 안전하게, 송금
     • 송금을 자유롭게, 토스에서는 은행 상관없이 수수료가
     평생 무료에요.
     어쩌고 저쩌고
     """
     
-    private var isExpanded: Bool = false
-    
-    private let contentLabel: UILabel = {
+    private lazy var contentLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16)
-        label.numberOfLines = 0
+        label.numberOfLines = 4
         label.textColor = .white
+        label.text = String(fullText.prefix(150))
         return label
     }()
     
@@ -57,6 +57,7 @@ class DeveloperInfo: UIViewController {
         label.text = "Viva Republica"
         label.font = .systemFont(ofSize: 16)
         label.textColor = .systemBlue
+        label.numberOfLines = 0
         return label
     }()
     
@@ -68,46 +69,59 @@ class DeveloperInfo: UIViewController {
         return button
     }()
     
+    private let secondDeveloperLabel: UILabel = {
+        let label = UILabel()
+        label.text = "개발자"
+        label.font = .systemFont(ofSize: 14)
+        label.textColor = .lightGray
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setLayout()
-        
-        contentLabel.text = isExpanded ? fullText : fullText.split(separator: "\n").prefix(3).joined(separator: "\n")
     }
     
     private func setUI() {
-        [contentLabel, moreButton, developerLabel, nextButton].forEach {
+        [contentLabel, moreButton, developerLabel, nextButton, secondDeveloperLabel].forEach {
             view.addSubview($0)
         }
     }
     
     private func setLayout() {
         contentLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(20)
             $0.top.equalToSuperview()
+            $0.leading.equalToSuperview().offset(20)
         }
         
         moreButton.snp.makeConstraints {
+            $0.top.equalTo(contentLabel.snp.bottom).offset(-25)
             $0.trailing.equalToSuperview().offset(-20)
-            $0.centerY.equalTo(contentLabel.snp.bottom)
         }
         
         developerLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(20)
             $0.top.equalTo(contentLabel.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(20)
         }
         
         nextButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().offset(-20)
             $0.centerY.equalTo(developerLabel)
         }
+        
+        secondDeveloperLabel.snp.makeConstraints {
+            $0.top.equalTo(developerLabel.snp.bottom)
+            $0.leading.equalToSuperview().offset(20)
+        }
     }
     
     @objc private func moreButtonTapped() {
-        isExpanded.toggle()
+        contentLabel.numberOfLines = 0
+        moreButton.isHidden = true
+        contentLabel.text = fullText
         
-        contentLabel.text = isExpanded ? fullText : fullText.split(separator: "\n").prefix(3).joined(separator: "\n")
-        moreButton.setTitle(isExpanded ? "" : "더 보기", for: .normal)
+        isExpanded.toggle()
     }
 }
+
