@@ -134,7 +134,7 @@ class AppstoreMainViewController: UIViewController {
         review.view.snp.makeConstraints{
             $0.top.equalTo(developerInfo.view.snp.bottom).offset(50)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(480)
+            $0.height.equalTo(520)
             $0.bottom.equalToSuperview()
         }
     }

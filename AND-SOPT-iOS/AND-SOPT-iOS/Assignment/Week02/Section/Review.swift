@@ -150,19 +150,19 @@ class Review: UIViewController {
         button.clipsToBounds = true
         button.tintColor = .systemBlue
         button.semanticContentAttribute = .forceLeftToRight
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
         return button
     }
     
     private lazy var writeReviewButton: UIButton = createButton(title: "리뷰 작성", iconName: "square.and.pencil")
-    
     private lazy var appSupportButton: UIButton = createButton(title: "앱 지원", iconName: "questionmark.circle")
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setLayout()
+        
+        configureStarRating()
     }
     
     private func setUI() {
@@ -196,7 +196,7 @@ class Review: UIViewController {
             $0.top.equalTo(mostHelpfulReviewLabel.snp.bottom).offset(15)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(345)
-            $0.height.equalTo(200)
+            $0.height.equalTo(190)
         }
         
         reviewTitleLabel.snp.makeConstraints{
@@ -239,20 +239,19 @@ class Review: UIViewController {
             $0.leading.equalToSuperview().offset(50)
         }
         
-        
         tapToRateLabel.snp.makeConstraints {
-            $0.top.equalTo(reviewContentView.snp.bottom).offset(15)
+            $0.top.equalTo(reviewContentView.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
         }
         
-        //        starStackView.snp.makeConstraints {
-        //            $0.centerX.equalToSuperview()
-        //            $0.top.equalTo(tapToRateLabel.snp.bottom).offset(5)
-        //            $0.width.equalTo(200)
-        //        }
+        starStackView.snp.makeConstraints {
+            $0.top.equalTo(tapToRateLabel.snp.bottom).offset(8)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(200)
+        }
         
         writeReviewButton.snp.makeConstraints {
-            $0.top.equalTo(tapToRateLabel.snp.bottom).offset(10)
+            $0.top.equalTo(starStackView.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(40)
             $0.width.equalTo(150)
             $0.height.equalTo(50)
@@ -266,4 +265,42 @@ class Review: UIViewController {
         }
     }
     
+    // 버튼에 대한 타겟 및 제스처 인식을 설정
+    private func configureStarRating() {
+        for i in 1...5 {
+            let button = UIButton()
+            button.setImage(UIImage(systemName: "star", withConfiguration: UIImage.SymbolConfiguration(weight: .bold)), for: .normal)
+            button.tintColor = .systemBlue
+            button.tag = i
+            button.addTarget(self, action: #selector(starTapped(_:)), for: .touchUpInside)
+            starButtons.append(button)
+            starStackView.addArrangedSubview(button)
+        }
+        
+        // 스와이프 제스처를 추가하여 별점을 드래그하며 선택할 수 있게
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        starStackView.addGestureRecognizer(panGesture)
+    }
+    
+    // 별 버튼이 클릭될 때 호출
+    @objc private func starTapped(_ sender: UIButton) {
+        updateRating(to: sender.tag)
+    }
+    
+    // 드래그 위치에 따라 별점을 계산하여 업데이트
+    @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        let location = gesture.location(in: starStackView)
+        let starWidth = starStackView.frame.width / CGFloat(starButtons.count)
+        let rating = Int(location.x / starWidth) + 1
+        updateRating(to: rating)
+    }
+    
+    // 주어진 별점으로 버튼 이미지를 업데이트
+    private func updateRating(to rating: Int) {
+        currentRating = rating
+        starButtons.enumerated().forEach { index, button in
+            let imageName = index < rating ? "star.fill" : "star"
+            button.setImage(UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(weight: .bold)), for: .normal)
+        }
+    }
 }
