@@ -39,7 +39,6 @@ class AppstoreMainViewController: UIViewController {
     private lazy var firstDividerLine: UIView = createDividerLine()
     private lazy var secondDividerLine: UIView = createDividerLine()
     private lazy var thirdDividerLine: UIView = createDividerLine()
-    private lazy var fourthDividerLine: UIView = createDividerLine()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +58,7 @@ class AppstoreMainViewController: UIViewController {
         
         scrollView.addSubview(contentView)
         
-        [appIntro.view, firstDividerLine, appInfo.view, secondDividerLine, whatsNew.view, thirdDividerLine, preview.view, developerInfo.view, fourthDividerLine, review.view].forEach {
+        [appIntro.view, firstDividerLine, appInfo.view, secondDividerLine, whatsNew.view, thirdDividerLine, preview.view, developerInfo.view, review.view].forEach {
             contentView.addSubview($0)
         }
     }
@@ -116,11 +115,11 @@ class AppstoreMainViewController: UIViewController {
         preview.view.snp.makeConstraints {
             $0.top.equalTo(whatsNew.view.snp.bottom).offset(10)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(570)
+            $0.height.equalTo(565)
         }
         
         thirdDividerLine.snp.makeConstraints {
-            $0.top.equalTo(preview.view.snp.bottom).offset(15)
+            $0.top.equalTo(preview.view.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
             $0.height.equalTo(0.3)
@@ -132,15 +131,8 @@ class AppstoreMainViewController: UIViewController {
             $0.height.equalTo(130)
         }
         
-        fourthDividerLine.snp.makeConstraints {
-            $0.top.equalTo(developerInfo.view.snp.bottom).offset(15)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
-            $0.height.equalTo(0.3)
-        }
-        
         review.view.snp.makeConstraints{
-            $0.top.equalTo(fourthDividerLine.snp.bottom).offset(20)
+            $0.top.equalTo(developerInfo.view.snp.bottom).offset(50)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(480)
             $0.bottom.equalToSuperview()

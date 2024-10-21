@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class Preview: UIViewController {
     
@@ -24,18 +25,20 @@ class Preview: UIViewController {
         return imageView
     }()
     
-    private var mobileIcon: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "iphone", withConfiguration: UIImage.SymbolConfiguration(weight: .bold)), for: .normal)
-        button.tintColor = .systemGray
-        return button
-    }()
-    
-    private let mobileLabel: UILabel = {
+    private let iphoneIconLabel: UILabel = {
         let label = UILabel()
-        label.text = "iPhone"
-        label.font = .systemFont(ofSize: 15 , weight: .heavy)
-        label.textColor = .systemGray
+        
+        let iconAttachment = NSTextAttachment()
+        iconAttachment.image = UIImage(systemName: "iphone")?.withTintColor(.systemGray)
+        
+        let attributedText = NSMutableAttributedString(attachment: iconAttachment)
+        attributedText.append(NSAttributedString(string: "   iPhone", attributes: [
+            .foregroundColor: UIColor.systemGray,
+            .font: UIFont.systemFont(ofSize: 13, weight: .heavy)
+        ]))
+        
+        label.attributedText = attributedText
+        
         return label
     }()
     
@@ -46,32 +49,27 @@ class Preview: UIViewController {
     }
     
     private func setUI() {
-        [titleLabel, imageView, mobileIcon, mobileLabel].forEach {
+        [titleLabel, imageView, iphoneIconLabel].forEach {
             view.addSubview($0)
         }
     }
     
     private func setLayout() {
         titleLabel.snp.makeConstraints{
-            $0.leading.equalToSuperview().offset(20)
             $0.top.equalToSuperview()
+            $0.leading.equalToSuperview().offset(20)
         }
         
         imageView.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
             $0.top.equalTo(titleLabel.snp.bottom).offset(15)
+            $0.centerX.equalToSuperview()
             $0.width.equalTo(240)
             $0.height.equalTo(480)
         }
         
-        mobileIcon.snp.makeConstraints {
+        iphoneIconLabel.snp.makeConstraints {
             $0.top.equalTo(imageView.snp.bottom).offset(15)
             $0.leading.equalToSuperview().offset(20)
-        }
-        
-        mobileLabel.snp.makeConstraints {
-            $0.leading.equalTo(mobileIcon.snp.trailing).offset(8)
-            $0.centerY.equalTo(mobileIcon)
         }
     }
 }

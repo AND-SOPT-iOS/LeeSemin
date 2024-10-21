@@ -9,19 +9,15 @@ import UIKit
 
 class Review: UIViewController {
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "평가 및 리뷰"
-        label.font = .systemFont(ofSize: 22, weight: .heavy)
-        label.textColor = .white
-        return label
-    }()
-    
-    private var nextButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(weight: .bold)), for: .normal)
-        button.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+    private let reviewButton: UIButton = {
+        let button = UIButton()
+        let icon = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
+        button.setImage(icon, for: .normal)
         button.tintColor = .systemGray
+        button.setTitle("평가 및 리뷰 ", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.semanticContentAttribute = .forceRightToLeft
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
         return button
     }()
     
@@ -170,25 +166,20 @@ class Review: UIViewController {
     }
     
     private func setUI() {
-        [titleLabel, nextButton, ratingsLabel, totalRatingsLabel, mostHelpfulLabel, reviewContentView, reviewTitleLabel, reviewRatingLabel, reviewDateLabel, reviewerLabel, reviewContentLabel, developerLabel, answerDateLabel, answerContentLabel, tapToRateLabel, starStackView, writeReviewButton, appSupportButton].forEach {
+        [reviewButton, ratingsLabel, totalRatingsLabel, mostHelpfulLabel, reviewContentView, reviewTitleLabel, reviewRatingLabel, reviewDateLabel, reviewerLabel, reviewContentLabel, developerLabel, answerDateLabel, answerContentLabel, tapToRateLabel, starStackView, writeReviewButton, appSupportButton].forEach {
             view.addSubview($0)
         }
     }
     
     private func setLayout() {
-        titleLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(20)
+        reviewButton.snp.makeConstraints {
             $0.top.equalToSuperview()
-        }
-        
-        nextButton.snp.makeConstraints {
-            $0.leading.equalTo(titleLabel.snp.trailing).offset(3)
-            $0.centerY.equalTo(titleLabel)
+            $0.leading.equalToSuperview().offset(20)
         }
         
         ratingsLabel.snp.makeConstraints {
+            $0.top.equalTo(reviewButton.snp.bottom).offset(5)
             $0.leading.equalToSuperview().offset(20)
-            $0.top.equalTo(titleLabel.snp.bottom).offset(5)
         }
         
         totalRatingsLabel.snp.makeConstraints{
@@ -197,29 +188,29 @@ class Review: UIViewController {
         }
         
         mostHelpfulLabel.snp.makeConstraints{
-            $0.leading.equalToSuperview().offset(20)
             $0.top.equalTo(ratingsLabel.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(20)
         }
         
         reviewContentView.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
             $0.top.equalTo(mostHelpfulLabel.snp.bottom).offset(15)
-            $0.width.equalTo(340)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(345)
             $0.height.equalTo(200)
         }
         
         reviewTitleLabel.snp.makeConstraints{
-            $0.leading.equalToSuperview().offset(50)
             $0.top.equalTo(mostHelpfulLabel.snp.bottom).offset(30)
+            $0.leading.equalToSuperview().offset(50)
         }
         
         reviewRatingLabel.snp.makeConstraints{
-            $0.leading.equalToSuperview().offset(50)
             $0.top.equalTo(reviewTitleLabel.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(50)
         }
         
         reviewDateLabel.snp.makeConstraints{
-            $0.leading.equalTo(titleLabel.snp.trailing).offset(5)
+            $0.leading.equalTo(reviewRatingLabel.snp.trailing).offset(5)
             $0.centerY.equalTo(reviewRatingLabel)
         }
         
@@ -229,13 +220,13 @@ class Review: UIViewController {
         }
         
         reviewContentLabel.snp.makeConstraints{
-            $0.leading.equalToSuperview().offset(50)
             $0.top.equalTo(reviewRatingLabel.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(50)
         }
         
         developerLabel.snp.makeConstraints{
-            $0.leading.equalToSuperview().offset(50)
             $0.top.equalTo(reviewContentLabel.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(50)
         }
         
         answerDateLabel.snp.makeConstraints{
@@ -244,14 +235,14 @@ class Review: UIViewController {
         }
         
         answerContentLabel.snp.makeConstraints{
-            $0.leading.equalToSuperview().offset(50)
             $0.top.equalTo(developerLabel.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(50)
         }
         
         
         tapToRateLabel.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
             $0.top.equalTo(reviewContentView.snp.bottom).offset(15)
+            $0.centerX.equalToSuperview()
         }
         
         //        starStackView.snp.makeConstraints {
@@ -261,8 +252,8 @@ class Review: UIViewController {
         //        }
         
         writeReviewButton.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(40)
             $0.top.equalTo(tapToRateLabel.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(40)
             $0.width.equalTo(150)
             $0.height.equalTo(50)
         }
