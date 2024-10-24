@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class Preview: UIViewController {
+class Preview: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -28,10 +28,10 @@ class Preview: UIViewController {
     private let iphoneIconLabel: UILabel = {
         let label = UILabel()
         
-        let iconAttachment = NSTextAttachment()
-        iconAttachment.image = UIImage(systemName: "iphone")?.withTintColor(.systemGray)
+        let icon = NSTextAttachment()
+        icon.image = UIImage(systemName: "iphone")?.withTintColor(.systemGray)
         
-        let attributedText = NSMutableAttributedString(attachment: iconAttachment)
+        let attributedText = NSMutableAttributedString(attachment: icon)
         attributedText.append(NSAttributedString(string: "   iPhone", attributes: [
             .foregroundColor: UIColor.systemGray,
             .font: UIFont.systemFont(ofSize: 13, weight: .heavy)
@@ -42,15 +42,19 @@ class Preview: UIViewController {
         return label
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setUI()
         setLayout()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setUI() {
         [titleLabel, imageView, iphoneIconLabel].forEach {
-            view.addSubview($0)
+            addSubview($0)
         }
     }
     

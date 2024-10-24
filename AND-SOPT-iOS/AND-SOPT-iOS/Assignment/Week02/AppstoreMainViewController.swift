@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class AppstoreMainViewController: UIViewController {
+class AppstoreMainViewController: UIViewController, WhatsNewDelegate, ReviewDelegate {
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
@@ -42,6 +42,8 @@ class AppstoreMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        whatsNew.delegate = self
+        review.delegate = self
         setStyle()
         setUI()
         setLayout()
@@ -58,7 +60,7 @@ class AppstoreMainViewController: UIViewController {
         
         scrollView.addSubview(contentView)
         
-        [appIntro.view, firstDividerLine, appInfo.view, secondDividerLine, whatsNew.view, thirdDividerLine, preview.view, developerInfo.view, review.view].forEach {
+        [appIntro, firstDividerLine, appInfo, secondDividerLine, whatsNew, thirdDividerLine, preview, developerInfo, review].forEach {
             contentView.addSubview($0)
         }
     }
@@ -80,62 +82,72 @@ class AppstoreMainViewController: UIViewController {
             $0.height.greaterThanOrEqualToSuperview().priority(.low)
         }
         
-        appIntro.view.snp.makeConstraints {
+        appIntro.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(120)
         }
         
         firstDividerLine.snp.makeConstraints {
-            $0.top.equalTo(appIntro.view.snp.bottom).offset(10)
+            $0.top.equalTo(appIntro.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
             $0.height.equalTo(0.3)
         }
         
-        appInfo.view.snp.makeConstraints {
+        appInfo.snp.makeConstraints {
             $0.top.equalTo(firstDividerLine.snp.bottom).offset(10)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(70)
         }
         
         secondDividerLine.snp.makeConstraints {
-            $0.top.equalTo(appInfo.view.snp.bottom).offset(10)
+            $0.top.equalTo(appInfo.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
             $0.height.equalTo(0.3)
         }
         
-        whatsNew.view.snp.makeConstraints {
+        whatsNew.snp.makeConstraints {
             $0.top.equalTo(secondDividerLine.snp.bottom).offset(10)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(150)
         }
         
-        preview.view.snp.makeConstraints {
-            $0.top.equalTo(whatsNew.view.snp.bottom).offset(10)
+        preview.snp.makeConstraints {
+            $0.top.equalTo(whatsNew.snp.bottom).offset(10)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(565)
         }
         
         thirdDividerLine.snp.makeConstraints {
-            $0.top.equalTo(preview.view.snp.bottom).offset(10)
+            $0.top.equalTo(preview.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
             $0.height.equalTo(0.3)
         }
         
-        developerInfo.view.snp.makeConstraints{
+        developerInfo.snp.makeConstraints{
             $0.top.equalTo(thirdDividerLine.snp.bottom).offset(15)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(130)
         }
         
-        review.view.snp.makeConstraints{
-            $0.top.equalTo(developerInfo.view.snp.bottom).offset(50)
+        review.snp.makeConstraints{
+            $0.top.equalTo(developerInfo.snp.bottom).offset(50)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(520)
             $0.bottom.equalToSuperview()
         }
+    }
+    
+    func didTapWhatsNewButton() {
+        let versionHistoryVC = VersionHistoryViewController()
+        self.navigationController?.pushViewController(versionHistoryVC, animated: true)
+    }
+    
+    func didTapMoreReviewButton() {
+        let allReviewsVC = AllReviewsViewController()
+        self.navigationController?.pushViewController(allReviewsVC, animated: true)
     }
 }

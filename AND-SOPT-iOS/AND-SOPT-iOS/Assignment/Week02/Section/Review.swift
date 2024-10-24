@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import SnapKit
 
-class Review: UIViewController {
+protocol ReviewDelegate: AnyObject {
+    func didTapMoreReviewButton()
+}
+
+class Review: UIView {
     
-    private let moreReviewButton: UIButton = {
+    weak var delegate: ReviewDelegate?
+    
+    private lazy var moreReviewButton: UIButton = {
         let button = UIButton()
         let icon = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
         button.setImage(icon, for: .normal)
@@ -18,13 +25,14 @@ class Review: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
+        button.addTarget(self, action: #selector(moreReviewButtonTapped), for: .touchUpInside)
         return button
     }()
     
     private let ratingLabel: UILabel = {
         let label = UILabel()
         label.text = "4.4"
-        label.font = .systemFont(ofSize: 55, weight: .heavy)
+        label.font = .systemFont(ofSize: 57, weight: .heavy)
         label.textColor = .white
         return label
     }()
@@ -157,24 +165,28 @@ class Review: UIViewController {
         button.clipsToBounds = true
         button.tintColor = .systemBlue
         button.semanticContentAttribute = .forceLeftToRight
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
         return button
     }
     
     private lazy var writeReviewButton: UIButton = createButton(title: "리뷰 작성", iconName: "square.and.pencil")
     private lazy var appSupportButton: UIButton = createButton(title: "앱 지원", iconName: "questionmark.circle")
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setUI()
         setLayout()
         
         configureStarRating()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setUI() {
         [moreReviewButton, ratingLabel, starRatingLabel, totalRatingsLabel, mostHelpfulReviewLabel, reviewContentView, reviewTitleLabel, reviewRatingLabel, reviewDateLabel, reviewerLabel, reviewContentLabel, developerLabel, answerDateLabel, answerContentLabel, tapToRateLabel, starStackView, writeReviewButton, appSupportButton].forEach {
-            view.addSubview($0)
+            addSubview($0)
         }
     }
     
@@ -207,7 +219,7 @@ class Review: UIViewController {
         reviewContentView.snp.makeConstraints {
             $0.top.equalTo(mostHelpfulReviewLabel.snp.bottom).offset(15)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(345)
+            $0.width.equalTo(350)
             $0.height.equalTo(190)
         }
         
@@ -265,23 +277,27 @@ class Review: UIViewController {
         writeReviewButton.snp.makeConstraints {
             $0.top.equalTo(starStackView.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(40)
-            $0.width.equalTo(150)
+            $0.width.equalTo(152)
             $0.height.equalTo(50)
         }
         
         appSupportButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().offset(-40)
             $0.centerY.equalTo(writeReviewButton)
-            $0.width.equalTo(150)
+            $0.width.equalTo(152)
             $0.height.equalTo(50)
         }
+    }
+    
+    @objc private func moreReviewButtonTapped() {
+        delegate?.didTapMoreReviewButton()
     }
     
     // 버튼에 대한 타겟 및 제스처 인식을 설정
     private func configureStarRating() {
         for i in 1...5 {
             let button = UIButton()
-            button.setImage(UIImage(systemName: "star", withConfiguration: UIImage.SymbolConfiguration(weight: .bold)), for: .normal)
+            button.setImage(UIImage(systemName: "star", withConfiguration: UIImage.SymbolConfiguration(pointSize: 22, weight: .bold)), for: .normal)
             button.tintColor = .systemBlue
             button.tag = i
             button.addTarget(self, action: #selector(starTapped(_:)), for: .touchUpInside)
@@ -312,7 +328,7 @@ class Review: UIViewController {
         currentRating = rating
         starButtons.enumerated().forEach { index, button in
             let imageName = index < rating ? "star.fill" : "star"
-            button.setImage(UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(weight: .bold)), for: .normal)
+            button.setImage(UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: 22, weight: .bold)), for: .normal)
         }
     }
 }

@@ -8,9 +8,15 @@
 import UIKit
 import SnapKit
 
-class WhatsNew: UIViewController {
+protocol WhatsNewDelegate: AnyObject {
+    func didTapWhatsNewButton()
+}
+
+class WhatsNew: UIView {
     
-    private let whatsNewButton: UIButton = {
+    weak var delegate: WhatsNewDelegate?
+    
+    private lazy var whatsNewButton: UIButton = {
         let button = UIButton()
         let icon = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
         button.setImage(icon, for: .normal)
@@ -19,6 +25,7 @@ class WhatsNew: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
+        button.addTarget(self, action: #selector(whatsNewButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -47,15 +54,19 @@ class WhatsNew: UIViewController {
         return label
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setUI()
         setLayout()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setUI() {
         [whatsNewButton, versionLabel, dateLabel, updateContentLabel].forEach {
-            view.addSubview($0)
+            addSubview($0)
         }
     }
     
@@ -79,5 +90,9 @@ class WhatsNew: UIViewController {
             $0.top.equalTo(versionLabel.snp.bottom).offset(15)
             $0.leading.equalToSuperview().offset(20)
         }
+    }
+    
+    @objc private func whatsNewButtonTapped() {
+        delegate?.didTapWhatsNewButton()
     }
 }

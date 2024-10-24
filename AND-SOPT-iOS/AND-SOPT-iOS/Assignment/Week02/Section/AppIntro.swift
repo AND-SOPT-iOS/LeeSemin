@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class AppIntro: UIViewController {
+class AppIntro: UIView {
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -52,15 +52,19 @@ class AppIntro: UIViewController {
         return button
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setUI()
         setLayout()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setUI() {
         [logoImageView, titleLabel, subtitleLabel, openButton, shareButton].forEach {
-            view.addSubview($0)
+            addSubview($0)
         }
     }
     
@@ -72,13 +76,13 @@ class AppIntro: UIViewController {
         }
         
         titleLabel.snp.makeConstraints {
-            $0.leading.equalTo(logoImageView.snp.trailing).offset(15)
             $0.top.equalTo(logoImageView.snp.top)
+            $0.leading.equalTo(logoImageView.snp.trailing).offset(15)
         }
         
         subtitleLabel.snp.makeConstraints {
-            $0.leading.equalTo(titleLabel.snp.leading)
             $0.top.equalTo(titleLabel.snp.bottom).offset(3)
+            $0.leading.equalTo(titleLabel.snp.leading)
         }
         
         openButton.snp.makeConstraints {
@@ -96,4 +100,3 @@ class AppIntro: UIViewController {
         }
     }
 }
-
