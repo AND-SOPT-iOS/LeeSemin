@@ -138,7 +138,7 @@ class Review: UIView {
     private let tapToRateLabel: UILabel = {
         let label = UILabel()
         label.text = "탭하여 평가하기"
-        label.font = .systemFont(ofSize: 18)
+        label.font = .systemFont(ofSize: 16)
         label.textColor = .white
         return label
     }()
@@ -264,7 +264,7 @@ class Review: UIView {
         }
         
         tapToRateLabel.snp.makeConstraints {
-            $0.top.equalTo(reviewContentView.snp.bottom).offset(20)
+            $0.top.equalTo(reviewContentView.snp.bottom).offset(25)
             $0.centerX.equalToSuperview()
         }
         

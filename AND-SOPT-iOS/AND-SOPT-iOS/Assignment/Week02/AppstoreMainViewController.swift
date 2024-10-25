@@ -109,7 +109,7 @@ class AppstoreMainViewController: UIViewController, WhatsNewDelegate, ReviewDele
         }
         
         whatsNew.snp.makeConstraints {
-            $0.top.equalTo(secondDividerLine.snp.bottom).offset(20)
+            $0.top.equalTo(secondDividerLine.snp.bottom).offset(15)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(150)
         }
@@ -128,7 +128,7 @@ class AppstoreMainViewController: UIViewController, WhatsNewDelegate, ReviewDele
         }
         
         developerInfo.snp.makeConstraints{
-            $0.top.equalTo(thirdDividerLine.snp.bottom).offset(15)
+            $0.top.equalTo(thirdDividerLine.snp.bottom).offset(20)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(130)
         }
