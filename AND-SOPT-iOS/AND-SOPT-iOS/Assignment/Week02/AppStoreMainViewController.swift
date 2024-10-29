@@ -36,9 +36,9 @@ class AppStoreMainViewController: UIViewController {
         return view
     }
     
-    private lazy var firstDividerLine: UIView = createDividerLine()
-    private lazy var secondDividerLine: UIView = createDividerLine()
-    private lazy var thirdDividerLine: UIView = createDividerLine()
+    private lazy var firstDividerLine = UIView.dividerLine
+    private lazy var secondDividerLine = UIView.dividerLine
+    private lazy var thirdDividerLine = UIView.dividerLine
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,5 +152,13 @@ extension AppStoreMainViewController: WhatsNewDelegate, ReviewDelegate {
     func didTapMoreReviewButton() {
         let allReviewsVC = AllReviewsViewController()
         self.navigationController?.pushViewController(allReviewsVC, animated: true)
+    }
+}
+
+extension UIView {
+    static var dividerLine: UIView {
+        let view = UIView()
+        view.backgroundColor = .systemGray
+        return view
     }
 }
