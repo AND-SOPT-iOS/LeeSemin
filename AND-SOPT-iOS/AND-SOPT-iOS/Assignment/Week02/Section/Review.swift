@@ -154,23 +154,8 @@ class Review: UIView {
     private var starButtons: [UIButton] = []
     private var currentRating: Int = 0
     
-    private func createButton(title: String, iconName: String) -> UIButton {
-        let button = UIButton()
-        let icon = UIImage(systemName: iconName)
-        button.setImage(icon, for: .normal)
-        button.setTitle("  \(title)", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.backgroundColor = .tertiarySystemGroupedBackground
-        button.layer.cornerRadius = 18
-        button.clipsToBounds = true
-        button.tintColor = .systemBlue
-        button.semanticContentAttribute = .forceLeftToRight
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
-        return button
-    }
-    
-    private lazy var writeReviewButton: UIButton = createButton(title: "리뷰 작성", iconName: "square.and.pencil")
-    private lazy var appSupportButton: UIButton = createButton(title: "앱 지원", iconName: "questionmark.circle")
+    private lazy var writeReviewButton = UIButton.createButton(title: "리뷰 작성", iconName: "square.and.pencil")
+    private lazy var appSupportButton = UIButton.createButton(title: "앱 지원", iconName: "questionmark.circle")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -330,5 +315,22 @@ class Review: UIView {
             let imageName = index < rating ? "star.fill" : "star"
             button.setImage(UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: 22, weight: .bold)), for: .normal)
         }
+    }
+}
+
+extension UIButton {
+    static func createButton(title: String, iconName: String) -> UIButton {
+        let button = UIButton()
+        let icon = UIImage(systemName: iconName)
+        button.setImage(icon, for: .normal)
+        button.setTitle("  \(title)", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.backgroundColor = .tertiarySystemGroupedBackground
+        button.layer.cornerRadius = 18
+        button.clipsToBounds = true
+        button.tintColor = .systemBlue
+        button.semanticContentAttribute = .forceLeftToRight
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
+        return button
     }
 }

@@ -36,9 +36,9 @@ class AppStoreMainViewController: UIViewController {
         return view
     }
     
-    private lazy var firstDividerLine = UIView.dividerLine
-    private lazy var secondDividerLine = UIView.dividerLine
-    private lazy var thirdDividerLine = UIView.dividerLine
+    private lazy var firstDividerLine = UIView.createDividerLine
+    private lazy var secondDividerLine = UIView.createDividerLine
+    private lazy var thirdDividerLine = UIView.createDividerLine
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -160,7 +160,7 @@ extension AppStoreMainViewController: WhatsNewDelegate, ReviewDelegate {
 }
 
 extension UIView {
-    static var dividerLine: UIView {
+    static var createDividerLine: UIView {
         let view = UIView()
         view.backgroundColor = .systemGray
         return view
