@@ -174,6 +174,9 @@ class AppInfo: UIView {
         ratingStackView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(20)
             $0.width.equalTo(awardsStackView.snp.width)
+        }
+        
+        awardsStackView.snp.makeConstraints {
             $0.width.equalTo(ageStackView.snp.width)
         }
         
