@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class AppStoreMainViewController: UIViewController, WhatsNewDelegate, ReviewDelegate {
+class AppStoreMainViewController: UIViewController {
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
@@ -140,6 +140,9 @@ class AppStoreMainViewController: UIViewController, WhatsNewDelegate, ReviewDele
             $0.bottom.equalToSuperview()
         }
     }
+}
+
+extension AppStoreMainViewController: WhatsNewDelegate, ReviewDelegate {
     
     func didTapWhatsNewButton() {
         let versionHistoryVC = VersionHistoryViewController()
