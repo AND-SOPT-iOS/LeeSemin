@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class AppstoreMainViewController: UIViewController, WhatsNewDelegate, ReviewDelegate {
+class AppStoreMainViewController: UIViewController, WhatsNewDelegate, ReviewDelegate {
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
