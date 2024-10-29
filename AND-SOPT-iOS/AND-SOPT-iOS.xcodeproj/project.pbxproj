@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		760C54172CC6AD2900502B24 /* AppStoreMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54162CC6AD2900502B24 /* AppStoreMainViewController.swift */; };
+		760C541A2CC6ADD600502B24 /* AppIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54192CC6ADD600502B24 /* AppIntro.swift */; };
+		760C541C2CC6ADFA00502B24 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C541B2CC6ADFA00502B24 /* AppInfo.swift */; };
+		760C541E2CC6AE1000502B24 /* WhatsNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C541D2CC6AE1000502B24 /* WhatsNew.swift */; };
+		760C54202CC6AE2000502B24 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C541F2CC6AE2000502B24 /* Preview.swift */; };
+		760C54222CC6AE3100502B24 /* DeveloperInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54212CC6AE3100502B24 /* DeveloperInfo.swift */; };
+		760C54242CC6AE3E00502B24 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54232CC6AE3E00502B24 /* Review.swift */; };
+		760C54262CC6DF2D00502B24 /* VersionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54252CC6DF2D00502B24 /* VersionHistoryViewController.swift */; };
+		760C54282CC6DFF000502B24 /* AllReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54272CC6DFF000502B24 /* AllReviewsViewController.swift */; };
+		760C54572CD0ADCF00502B24 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54562CD0ADCF00502B24 /* UIView+.swift */; };
+		760C54592CD0C26900502B24 /* DeveloperInfoLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54582CD0C26900502B24 /* DeveloperInfoLabels.swift */; };
+		760F11BF2CC2B0ED00199A79 /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F11BB2CC2B0ED00199A79 /* ColorsViewController.swift */; };
+		760F11C02CC2B0ED00199A79 /* InputNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F11BC2CC2B0ED00199A79 /* InputNicknameViewController.swift */; };
+		760F11C12CC2B0ED00199A79 /* SecondMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F11BD2CC2B0ED00199A79 /* SecondMainViewController.swift */; };
 		7641BCF42CBC51AE003D99CE /* FirstMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641BCF32CBC51AE003D99CE /* FirstMainViewController.swift */; };
 		7641BCF62CBC526E003D99CE /* ReceivedDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641BCF52CBC526E003D99CE /* ReceivedDataViewController.swift */; };
 		7692BC4B2CB9608400CF5176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC4A2CB9608400CF5176 /* AppDelegate.swift */; };
@@ -19,6 +33,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		760C54162CC6AD2900502B24 /* AppStoreMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreMainViewController.swift; sourceTree = "<group>"; };
+		760C54192CC6ADD600502B24 /* AppIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntro.swift; sourceTree = "<group>"; };
+		760C541B2CC6ADFA00502B24 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		760C541D2CC6AE1000502B24 /* WhatsNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNew.swift; sourceTree = "<group>"; };
+		760C541F2CC6AE2000502B24 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		760C54212CC6AE3100502B24 /* DeveloperInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfo.swift; sourceTree = "<group>"; };
+		760C54232CC6AE3E00502B24 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		760C54252CC6DF2D00502B24 /* VersionHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionHistoryViewController.swift; sourceTree = "<group>"; };
+		760C54272CC6DFF000502B24 /* AllReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewsViewController.swift; sourceTree = "<group>"; };
+		760C54562CD0ADCF00502B24 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		760C54582CD0C26900502B24 /* DeveloperInfoLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfoLabels.swift; sourceTree = "<group>"; };
+		760F11BB2CC2B0ED00199A79 /* ColorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
+		760F11BC2CC2B0ED00199A79 /* InputNicknameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputNicknameViewController.swift; sourceTree = "<group>"; };
+		760F11BD2CC2B0ED00199A79 /* SecondMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondMainViewController.swift; sourceTree = "<group>"; };
 		7641BCF32CBC51AE003D99CE /* FirstMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMainViewController.swift; sourceTree = "<group>"; };
 		7641BCF52CBC526E003D99CE /* ReceivedDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedDataViewController.swift; sourceTree = "<group>"; };
 		7692BC472CB9608400CF5176 /* AND-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AND-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,9 +71,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		760C540C2CC6AAF400502B24 /* Week02 */ = {
+			isa = PBXGroup;
+			children = (
+				760C545A2CD0C27500502B24 /* Label */,
+				760C54182CC6AD6A00502B24 /* Section */,
+				760C54162CC6AD2900502B24 /* AppStoreMainViewController.swift */,
+				760C54252CC6DF2D00502B24 /* VersionHistoryViewController.swift */,
+				760C54272CC6DFF000502B24 /* AllReviewsViewController.swift */,
+			);
+			path = Week02;
+			sourceTree = "<group>";
+		};
+		760C54182CC6AD6A00502B24 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				760C54192CC6ADD600502B24 /* AppIntro.swift */,
+				760C541B2CC6ADFA00502B24 /* AppInfo.swift */,
+				760C541D2CC6AE1000502B24 /* WhatsNew.swift */,
+				760C541F2CC6AE2000502B24 /* Preview.swift */,
+				760C54212CC6AE3100502B24 /* DeveloperInfo.swift */,
+				760C54232CC6AE3E00502B24 /* Review.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		760C54552CD0ADB000502B24 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				760C54562CD0ADCF00502B24 /* UIView+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		760C545A2CD0C27500502B24 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				760C54582CD0C26900502B24 /* DeveloperInfoLabels.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		760F11BE2CC2B0ED00199A79 /* Week02 */ = {
+			isa = PBXGroup;
+			children = (
+				760F11BB2CC2B0ED00199A79 /* ColorsViewController.swift */,
+				760F11BC2CC2B0ED00199A79 /* InputNicknameViewController.swift */,
+				760F11BD2CC2B0ED00199A79 /* SecondMainViewController.swift */,
+			);
+			name = Week02;
+			path = "../../../../../Dev/AND-SOPT-iOS/AND-SOPT-iOS/Practice/Week02";
+			sourceTree = "<group>";
+		};
 		7641BCE52CBC479A003D99CE /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				760C540C2CC6AAF400502B24 /* Week02 */,
 				7641BCF72CBE1FF2003D99CE /* Week01 */,
 			);
 			path = Assignment;
@@ -54,6 +135,7 @@
 		7641BCE82CBC48EA003D99CE /* Practice */ = {
 			isa = PBXGroup;
 			children = (
+				760F11BE2CC2B0ED00199A79 /* Week02 */,
 				7641BCE92CBC48F0003D99CE /* Week01 */,
 			);
 			path = Practice;
@@ -96,6 +178,7 @@
 		7692BC492CB9608400CF5176 /* AND-SOPT-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				760C54552CD0ADB000502B24 /* Extensions */,
 				7641BCE82CBC48EA003D99CE /* Practice */,
 				7641BCE52CBC479A003D99CE /* Assignment */,
 				7692BC4A2CB9608400CF5176 /* AppDelegate.swift */,
@@ -183,11 +266,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				760F11BF2CC2B0ED00199A79 /* ColorsViewController.swift in Sources */,
+				760C54592CD0C26900502B24 /* DeveloperInfoLabels.swift in Sources */,
 				7641BCF42CBC51AE003D99CE /* FirstMainViewController.swift in Sources */,
+				760C54172CC6AD2900502B24 /* AppStoreMainViewController.swift in Sources */,
 				7692BC4F2CB9608400CF5176 /* FindDifferentButtonViewController.swift in Sources */,
+				760C54202CC6AE2000502B24 /* Preview.swift in Sources */,
+				760F11C02CC2B0ED00199A79 /* InputNicknameViewController.swift in Sources */,
+				760C541C2CC6ADFA00502B24 /* AppInfo.swift in Sources */,
+				760C541E2CC6AE1000502B24 /* WhatsNew.swift in Sources */,
+				760C54282CC6DFF000502B24 /* AllReviewsViewController.swift in Sources */,
+				760F11C12CC2B0ED00199A79 /* SecondMainViewController.swift in Sources */,
+				760C54242CC6AE3E00502B24 /* Review.swift in Sources */,
 				7692BC4B2CB9608400CF5176 /* AppDelegate.swift in Sources */,
 				7692BC4D2CB9608400CF5176 /* SceneDelegate.swift in Sources */,
+				760C541A2CC6ADD600502B24 /* AppIntro.swift in Sources */,
+				760C54262CC6DF2D00502B24 /* VersionHistoryViewController.swift in Sources */,
+				760C54572CD0ADCF00502B24 /* UIView+.swift in Sources */,
 				7641BCF62CBC526E003D99CE /* ReceivedDataViewController.swift in Sources */,
+				760C54222CC6AE3100502B24 /* DeveloperInfo.swift in Sources */,
 				7692BC5F2CB9619B00CF5176 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
