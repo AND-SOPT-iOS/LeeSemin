@@ -42,11 +42,15 @@ class AppStoreMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        whatsNew.delegate = self
-        review.delegate = self
+        setDelegates()
         setStyle()
         setUI()
         setLayout()
+    }
+    
+    private func setDelegates() {
+        whatsNew.delegate = self
+        review.delegate = self
     }
     
     private func setStyle() {
