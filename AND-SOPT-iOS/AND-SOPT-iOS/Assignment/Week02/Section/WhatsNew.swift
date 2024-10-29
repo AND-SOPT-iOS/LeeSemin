@@ -65,9 +65,7 @@ class WhatsNew: UIView {
     }
     
     private func setUI() {
-        [whatsNewButton, versionLabel, dateLabel, updateContentLabel].forEach {
-            addSubview($0)
-        }
+        addSubviews(whatsNewButton, versionLabel, dateLabel, updateContentLabel)
     }
     
     private func setLayout() {

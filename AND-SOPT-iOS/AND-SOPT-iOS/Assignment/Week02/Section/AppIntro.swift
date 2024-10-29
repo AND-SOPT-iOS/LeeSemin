@@ -63,9 +63,7 @@ class AppIntro: UIView {
     }
     
     private func setUI() {
-        [logoImageView, titleLabel, subtitleLabel, openButton, shareButton].forEach {
-            addSubview($0)
-        }
+        addSubviews(logoImageView, titleLabel, subtitleLabel, openButton, shareButton)
     }
     
     private func setLayout() {

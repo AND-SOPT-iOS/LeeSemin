@@ -89,9 +89,7 @@ class DeveloperInfo: UIView {
     }
     
     private func setUI() {
-        [contentLabel, moreButton, developerLabel, nextButton, secondDeveloperLabel].forEach {
-            addSubview($0)
-        }
+        addSubviews(contentLabel, moreButton, developerLabel, nextButton, secondDeveloperLabel)
     }
     
     private func setLayout() {

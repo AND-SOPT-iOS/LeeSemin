@@ -71,24 +71,24 @@ class AppInfo: UIView {
     
     private let editorChoiceLabel: UILabel = {
         let label = UILabel()
-
+        
         let iconLeft = NSTextAttachment()
         iconLeft.image = UIImage(systemName: "person.fill")?.withTintColor(.systemGray)
         let iconRight = NSTextAttachment()
         iconRight.image = UIImage(systemName: "person.fill")?.withTintColor(.systemGray)
-
+        
         let attributedText = NSMutableAttributedString(attachment: iconLeft)
         attributedText.append(NSAttributedString(string: " 에디터의 선택 ", attributes: [
             .foregroundColor: UIColor.gray,
             .font: UIFont.systemFont(ofSize: 12)
         ]))
         attributedText.append(NSAttributedString(attachment: iconRight))
-
+        
         label.attributedText = attributedText
-
+        
         return label
     }()
-
+    
     
     private let appLabel: UILabel = {
         let label = UILabel()

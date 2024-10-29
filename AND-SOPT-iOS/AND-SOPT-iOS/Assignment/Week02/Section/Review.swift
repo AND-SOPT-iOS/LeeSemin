@@ -170,9 +170,7 @@ class Review: UIView {
     }
     
     private func setUI() {
-        [moreReviewButton, ratingLabel, starRatingLabel, totalRatingsLabel, mostHelpfulReviewLabel, reviewContentView, reviewTitleLabel, reviewRatingLabel, reviewDateLabel, reviewerLabel, reviewContentLabel, developerLabel, answerDateLabel, answerContentLabel, tapToRateLabel, starStackView, writeReviewButton, appSupportButton].forEach {
-            addSubview($0)
-        }
+        addSubviews(moreReviewButton, ratingLabel, starRatingLabel, totalRatingsLabel, mostHelpfulReviewLabel, reviewContentView, reviewTitleLabel, reviewRatingLabel, reviewDateLabel, reviewerLabel, reviewContentLabel, developerLabel, answerDateLabel, answerContentLabel, tapToRateLabel, starStackView, writeReviewButton, appSupportButton)
     }
     
     private func setLayout() {

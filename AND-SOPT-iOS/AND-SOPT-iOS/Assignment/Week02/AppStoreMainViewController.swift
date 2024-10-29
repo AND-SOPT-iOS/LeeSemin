@@ -58,15 +58,11 @@ class AppStoreMainViewController: UIViewController {
     }
     
     private func setUI() {
-        [backButton, scrollView].forEach {
-            view.addSubview($0)
-        }
+        view.addSubviews(backButton, scrollView)
         
         scrollView.addSubview(contentView)
         
-        [appIntro, firstDividerLine, appInfo, secondDividerLine, whatsNew, thirdDividerLine, preview, developerInfo, review].forEach {
-            contentView.addSubview($0)
-        }
+        contentView.addSubviews(appIntro, firstDividerLine, appInfo, secondDividerLine, whatsNew, thirdDividerLine, preview, developerInfo, review)
     }
     
     private func setLayout() {

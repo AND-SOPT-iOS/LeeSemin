@@ -53,9 +53,7 @@ class Preview: UIView {
     }
     
     private func setUI() {
-        [titleLabel, imageView, iphoneIconLabel].forEach {
-            addSubview($0)
-        }
+        addSubviews(titleLabel, imageView, iphoneIconLabel)
     }
     
     private func setLayout() {
