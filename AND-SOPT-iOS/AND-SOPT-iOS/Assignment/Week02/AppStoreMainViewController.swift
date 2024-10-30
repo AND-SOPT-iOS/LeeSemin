@@ -117,7 +117,7 @@ class AppStoreMainViewController: UIViewController {
         preview.snp.makeConstraints {
             $0.top.equalTo(whatsNew.snp.bottom).offset(10)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(565)
+            $0.height.equalTo(575)
         }
         
         thirdDividerLine.snp.makeConstraints {

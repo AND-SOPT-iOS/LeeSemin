@@ -19,6 +19,13 @@
 		760C54572CD0ADCF00502B24 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54562CD0ADCF00502B24 /* UIView+.swift */; };
 		760C54592CD0C26900502B24 /* DeveloperInfoLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54582CD0C26900502B24 /* DeveloperInfoLabels.swift */; };
 		760C545D2CD0D33B00502B24 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 760C545C2CD0D33B00502B24 /* Then */; };
+		760C54682CD0D3BE00502B24 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C545E2CD0D3BE00502B24 /* Photo.swift */; };
+		760C54692CD0D3BE00502B24 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C545F2CD0D3BE00502B24 /* PhotoCell.swift */; };
+		760C546A2CD0D3BE00502B24 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54602CD0D3BE00502B24 /* PhotoViewController.swift */; };
+		760C546B2CD0D3BE00502B24 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54622CD0D3BE00502B24 /* App.swift */; };
+		760C546C2CD0D3BE00502B24 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54632CD0D3BE00502B24 /* ChartCell.swift */; };
+		760C546D2CD0D3BE00502B24 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54642CD0D3BE00502B24 /* ChartViewController.swift */; };
+		760C546E2CD0D3BE00502B24 /* DownloadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54652CD0D3BE00502B24 /* DownloadState.swift */; };
 		760F11BF2CC2B0ED00199A79 /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F11BB2CC2B0ED00199A79 /* ColorsViewController.swift */; };
 		760F11C02CC2B0ED00199A79 /* InputNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F11BC2CC2B0ED00199A79 /* InputNicknameViewController.swift */; };
 		760F11C12CC2B0ED00199A79 /* SecondMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F11BD2CC2B0ED00199A79 /* SecondMainViewController.swift */; };
@@ -45,6 +52,13 @@
 		760C54272CC6DFF000502B24 /* AllReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewsViewController.swift; sourceTree = "<group>"; };
 		760C54562CD0ADCF00502B24 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		760C54582CD0C26900502B24 /* DeveloperInfoLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfoLabels.swift; sourceTree = "<group>"; };
+		760C545E2CD0D3BE00502B24 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		760C545F2CD0D3BE00502B24 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		760C54602CD0D3BE00502B24 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		760C54622CD0D3BE00502B24 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		760C54632CD0D3BE00502B24 /* ChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
+		760C54642CD0D3BE00502B24 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		760C54652CD0D3BE00502B24 /* DownloadState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadState.swift; sourceTree = "<group>"; };
 		760F11BB2CC2B0ED00199A79 /* ColorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
 		760F11BC2CC2B0ED00199A79 /* InputNicknameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputNicknameViewController.swift; sourceTree = "<group>"; };
 		760F11BD2CC2B0ED00199A79 /* SecondMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondMainViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +128,36 @@
 			path = Label;
 			sourceTree = "<group>";
 		};
+		760C54612CD0D3BE00502B24 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				760C545E2CD0D3BE00502B24 /* Photo.swift */,
+				760C545F2CD0D3BE00502B24 /* PhotoCell.swift */,
+				760C54602CD0D3BE00502B24 /* PhotoViewController.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		760C54662CD0D3BE00502B24 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				760C54622CD0D3BE00502B24 /* App.swift */,
+				760C54632CD0D3BE00502B24 /* ChartCell.swift */,
+				760C54642CD0D3BE00502B24 /* ChartViewController.swift */,
+				760C54652CD0D3BE00502B24 /* DownloadState.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		760C54672CD0D3BE00502B24 /* Week03 */ = {
+			isa = PBXGroup;
+			children = (
+				760C54612CD0D3BE00502B24 /* CollectionView */,
+				760C54662CD0D3BE00502B24 /* TableView */,
+			);
+			path = Week03;
+			sourceTree = "<group>";
+		};
 		760F11BE2CC2B0ED00199A79 /* Week02 */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +181,7 @@
 		7641BCE82CBC48EA003D99CE /* Practice */ = {
 			isa = PBXGroup;
 			children = (
+				760C54672CD0D3BE00502B24 /* Week03 */,
 				760F11BE2CC2B0ED00199A79 /* Week02 */,
 				7641BCE92CBC48F0003D99CE /* Week01 */,
 			);
@@ -270,7 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				760C54682CD0D3BE00502B24 /* Photo.swift in Sources */,
 				760F11BF2CC2B0ED00199A79 /* ColorsViewController.swift in Sources */,
+				760C546A2CD0D3BE00502B24 /* PhotoViewController.swift in Sources */,
 				760C54592CD0C26900502B24 /* DeveloperInfoLabels.swift in Sources */,
 				7641BCF42CBC51AE003D99CE /* FirstMainViewController.swift in Sources */,
 				760C54172CC6AD2900502B24 /* AppStoreMainViewController.swift in Sources */,
@@ -284,11 +331,16 @@
 				760C54242CC6AE3E00502B24 /* Review.swift in Sources */,
 				7692BC4B2CB9608400CF5176 /* AppDelegate.swift in Sources */,
 				7692BC4D2CB9608400CF5176 /* SceneDelegate.swift in Sources */,
+				760C546C2CD0D3BE00502B24 /* ChartCell.swift in Sources */,
+				760C546D2CD0D3BE00502B24 /* ChartViewController.swift in Sources */,
 				760C541A2CC6ADD600502B24 /* AppIntro.swift in Sources */,
 				760C54262CC6DF2D00502B24 /* VersionHistoryViewController.swift in Sources */,
 				760C54572CD0ADCF00502B24 /* UIView+.swift in Sources */,
 				7641BCF62CBC526E003D99CE /* ReceivedDataViewController.swift in Sources */,
 				760C54222CC6AE3100502B24 /* DeveloperInfo.swift in Sources */,
+				760C546E2CD0D3BE00502B24 /* DownloadState.swift in Sources */,
+				760C546B2CD0D3BE00502B24 /* App.swift in Sources */,
+				760C54692CD0D3BE00502B24 /* PhotoCell.swift in Sources */,
 				7692BC5F2CB9619B00CF5176 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

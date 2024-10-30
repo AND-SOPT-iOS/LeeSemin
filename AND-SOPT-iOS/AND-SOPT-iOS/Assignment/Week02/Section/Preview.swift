@@ -18,11 +18,18 @@ class Preview: UIView {
         return label
     }()
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "toss_preview.png")
-        imageView.contentMode = .scaleAspectFit
-        return imageView
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsHorizontalScrollIndicator = false
+        return scrollView
+    }()
+    
+    private let imageStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 2
+        stackView.distribution = .fillEqually
+        return stackView
     }()
     
     private let iphoneIconLabel: UILabel = {
@@ -46,31 +53,50 @@ class Preview: UIView {
         super.init(frame: frame)
         setUI()
         setLayout()
+        setImages()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func setImages() {
+        for i in 1...5 {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: "toss_preview\(i).png")
+            imageView.contentMode = .scaleAspectFit
+            imageView.snp.makeConstraints {
+                $0.width.equalTo(240)
+                $0.height.equalTo(490)
+            }
+            imageStackView.addArrangedSubview(imageView)
+        }
+    }
+    
     private func setUI() {
-        addSubviews(titleLabel, imageView, iphoneIconLabel)
+        addSubviews(titleLabel, scrollView, iphoneIconLabel)
+        scrollView.addSubview(imageStackView)
     }
     
     private func setLayout() {
-        titleLabel.snp.makeConstraints{
+        titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.equalToSuperview().offset(20)
         }
         
-        imageView.snp.makeConstraints {
+        scrollView.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(15)
-            $0.centerX.equalToSuperview()
-            $0.width.equalTo(240)
-            $0.height.equalTo(480)
+            $0.leading.trailing.equalToSuperview()
+        }
+        
+        imageStackView.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(10)
+            $0.trailing.equalToSuperview().offset(-10)
+            $0.height.equalToSuperview()
         }
         
         iphoneIconLabel.snp.makeConstraints {
-            $0.top.equalTo(imageView.snp.bottom).offset(15)
+            $0.top.equalTo(scrollView.snp.bottom).offset(15)
             $0.leading.equalToSuperview().offset(20)
         }
     }
