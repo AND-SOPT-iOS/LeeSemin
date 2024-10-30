@@ -63,7 +63,7 @@ class Preview: UIView {
     private func setImages() {
         for i in 1...5 {
             let imageView = UIImageView()
-            imageView.image = UIImage(named: "toss_preview\(i).png")
+            imageView.image = UIImage(named: "tossPreview\(i).png")
             imageView.contentMode = .scaleAspectFit
             imageView.snp.makeConstraints {
                 $0.width.equalTo(240)

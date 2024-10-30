@@ -29,13 +29,14 @@
 		760C54702CD1F02600502B24 /* ReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C546F2CD1F02600502B24 /* ReviewData.swift */; };
 		760C54792CD28E9300502B24 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54782CD28E9300502B24 /* FinanceViewController.swift */; };
 		760C547B2CD28FF800502B24 /* EssentialApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C547A2CD28FF800502B24 /* EssentialApps.swift */; };
-		760C547D2CD2900A00502B24 /* Featured.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C547C2CD2900A00502B24 /* Featured.swift */; };
+		760C547D2CD2900A00502B24 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C547C2CD2900A00502B24 /* Banner.swift */; };
 		760C547F2CD2902A00502B24 /* TopPaid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C547E2CD2902A00502B24 /* TopPaid.swift */; };
 		760C54812CD2903300502B24 /* TopFree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54802CD2903300502B24 /* TopFree.swift */; };
 		760C54832CD2904900502B24 /* TopChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C54822CD2904900502B24 /* TopChartViewController.swift */; };
 		760F11BF2CC2B0ED00199A79 /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F11BB2CC2B0ED00199A79 /* ColorsViewController.swift */; };
 		760F11C02CC2B0ED00199A79 /* InputNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F11BC2CC2B0ED00199A79 /* InputNicknameViewController.swift */; };
 		760F11C12CC2B0ED00199A79 /* SecondMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F11BD2CC2B0ED00199A79 /* SecondMainViewController.swift */; };
+		762B2AA62CD2A4DA007E0822 /* BannerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B2AA52CD2A4DA007E0822 /* BannerData.swift */; };
 		7641BCF42CBC51AE003D99CE /* FirstMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641BCF32CBC51AE003D99CE /* FirstMainViewController.swift */; };
 		7641BCF62CBC526E003D99CE /* ReceivedDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641BCF52CBC526E003D99CE /* ReceivedDataViewController.swift */; };
 		7692BC4B2CB9608400CF5176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC4A2CB9608400CF5176 /* AppDelegate.swift */; };
@@ -69,13 +70,14 @@
 		760C546F2CD1F02600502B24 /* ReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewData.swift; sourceTree = "<group>"; };
 		760C54782CD28E9300502B24 /* FinanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
 		760C547A2CD28FF800502B24 /* EssentialApps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialApps.swift; sourceTree = "<group>"; };
-		760C547C2CD2900A00502B24 /* Featured.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Featured.swift; sourceTree = "<group>"; };
+		760C547C2CD2900A00502B24 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		760C547E2CD2902A00502B24 /* TopPaid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPaid.swift; sourceTree = "<group>"; };
 		760C54802CD2903300502B24 /* TopFree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFree.swift; sourceTree = "<group>"; };
 		760C54822CD2904900502B24 /* TopChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartViewController.swift; sourceTree = "<group>"; };
 		760F11BB2CC2B0ED00199A79 /* ColorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
 		760F11BC2CC2B0ED00199A79 /* InputNicknameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputNicknameViewController.swift; sourceTree = "<group>"; };
 		760F11BD2CC2B0ED00199A79 /* SecondMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondMainViewController.swift; sourceTree = "<group>"; };
+		762B2AA52CD2A4DA007E0822 /* BannerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerData.swift; sourceTree = "<group>"; };
 		7641BCF32CBC51AE003D99CE /* FirstMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMainViewController.swift; sourceTree = "<group>"; };
 		7641BCF52CBC526E003D99CE /* ReceivedDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedDataViewController.swift; sourceTree = "<group>"; };
 		7692BC472CB9608400CF5176 /* AND-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AND-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +144,7 @@
 			children = (
 				760C54582CD0C26900502B24 /* DeveloperInfoLabels.swift */,
 				760C546F2CD1F02600502B24 /* ReviewData.swift */,
+				762B2AA52CD2A4DA007E0822 /* BannerData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -180,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				760C547A2CD28FF800502B24 /* EssentialApps.swift */,
-				760C547C2CD2900A00502B24 /* Featured.swift */,
+				760C547C2CD2900A00502B24 /* Banner.swift */,
 				760C547E2CD2902A00502B24 /* TopPaid.swift */,
 				760C54802CD2903300502B24 /* TopFree.swift */,
 			);
@@ -346,6 +349,7 @@
 			files = (
 				760C54682CD0D3BE00502B24 /* Photo.swift in Sources */,
 				760C54832CD2904900502B24 /* TopChartViewController.swift in Sources */,
+				762B2AA62CD2A4DA007E0822 /* BannerData.swift in Sources */,
 				760F11BF2CC2B0ED00199A79 /* ColorsViewController.swift in Sources */,
 				760C546A2CD0D3BE00502B24 /* PhotoViewController.swift in Sources */,
 				760C54592CD0C26900502B24 /* DeveloperInfoLabels.swift in Sources */,
@@ -362,7 +366,7 @@
 				760F11C12CC2B0ED00199A79 /* SecondMainViewController.swift in Sources */,
 				760C54242CC6AE3E00502B24 /* Review.swift in Sources */,
 				7692BC4B2CB9608400CF5176 /* AppDelegate.swift in Sources */,
-				760C547D2CD2900A00502B24 /* Featured.swift in Sources */,
+				760C547D2CD2900A00502B24 /* Banner.swift in Sources */,
 				7692BC4D2CB9608400CF5176 /* SceneDelegate.swift in Sources */,
 				760C546C2CD0D3BE00502B24 /* ChartCell.swift in Sources */,
 				760C546D2CD0D3BE00502B24 /* ChartViewController.swift in Sources */,

@@ -12,7 +12,7 @@ class AppIntro: UIView {
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "toss_icon.png")
+        imageView.image = UIImage(named: "tossIcon.png")
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 25
         imageView.clipsToBounds = true
