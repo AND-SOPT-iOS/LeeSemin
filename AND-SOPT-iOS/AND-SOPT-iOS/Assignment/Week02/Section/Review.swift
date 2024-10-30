@@ -53,86 +53,20 @@ class Review: UIView {
         return label
     }()
     
-    private let mostHelpfulReviewLabel: UILabel = {
-        let label = UILabel()
-        label.text = "가장 도움이 되는 리뷰"
-        label.font = .boldSystemFont(ofSize: 16)
-        label.textColor = .white
-        return label
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsHorizontalScrollIndicator = false
+//        scrollView.isPagingEnabled = true
+        return scrollView
     }()
     
-    private let reviewContentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .tertiarySystemGroupedBackground
-        view.layer.cornerRadius = 15
-        view.clipsToBounds = true
-        return view
-    }()
-    
-    private let reviewTitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "토스 UX 전버전으로 해주세요"
-        label.font = .systemFont(ofSize: 16, weight: .heavy)
-        label.textColor = .white
-        return label
-    }()
-    
-    private let reviewRatingLabel: UILabel = {
-        let label = UILabel()
-        label.text = "★★★★★"
-        label.font = .systemFont(ofSize: 13)
-        label.textColor = .white
-        return label
-    }()
-    
-    private let reviewDateLabel: UILabel = {
-        let label = UILabel()
-        label.text = "9월 27일 •"
-        label.font = .systemFont(ofSize: 15)
-        label.textColor = .lightGray
-        return label
-    }()
-    
-    private let reviewerLabel: UILabel = {
-        let label = UILabel()
-        label.text = "흑 운영자님 ㅠㅠ"
-        label.font = .systemFont(ofSize: 15)
-        label.textColor = .lightGray
-        return label
-    }()
-    
-    private let reviewContentLabel: UILabel = {
-        let label = UILabel()
-        label.text = "최근 업데이트가 토스 만의 ux 색깔 개성자체를\n잃어버린 것 같습니다. 메인 화면 볼때마다 되게\n부드럽고 한눈에 보기 편했는데, 이번 업데이트로\n인해 딱딱해진 것 같네요. 새로움을 지향하는건\n좋으나 이용자들에게 강제가 아닌 선택할 수 있는\n옵션이라도 만들어 주셨으면 어떨까요?"
-        label.font = .systemFont(ofSize: 15)
-        label.numberOfLines = 2
-        label.textColor = .lightGray
-        return label
-    }()
-    
-    private let developerLabel: UILabel = {
-        let label = UILabel()
-        label.text = "개발자 답변"
-        label.font = .systemFont(ofSize: 15)
-        label.textColor = .white
-        return label
-    }()
-    
-    private let answerDateLabel: UILabel = {
-        let label = UILabel()
-        label.text = "9월 29일"
-        label.font = .systemFont(ofSize: 15)
-        label.textColor = .lightGray
-        return label
-    }()
-    
-    private let answerContentLabel: UILabel = {
-        let label = UILabel()
-        label.text = "안녕하세요. 토스팀입니다. 소중한 의견을 주셔서\n너무나 감사합니다. 토스 화면 UI를 사용자의 \n요구를 반영해 조금 더 편리하게 사용하도록 변경\n 하였습니다만, 고객님처럼 불편하게 느끼셨을\n수도 있다고 생각합니다. 사용에 불편을 드려 죄송\n합니다.\n고객님께서 말씀해주신 내용은 반영될 수 있다\n확답 드리기는 어려우나, 팀내에 공유하여 보다\n편리한 토스 사용 경험을 하실 수 있도록 노력\n하겠습니다. 다른 문의 사항이 있다면 24시간 운영\n되는 카카오톡(@toss) 또는 고객센터 1599-\n4905로 문의 부탁드립니다. 감사합니다."
-        label.numberOfLines = 2
-        label.font = .systemFont(ofSize: 15)
-        label.textColor = .lightGray
-        return label
+    private let reviewStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 15
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        return stackView
     }()
     
     private let tapToRateLabel: UILabel = {
@@ -161,7 +95,7 @@ class Review: UIView {
         super.init(frame: frame)
         setUI()
         setLayout()
-        
+        setReviewContentViews()
         configureStarRating()
     }
     
@@ -169,8 +103,15 @@ class Review: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setReviewContentViews() {
+        for _ in 0..<5 {
+            reviewStackView.addArrangedSubview(createReviewContentView())
+        }
+    }
+    
     private func setUI() {
-        addSubviews(moreReviewButton, ratingLabel, starRatingLabel, totalRatingsLabel, mostHelpfulReviewLabel, reviewContentView, reviewTitleLabel, reviewRatingLabel, reviewDateLabel, reviewerLabel, reviewContentLabel, developerLabel, answerDateLabel, answerContentLabel, tapToRateLabel, starStackView, writeReviewButton, appSupportButton)
+        addSubviews(moreReviewButton, ratingLabel, starRatingLabel, totalRatingsLabel, scrollView, tapToRateLabel, starStackView, writeReviewButton, appSupportButton)
+        scrollView.addSubview(reviewStackView)
     }
     
     private func setLayout() {
@@ -189,65 +130,24 @@ class Review: UIView {
             $0.trailing.equalToSuperview().offset(-20)
         }
         
-        totalRatingsLabel.snp.makeConstraints{
+        totalRatingsLabel.snp.makeConstraints {
             $0.top.equalTo(moreReviewButton.snp.bottom).offset(45)
             $0.trailing.equalToSuperview().offset(-20)
         }
         
-        mostHelpfulReviewLabel.snp.makeConstraints{
-            $0.top.equalTo(ratingLabel.snp.bottom).offset(10)
+        scrollView.snp.makeConstraints {
+            $0.top.equalTo(totalRatingsLabel.snp.bottom).offset(15)
+            $0.leading.trailing.equalToSuperview()
+        }
+        
+        reviewStackView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(20)
-        }
-        
-        reviewContentView.snp.makeConstraints {
-            $0.top.equalTo(mostHelpfulReviewLabel.snp.bottom).offset(15)
-            $0.centerX.equalToSuperview()
-            $0.width.equalTo(350)
-            $0.height.equalTo(190)
-        }
-        
-        reviewTitleLabel.snp.makeConstraints{
-            $0.top.equalTo(mostHelpfulReviewLabel.snp.bottom).offset(30)
-            $0.leading.equalToSuperview().offset(50)
-        }
-        
-        reviewRatingLabel.snp.makeConstraints{
-            $0.top.equalTo(reviewTitleLabel.snp.bottom).offset(8)
-            $0.leading.equalToSuperview().offset(50)
-        }
-        
-        reviewDateLabel.snp.makeConstraints{
-            $0.leading.equalTo(reviewRatingLabel.snp.trailing).offset(5)
-            $0.centerY.equalTo(reviewRatingLabel)
-        }
-        
-        reviewerLabel.snp.makeConstraints{
-            $0.leading.equalTo(reviewDateLabel.snp.trailing).offset(5)
-            $0.centerY.equalTo(reviewRatingLabel)
-        }
-        
-        reviewContentLabel.snp.makeConstraints{
-            $0.top.equalTo(reviewRatingLabel.snp.bottom).offset(8)
-            $0.leading.equalToSuperview().offset(50)
-        }
-        
-        developerLabel.snp.makeConstraints{
-            $0.top.equalTo(reviewContentLabel.snp.bottom).offset(8)
-            $0.leading.equalToSuperview().offset(50)
-        }
-        
-        answerDateLabel.snp.makeConstraints{
-            $0.leading.equalTo(developerLabel.snp.trailing).offset(5)
-            $0.centerY.equalTo(developerLabel)
-        }
-        
-        answerContentLabel.snp.makeConstraints{
-            $0.top.equalTo(developerLabel.snp.bottom).offset(8)
-            $0.leading.equalToSuperview().offset(50)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalToSuperview()
         }
         
         tapToRateLabel.snp.makeConstraints {
-            $0.top.equalTo(reviewContentView.snp.bottom).offset(25)
+            $0.top.equalTo(scrollView.snp.bottom).offset(25)
             $0.centerX.equalToSuperview()
         }
         
@@ -276,7 +176,6 @@ class Review: UIView {
         delegate?.didTapMoreReviewButton()
     }
     
-    // 버튼에 대한 타겟 및 제스처 인식을 설정
     private func configureStarRating() {
         for i in 1...5 {
             let button = UIButton()
@@ -288,17 +187,14 @@ class Review: UIView {
             starStackView.addArrangedSubview(button)
         }
         
-        // 스와이프 제스처를 추가하여 별점을 드래그하며 선택할 수 있게
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
         starStackView.addGestureRecognizer(panGesture)
     }
     
-    // 별 버튼이 클릭될 때 호출
     @objc private func starTapped(_ sender: UIButton) {
         updateRating(to: sender.tag)
     }
     
-    // 드래그 위치에 따라 별점을 계산하여 업데이트
     @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
         let location = gesture.location(in: starStackView)
         let starWidth = starStackView.frame.width / CGFloat(starButtons.count)
@@ -306,13 +202,110 @@ class Review: UIView {
         updateRating(to: rating)
     }
     
-    // 주어진 별점으로 버튼 이미지를 업데이트
     private func updateRating(to rating: Int) {
         currentRating = rating
         starButtons.enumerated().forEach { index, button in
             let imageName = index < rating ? "star.fill" : "star"
             button.setImage(UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: 22, weight: .bold)), for: .normal)
         }
+    }
+    
+    private func createReviewContentView() -> UIView {
+        let reviewContentView = UIView()
+        reviewContentView.backgroundColor = .tertiarySystemGroupedBackground
+        reviewContentView.layer.cornerRadius = 15
+        reviewContentView.clipsToBounds = true
+        
+        let reviewTitleLabel = UILabel()
+        reviewTitleLabel.text = "토스 UX 전버전으로 해주세요"
+        reviewTitleLabel.font = .systemFont(ofSize: 17, weight: .heavy)
+        reviewTitleLabel.textColor = .white
+        
+        let reviewRatingLabel = UILabel()
+        reviewRatingLabel.text = "★★★★★"
+        reviewRatingLabel.font = .systemFont(ofSize: 13)
+        reviewRatingLabel.textColor = .white
+        
+        let reviewDateLabel = UILabel()
+        reviewDateLabel.text = "9월 27일 •"
+        reviewDateLabel.font = .systemFont(ofSize: 15)
+        reviewDateLabel.textColor = .lightGray
+        
+        let reviewerLabel = UILabel()
+        reviewerLabel.text = "흑 운영자님 ㅠㅠ"
+        reviewerLabel.font = .systemFont(ofSize: 15)
+        reviewerLabel.textColor = .lightGray
+        
+        let reviewContentLabel = UILabel()
+        reviewContentLabel.text = "최근 업데이트가 토스 만의 ux 색깔 개성자체를\n잃어버린 것 같습니다. 메인 화면 볼때마다 되게\n부드럽고 한눈에 보기 편했는데, 이번 업데이트로\n인해 딱딱해진 것 같네요. 새로움을 지향하는건\n좋으나 이용자들에게 강제가 아닌 선택할 수 있는\n옵션이라도 만들어 주셨으면 어떨까요?"
+        reviewContentLabel.font = .systemFont(ofSize: 15)
+        reviewContentLabel.numberOfLines = 2
+        reviewContentLabel.textColor = .lightGray
+        
+        let developerLabel = UILabel()
+        developerLabel.text = "개발자 답변"
+        developerLabel.font = .systemFont(ofSize: 15)
+        developerLabel.textColor = .white
+        
+        let answerDateLabel = UILabel()
+        answerDateLabel.text = "9월 29일"
+        answerDateLabel.font = .systemFont(ofSize: 15)
+        answerDateLabel.textColor = .lightGray
+        
+        let answerContentLabel = UILabel()
+        answerContentLabel.text = "안녕하세요. 토스팀입니다. 소중한 의견을 주셔서\n너무나 감사합니다. 토스 화면 UI를 사용자의 \n요구를 반영해 조금 더 편리하게 사용하도록 변경\n 하였습니다만, 고객님처럼 불편하게 느끼셨을\n수도 있다고 생각합니다. 사용에 불편을 드려 죄송\n합니다.\n고객님께서 말씀해주신 내용은 반영될 수 있다\n확답 드리기는 어려우나, 팀내에 공유하여 보다\n편리한 토스 사용 경험을 하실 수 있도록 노력\n하겠습니다. 다른 문의 사항이 있다면 24시간 운영\n되는 카카오톡(@toss) 또는 고객센터 1599-\n4905로 문의 부탁드립니다. 감사합니다."
+        answerContentLabel.numberOfLines = 2
+        answerContentLabel.font = .systemFont(ofSize: 15)
+        answerContentLabel.textColor = .lightGray
+       
+        reviewContentView.addSubviews(reviewTitleLabel, reviewRatingLabel, reviewDateLabel, reviewerLabel, reviewContentLabel, developerLabel, answerDateLabel, answerContentLabel)
+        
+        reviewContentView.snp.makeConstraints{
+            $0.width.equalTo(340)
+            $0.height.equalTo(190)
+        }
+        
+        reviewTitleLabel.snp.makeConstraints{
+            $0.top.equalTo(reviewContentView).offset(18)
+            $0.leading.equalToSuperview().offset(25)
+        }
+        
+        reviewRatingLabel.snp.makeConstraints{
+            $0.top.equalTo(reviewTitleLabel.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(25)
+        }
+        
+        reviewDateLabel.snp.makeConstraints{
+            $0.leading.equalTo(reviewRatingLabel.snp.trailing).offset(8)
+            $0.centerY.equalTo(reviewRatingLabel)
+        }
+        
+        reviewerLabel.snp.makeConstraints{
+            $0.leading.equalTo(reviewDateLabel.snp.trailing).offset(5)
+            $0.centerY.equalTo(reviewRatingLabel)
+        }
+        
+        reviewContentLabel.snp.makeConstraints{
+            $0.top.equalTo(reviewRatingLabel.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(25)
+        }
+        
+        developerLabel.snp.makeConstraints{
+            $0.top.equalTo(reviewContentLabel.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(25)
+        }
+        
+        answerDateLabel.snp.makeConstraints{
+            $0.leading.equalTo(developerLabel.snp.trailing).offset(8)
+            $0.centerY.equalTo(developerLabel)
+        }
+        
+        answerContentLabel.snp.makeConstraints{
+            $0.top.equalTo(developerLabel.snp.bottom).offset(8)
+            $0.leading.equalToSuperview().offset(25)
+        }
+        
+        return reviewContentView
     }
 }
 
