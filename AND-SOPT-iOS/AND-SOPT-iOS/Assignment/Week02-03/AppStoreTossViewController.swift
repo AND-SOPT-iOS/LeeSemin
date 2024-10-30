@@ -1,5 +1,5 @@
 //
-//  AppstoreMainViewController.swift
+//  AppStoreTossViewController.swift
 //  AND-SOPT-iOS
 //
 //  Created by 이세민 on 10/22/24.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class AppStoreMainViewController: UIViewController {
+class AppStoreTossViewController: UIViewController {
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
@@ -29,12 +29,6 @@ class AppStoreMainViewController: UIViewController {
         button.semanticContentAttribute = .forceLeftToRight
         return button
     }()
-    
-    private func createDividerLine() -> UIView {
-        let view = UIView()
-        view.backgroundColor = .systemGray
-        return view
-    }
     
     private lazy var firstDividerLine = UIView.createDividerLine
     private lazy var secondDividerLine = UIView.createDividerLine
@@ -142,7 +136,7 @@ class AppStoreMainViewController: UIViewController {
     }
 }
 
-extension AppStoreMainViewController: WhatsNewDelegate, ReviewDelegate {
+extension AppStoreTossViewController: WhatsNewDelegate, ReviewDelegate {
     
     func didTapWhatsNewButton() {
         let versionHistoryVC = VersionHistoryViewController()
