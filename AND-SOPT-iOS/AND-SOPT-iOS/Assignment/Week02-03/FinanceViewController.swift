@@ -64,12 +64,13 @@ class FinanceViewController: UIViewController {
         banner.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(350)
+            $0.height.equalTo(360)
         }
         
         essentialApps.snp.makeConstraints {
             $0.top.equalTo(banner.snp.bottom)
             $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(280)
         }
     }
 }

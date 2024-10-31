@@ -39,6 +39,8 @@
 		762B2AA62CD2A4DA007E0822 /* BannerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B2AA52CD2A4DA007E0822 /* BannerData.swift */; };
 		7641BCF42CBC51AE003D99CE /* FirstMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641BCF32CBC51AE003D99CE /* FirstMainViewController.swift */; };
 		7641BCF62CBC526E003D99CE /* ReceivedDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641BCF52CBC526E003D99CE /* ReceivedDataViewController.swift */; };
+		764FD43E2CD3EC7C00E09ADC /* EssentialAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764FD43D2CD3EC7C00E09ADC /* EssentialAppCell.swift */; };
+		764FD4402CD400BB00E09ADC /* FinanceAppList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764FD43F2CD400BB00E09ADC /* FinanceAppList.swift */; };
 		7692BC4B2CB9608400CF5176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC4A2CB9608400CF5176 /* AppDelegate.swift */; };
 		7692BC4D2CB9608400CF5176 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC4C2CB9608400CF5176 /* SceneDelegate.swift */; };
 		7692BC4F2CB9608400CF5176 /* FindDifferentButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC4E2CB9608400CF5176 /* FindDifferentButtonViewController.swift */; };
@@ -80,6 +82,8 @@
 		762B2AA52CD2A4DA007E0822 /* BannerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerData.swift; sourceTree = "<group>"; };
 		7641BCF32CBC51AE003D99CE /* FirstMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMainViewController.swift; sourceTree = "<group>"; };
 		7641BCF52CBC526E003D99CE /* ReceivedDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedDataViewController.swift; sourceTree = "<group>"; };
+		764FD43D2CD3EC7C00E09ADC /* EssentialAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialAppCell.swift; sourceTree = "<group>"; };
+		764FD43F2CD400BB00E09ADC /* FinanceAppList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceAppList.swift; sourceTree = "<group>"; };
 		7692BC472CB9608400CF5176 /* AND-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AND-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7692BC4A2CB9608400CF5176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7692BC4C2CB9608400CF5176 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 				760C547C2CD2900A00502B24 /* Banner.swift */,
 				760C547E2CD2902A00502B24 /* TopPaid.swift */,
 				760C54802CD2903300502B24 /* TopFree.swift */,
+				764FD43D2CD3EC7C00E09ADC /* EssentialAppCell.swift */,
+				764FD43F2CD400BB00E09ADC /* FinanceAppList.swift */,
 			);
 			path = FinanceSection;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 				762B2AA62CD2A4DA007E0822 /* BannerData.swift in Sources */,
 				760F11BF2CC2B0ED00199A79 /* ColorsViewController.swift in Sources */,
 				760C546A2CD0D3BE00502B24 /* PhotoViewController.swift in Sources */,
+				764FD4402CD400BB00E09ADC /* FinanceAppList.swift in Sources */,
 				760C54592CD0C26900502B24 /* DeveloperInfoLabels.swift in Sources */,
 				7641BCF42CBC51AE003D99CE /* FirstMainViewController.swift in Sources */,
 				760C54172CC6AD2900502B24 /* AppStoreTossViewController.swift in Sources */,
@@ -380,6 +387,7 @@
 				760C54222CC6AE3100502B24 /* DeveloperInfo.swift in Sources */,
 				760C546E2CD0D3BE00502B24 /* DownloadState.swift in Sources */,
 				760C546B2CD0D3BE00502B24 /* App.swift in Sources */,
+				764FD43E2CD3EC7C00E09ADC /* EssentialAppCell.swift in Sources */,
 				760C54692CD0D3BE00502B24 /* PhotoCell.swift in Sources */,
 				7692BC5F2CB9619B00CF5176 /* ResultViewController.swift in Sources */,
 			);
