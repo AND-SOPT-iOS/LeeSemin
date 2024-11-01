@@ -15,7 +15,6 @@ class TopChartViewController: UIViewController {
     private let tableView = UITableView()
     private let appList = FinanceAppList.topFreeData
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
@@ -30,6 +29,7 @@ class TopChartViewController: UIViewController {
                         forCellReuseIdentifier: TopChartCell.identifier)
             $0.rowHeight = 90
             $0.dataSource = self
+            $0.delegate = self
         }
     }
     
@@ -49,6 +49,16 @@ class TopChartViewController: UIViewController {
         self.navigationItem.title = "인기 차트"
         let rightItem = UIBarButtonItem(title: "금융", style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = rightItem
+    }
+}
+
+extension TopChartViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 8 {
+            let appStoreTossVC = AppStoreTossViewController()
+            self.navigationController?.pushViewController(appStoreTossVC, animated: true)
+            self.navigationItem.backButtonTitle = "금융"
+        }
     }
 }
 

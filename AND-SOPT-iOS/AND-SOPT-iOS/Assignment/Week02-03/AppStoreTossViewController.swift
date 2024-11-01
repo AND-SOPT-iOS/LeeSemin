@@ -22,16 +22,6 @@ class AppStoreTossViewController: UIViewController {
     private let developerInfo = DeveloperInfo()
     private let review = Review()
     
-//    private let backButton: UIButton = {
-//        let button = UIButton()
-//        let icon = UIImage(systemName: "chevron.left", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
-//        button.setImage(icon, for: .normal)
-//        button.setTitle(" 앱", for: .normal)
-//        button.setTitleColor(.systemBlue, for: .normal)
-//        button.semanticContentAttribute = .forceLeftToRight
-//        return button
-//    }()
-    
     private lazy var firstDividerLine = UIView.createDividerLine
     private lazy var secondDividerLine = UIView.createDividerLine
     private lazy var thirdDividerLine = UIView.createDividerLine
