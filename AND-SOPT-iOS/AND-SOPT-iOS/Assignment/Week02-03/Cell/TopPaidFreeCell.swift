@@ -77,18 +77,18 @@ class TopPaidFreeCell: UICollectionViewCell {
     
     private func setLayout() {
         logoImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(10)
+            $0.top.equalToSuperview()
             $0.leading.equalToSuperview().offset(15)
             $0.width.height.equalTo(65)
         }
         
         rankLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(17)
+            $0.top.equalToSuperview().offset(8)
             $0.leading.equalTo(logoImageView.snp.trailing).offset(10)
         }
         
         titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(17)
+            $0.top.equalToSuperview().offset(8)
             $0.leading.equalTo(rankLabel.snp.trailing).offset(10)
         }
         

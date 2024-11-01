@@ -67,14 +67,13 @@ extension TopChartViewController: UITableViewDataSource {
         let dividerLine = UIView()
         dividerLine.backgroundColor = .systemGray
         
-        if indexPath.row != 0 {
-            cell.addSubview(dividerLine)
-            dividerLine.snp.makeConstraints {
-                $0.leading.equalToSuperview().offset(20)
-                $0.trailing.equalToSuperview().offset(-20)
-                $0.height.equalTo(0.4)
-                $0.bottom.equalTo(cell)
-            }
+        
+        cell.addSubview(dividerLine)
+        dividerLine.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(85)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalTo(0.4)
+            $0.bottom.equalTo(cell)
         }
         
         return cell

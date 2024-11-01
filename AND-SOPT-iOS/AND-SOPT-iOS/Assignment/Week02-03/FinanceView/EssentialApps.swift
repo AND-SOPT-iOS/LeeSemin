@@ -79,7 +79,7 @@ class EssentialApps: UIView {
         }
         
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(descriptionLabel.snp.bottom).offset(8)
+            $0.top.equalTo(descriptionLabel.snp.bottom).offset(10)
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(265)
         }
@@ -99,6 +99,20 @@ extension EssentialApps: UICollectionViewDataSource {
         }
         
         item.bind(appList[indexPath.item])
+        
+        let dividerLine = UIView()
+        dividerLine.backgroundColor = .systemGray
+        
+        if indexPath.row % 3 != 2 {
+            item.addSubview(dividerLine)
+            dividerLine.snp.makeConstraints {
+                $0.leading.equalToSuperview().offset(80)
+                $0.trailing.equalToSuperview().offset(-20)
+                $0.height.equalTo(0.4)
+                $0.bottom.equalTo(item)
+            }
+        }
+        
         return item
     }
 }

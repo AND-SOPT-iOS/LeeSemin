@@ -83,13 +83,13 @@ class FinanceViewController: UIViewController {
         topPaid.snp.makeConstraints {
             $0.top.equalTo(essentialApps.snp.bottom).offset(15)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(330)
+            $0.height.equalTo(320)
         }
         
         topFree.snp.makeConstraints {
             $0.top.equalTo(topPaid.snp.bottom).offset(15)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(330)
+            $0.height.equalTo(320)
             $0.bottom.equalToSuperview()
         }
     }
