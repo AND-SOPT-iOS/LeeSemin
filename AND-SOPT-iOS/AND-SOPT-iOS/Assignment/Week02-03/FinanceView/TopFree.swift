@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol TopFreeDelegate: AnyObject {
+    func didTapTopFreeButton()
+}
+
 class TopFree: UIView {
+    
+    weak var delegate: TopFreeDelegate?
     
     private var appList = FinanceAppList.topFreeData
     
@@ -20,6 +26,7 @@ class TopFree: UIView {
         button.setTitleColor(.white, for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
         button.titleLabel?.font = UIFont.systemFont(ofSize: 23, weight: .heavy)
+        button.addTarget(self, action: #selector(topFreeButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -70,6 +77,10 @@ class TopFree: UIView {
             $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(265)
         }
+    }
+    
+    @objc private func topFreeButtonTapped() {
+        delegate?.didTapTopFreeButton()
     }
 }
 

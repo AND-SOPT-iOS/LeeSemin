@@ -29,9 +29,14 @@ class FinanceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegates()
         setStyle()
         setUI()
         setLayout()
+    }
+    
+    private func setDelegates() {
+        topFree.delegate = self
     }
     
     private func setStyle() {
@@ -87,5 +92,13 @@ class FinanceViewController: UIViewController {
             $0.height.equalTo(330)
             $0.bottom.equalToSuperview()
         }
+    }
+}
+
+extension FinanceViewController: TopFreeDelegate {
+    
+    func didTapTopFreeButton() {
+        let topChartVC = TopChartViewController()
+        self.navigationController?.pushViewController(topChartVC, animated: true)
     }
 }
