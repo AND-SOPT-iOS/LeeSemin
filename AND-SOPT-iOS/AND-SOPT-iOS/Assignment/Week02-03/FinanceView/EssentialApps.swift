@@ -52,7 +52,7 @@ class EssentialApps: UIView {
     private func setCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 75)
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 80)
         flowLayout.minimumLineSpacing = 0
         
         collectionView.do {
@@ -74,14 +74,14 @@ class EssentialApps: UIView {
         }
         
         descriptionLabel.snp.makeConstraints {
-            $0.top.equalTo(essentialFinanceAppsButton.snp.bottom).offset(8)
+            $0.top.equalTo(essentialFinanceAppsButton.snp.bottom).offset(5)
             $0.leading.equalToSuperview().offset(20)
         }
         
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(descriptionLabel.snp.bottom).offset(20)
+            $0.top.equalTo(descriptionLabel.snp.bottom).offset(8)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(250)
+            $0.height.equalTo(265)
         }
     }
 }

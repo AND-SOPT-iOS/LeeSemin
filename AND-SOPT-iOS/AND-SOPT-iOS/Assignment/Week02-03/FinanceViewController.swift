@@ -14,6 +14,8 @@ class FinanceViewController: UIViewController {
     
     private let banner = Banner()
     private let essentialApps = EssentialApps()
+    private let topPaid = TopPaid()
+    private let topFree = TopFree()
     
     private let backButton: UIButton = {
         let button = UIButton()
@@ -41,7 +43,7 @@ class FinanceViewController: UIViewController {
         
         scrollView.addSubview(contentView)
         
-        contentView.addSubviews(banner, essentialApps)
+        contentView.addSubviews(banner, essentialApps, topPaid, topFree)
     }
     
     private func setLayout() {
@@ -70,7 +72,20 @@ class FinanceViewController: UIViewController {
         essentialApps.snp.makeConstraints {
             $0.top.equalTo(banner.snp.bottom)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(280)
+            $0.height.equalTo(350)
+        }
+        
+        topPaid.snp.makeConstraints {
+            $0.top.equalTo(essentialApps.snp.bottom).offset(15)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(330)
+        }
+        
+        topFree.snp.makeConstraints {
+            $0.top.equalTo(topPaid.snp.bottom).offset(15)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(330)
+            $0.bottom.equalToSuperview()
         }
     }
 }

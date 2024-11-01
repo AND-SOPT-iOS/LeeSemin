@@ -1,5 +1,5 @@
 //
-//  EssentialAppCell.swift
+//  TopPaidFreeCell.swift
 //  AND-SOPT-iOS
 //
 //  Created by 이세민 on 11/1/24.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class EssentialAppCell: UICollectionViewCell {
-    static let identifier = "EssentialAppCell"
+class TopPaidFreeCell: UICollectionViewCell {
+    static let identifier = "TopPaidFreeCell"
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -16,6 +16,13 @@ class EssentialAppCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
         return imageView
+    }()
+    
+    private let rankLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 17, weight: .bold)
+        label.textColor = .label
+        return label
     }()
     
     private let titleLabel: UILabel = {
@@ -63,9 +70,9 @@ class EssentialAppCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     private func setUI() {
-        addSubviews(logoImageView, titleLabel, descriptionLabel, downloadStateButton, inAppPurchasesLabel)
+        addSubviews(logoImageView, rankLabel, titleLabel, descriptionLabel, downloadStateButton, inAppPurchasesLabel)
     }
     
     private func setLayout() {
@@ -75,9 +82,14 @@ class EssentialAppCell: UICollectionViewCell {
             $0.width.height.equalTo(65)
         }
         
-        titleLabel.snp.makeConstraints {
+        rankLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(17)
             $0.leading.equalTo(logoImageView.snp.trailing).offset(10)
+        }
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(17)
+            $0.leading.equalTo(rankLabel.snp.trailing).offset(10)
         }
         
         descriptionLabel.snp.makeConstraints {
@@ -104,5 +116,12 @@ class EssentialAppCell: UICollectionViewCell {
         descriptionLabel.text = financeAppList.description
         downloadStateButton.setTitle(financeAppList.downloadState, for: .normal)
         inAppPurchasesLabel.isHidden = !financeAppList.isInAppPurchases
+        rankLabel.isHidden = !financeAppList.isRank
+        
+        if let rank = financeAppList.rank {
+            rankLabel.text = "\(rank)"
+        } else {
+            rankLabel.text = nil
+        }
     }
 }
