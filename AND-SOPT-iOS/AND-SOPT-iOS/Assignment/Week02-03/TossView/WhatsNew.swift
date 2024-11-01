@@ -22,7 +22,7 @@ class WhatsNew: UIView {
         button.setImage(icon, for: .normal)
         button.tintColor = .systemGray
         button.setTitle("새로운 소식 ", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
         button.addTarget(self, action: #selector(whatsNewButtonTapped), for: .touchUpInside)
@@ -50,7 +50,7 @@ class WhatsNew: UIView {
         label.text = "• 구석구석 숨어있던 버그들을 잡았어요. 또 다른 버그가\n나타나면 토스 고객센터를 찾아주세요. 늘 열려있답니다.\n365일 24시간 언제든지요."
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 16)
-        label.textColor = .white
+        label.textColor = .label
         return label
     }()
     

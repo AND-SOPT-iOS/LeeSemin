@@ -22,7 +22,7 @@ class Review: UIView {
         button.setImage(icon, for: .normal)
         button.tintColor = .systemGray
         button.setTitle("평가 및 리뷰 ", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
         button.addTarget(self, action: #selector(moreReviewButtonTapped), for: .touchUpInside)
@@ -33,7 +33,7 @@ class Review: UIView {
         let label = UILabel()
         label.text = "4.4"
         label.font = .systemFont(ofSize: 57, weight: .heavy)
-        label.textColor = .white
+        label.textColor = .label
         return label
     }()
     
@@ -41,7 +41,7 @@ class Review: UIView {
         let label = UILabel()
         label.text = "★ ★ ★ ★ ☆"
         label.font = .systemFont(ofSize: 20, weight: .heavy)
-        label.textColor = .white
+        label.textColor = .label
         return label
     }()
     
@@ -49,7 +49,7 @@ class Review: UIView {
         let label = UILabel()
         label.text = "8.4만개의 평가"
         label.font = .systemFont(ofSize: 16)
-        label.textColor = .lightGray
+        label.textColor = .systemGray
         return label
     }()
     
@@ -73,7 +73,7 @@ class Review: UIView {
         let label = UILabel()
         label.text = "탭하여 평가하기"
         label.font = .systemFont(ofSize: 16)
-        label.textColor = .white
+        label.textColor = .label
         return label
     }()
     
@@ -216,12 +216,12 @@ class Review: UIView {
         reviewContentView.layer.cornerRadius = 15
         reviewContentView.clipsToBounds = true
         
-        let reviewTitleLabel = UILabel.createLabel(text: reviewData.reviewTitle, fontSize: 17, weight: .heavy)
-        let reviewRatingLabel = UILabel.createLabel(text: reviewData.reviewRating, fontSize: 13)
+        let reviewTitleLabel = UILabel.createLabel(text: reviewData.reviewTitle, fontSize: 17, weight: .heavy, color: .label)
+        let reviewRatingLabel = UILabel.createLabel(text: reviewData.reviewRating, fontSize: 13, color: .label)
         let reviewDateLabel = UILabel.createLabel(text: reviewData.reviewDate, fontSize: 15, color: .lightGray)
         let reviewerLabel = UILabel.createLabel(text: reviewData.reviewer, fontSize: 15, color: .lightGray)
         let reviewContentLabel = UILabel.createLabel(text: reviewData.reviewContent, fontSize: 15, color: .lightGray, lines: 2)
-        let developerLabel = UILabel.createLabel(text: reviewData.developer, fontSize: 15)
+        let developerLabel = UILabel.createLabel(text: reviewData.developer, fontSize: 15, color: .label)
         let answerDateLabel = UILabel.createLabel(text: reviewData.answerDate, fontSize: 15, color: .lightGray)
         let answerContentLabel = UILabel.createLabel(text: reviewData.answerContent, fontSize: 15, color: .lightGray, lines: 2)
         

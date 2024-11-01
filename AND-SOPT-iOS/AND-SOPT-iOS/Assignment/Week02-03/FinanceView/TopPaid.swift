@@ -17,7 +17,7 @@ class TopPaid: UIView {
         button.setImage(icon, for: .normal)
         button.tintColor = .systemGray
         button.setTitle("유료 순위 ", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
         button.titleLabel?.font = UIFont.systemFont(ofSize: 23, weight: .heavy)
         return button

@@ -14,7 +14,7 @@ class Preview: UIView {
         let label = UILabel()
         label.text = "미리 보기"
         label.font = .systemFont(ofSize: 22, weight: .heavy)
-        label.textColor = .white
+        label.textColor = .label
         return label
     }()
     

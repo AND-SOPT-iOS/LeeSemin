@@ -23,7 +23,7 @@ class AppIntro: UIView {
         let label = UILabel()
         label.text = "토스"
         label.font = .systemFont(ofSize: 20, weight: .heavy)
-        label.textColor = .white
+        label.textColor = .label
         return label
     }()
     

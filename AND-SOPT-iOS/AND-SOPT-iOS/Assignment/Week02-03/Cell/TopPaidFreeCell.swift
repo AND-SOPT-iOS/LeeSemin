@@ -27,7 +27,7 @@ class TopPaidFreeCell: UICollectionViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .bold)
+        label.font = .systemFont(ofSize: 17)
         label.textColor = .label
         label.numberOfLines = 2
         return label

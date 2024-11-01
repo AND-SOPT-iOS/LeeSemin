@@ -17,7 +17,7 @@ class EssentialApps: UIView {
         button.setImage(icon, for: .normal)
         button.tintColor = .systemGray
         button.setTitle("필수 금융 앱 ", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
         button.titleLabel?.font = UIFont.systemFont(ofSize: 23, weight: .heavy)
         return button
