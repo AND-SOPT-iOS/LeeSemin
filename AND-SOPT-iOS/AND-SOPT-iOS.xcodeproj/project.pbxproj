@@ -42,6 +42,7 @@
 		764FD43E2CD3EC7C00E09ADC /* EssentialAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764FD43D2CD3EC7C00E09ADC /* EssentialAppCell.swift */; };
 		764FD4402CD400BB00E09ADC /* FinanceAppList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764FD43F2CD400BB00E09ADC /* FinanceAppList.swift */; };
 		766C491C2CD4BDE000EB165E /* TopPaidFreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766C491B2CD4BDE000EB165E /* TopPaidFreeCell.swift */; };
+		766C49202CD4CCC700EB165E /* TopChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766C491F2CD4CCC700EB165E /* TopChartCell.swift */; };
 		7692BC4B2CB9608400CF5176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC4A2CB9608400CF5176 /* AppDelegate.swift */; };
 		7692BC4D2CB9608400CF5176 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC4C2CB9608400CF5176 /* SceneDelegate.swift */; };
 		7692BC4F2CB9608400CF5176 /* FindDifferentButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692BC4E2CB9608400CF5176 /* FindDifferentButtonViewController.swift */; };
@@ -86,6 +87,7 @@
 		764FD43D2CD3EC7C00E09ADC /* EssentialAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialAppCell.swift; sourceTree = "<group>"; };
 		764FD43F2CD400BB00E09ADC /* FinanceAppList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceAppList.swift; sourceTree = "<group>"; };
 		766C491B2CD4BDE000EB165E /* TopPaidFreeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPaidFreeCell.swift; sourceTree = "<group>"; };
+		766C491F2CD4CCC700EB165E /* TopChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartCell.swift; sourceTree = "<group>"; };
 		7692BC472CB9608400CF5176 /* AND-SOPT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AND-SOPT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7692BC4A2CB9608400CF5176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7692BC4C2CB9608400CF5176 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			children = (
 				764FD43D2CD3EC7C00E09ADC /* EssentialAppCell.swift */,
 				766C491B2CD4BDE000EB165E /* TopPaidFreeCell.swift */,
+				766C491F2CD4CCC700EB165E /* TopChartCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				760C547D2CD2900A00502B24 /* Banner.swift in Sources */,
 				7692BC4D2CB9608400CF5176 /* SceneDelegate.swift in Sources */,
 				760C546C2CD0D3BE00502B24 /* ChartCell.swift in Sources */,
+				766C49202CD4CCC700EB165E /* TopChartCell.swift in Sources */,
 				760C546D2CD0D3BE00502B24 /* ChartViewController.swift in Sources */,
 				760C541A2CC6ADD600502B24 /* AppIntro.swift in Sources */,
 				760C54792CD28E9300502B24 /* FinanceViewController.swift in Sources */,

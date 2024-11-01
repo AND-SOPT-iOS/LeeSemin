@@ -51,8 +51,19 @@ extension FinanceAppList {
         FinanceAppList(logoImage: UIImage(named: "KB Pay.png"), title: "KB Pay", description: "모든 금융을 한번에, 한손에,\n한눈에 담다", downloadState: "열기", isInAppPurchases: false, isRank: true, rank: 6),
         FinanceAppList(logoImage: UIImage(named: "KB스타뱅킹.png"), title: "KB스타뱅킹", description: "모바일신분증, 결제, 통신도 다\n되는 은행", downloadState: "열기", isInAppPurchases: false, isRank: true, rank: 7),
         FinanceAppList(logoImage: UIImage(named: "하나은행.png"), title: "하나은행, 하나원큐는\n돈기운 가득한 은행 앱", description: "송금, 해외송금, 유학생송금,...", downloadState: "받기", isInAppPurchases: false, isRank: true, rank: 8),
-        FinanceAppList(logoImage: UIImage(named: "빗썸.png"), title: "빗섬", description: "No.1 가상자산 플랫폼", downloadState: "받기", isInAppPurchases: false, isRank: true, rank: 9),
-        FinanceAppList(logoImage: UIImage(named: "tossIcon"), title: "토스", description: "금융이 쉬워진다", downloadState: "업데이트", isInAppPurchases: false, isRank: true, rank: 10),
+        FinanceAppList(logoImage: UIImage(named: "tossIcon"), title: "토스", description: "금융이 쉬워진다", downloadState: "업데이트", isInAppPurchases: false, isRank: true, rank: 9),
+        
+        FinanceAppList(logoImage: UIImage(named: "모바일티머니.png"), title: "모바일티머니", description: "금융", downloadState: "열기", isInAppPurchases: false, isRank: true, rank: 10),
+        FinanceAppList(logoImage: UIImage(named: "신한 SOL뱅크.png"), title: "신한 SOL뱅크 - \n신한은행 스마트폰•••", description: "금융", downloadState: "열기", isInAppPurchases: false, isRank: true, rank: 11),
+        FinanceAppList(logoImage: UIImage(named: "V3.png"), title: "V3 Mobile Plus", description: "코스콤 통합인증 / 알림장\n메세지 서비스", downloadState: "받기", isInAppPurchases: false, isRank: true, rank: 12),
+        FinanceAppList(logoImage: UIImage(named: "현대카드.png"), title: "현대카드", description: "금융", downloadState: "받기", isInAppPurchases: false, isRank: true, rank: 13),
+        FinanceAppList(logoImage: UIImage(named: "신한 SOL페이.png"), title: "신한 SOL페이 - 신\n한카드 대표 플랫폼", description: "결제부터 자산관리, 다양한...", downloadState: "열기", isInAppPurchases: false, isRank: true, rank: 14),
+        FinanceAppList(logoImage: UIImage(named: "트래블월렛.png"), title: "트래블월렛 - travel \nPay", description: "페이에 세계를 담다", downloadState: "받기", isInAppPurchases: false, isRank: true, rank: 15),
+        FinanceAppList(logoImage: UIImage(named: "카카오뱅크.png"), title: "카카오뱅크", description: "이미 모두의 은행", downloadState: "열기", isInAppPurchases: false, isRank: true, rank: 16),
+        FinanceAppList(logoImage: UIImage(named: "빗썸.png"), title: "빗섬", description: "No.1 가상자산 플랫폼", downloadState: "받기", isInAppPurchases: false, isRank: true, rank: 17),
+        FinanceAppList(logoImage: UIImage(named: "우리 WON 뱅킹.png"), title: "우리 WON 뱅킹", description: "금융", downloadState: "받기", isInAppPurchases: false, isRank: true, rank: 18),
+        FinanceAppList(logoImage: UIImage(named: "현대백화점.png"), title: "현대백화점", description: "금융", downloadState: "받기", isInAppPurchases: false, isRank: true, rank: 19),
+        FinanceAppList(logoImage: UIImage(named: "NH스마트뱅킹.png"), title: "NH스마트뱅킹", description: "한번에 편하게!", downloadState: "받기", isInAppPurchases: false, isRank: true, rank: 20),
     ]
 }
 
