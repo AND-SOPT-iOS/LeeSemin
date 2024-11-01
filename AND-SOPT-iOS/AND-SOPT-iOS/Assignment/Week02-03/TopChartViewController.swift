@@ -12,37 +12,13 @@ class TopChartViewController: UIViewController {
     private let tableView = UITableView()
     private let appList = FinanceAppList.topFreeData
     
-    private let backButton: UIButton = {
-        let button = UIButton()
-        let icon = UIImage(systemName: "chevron.left", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
-        button.setImage(icon, for: .normal)
-        button.setTitle(" 금융", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.semanticContentAttribute = .forceLeftToRight
-        return button
-    }()
-    
-    private let topChartsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "인기 차트"
-        label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .label
-        return label
-    }()
-    
-    private let financeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "금융"
-        label.font = .systemFont(ofSize: 17)
-        label.textColor = .systemBlue
-        return label
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         setUI()
         setLayout()
+        setupNavigationBar()
     }
     
     private func setStyle() {
@@ -55,29 +31,21 @@ class TopChartViewController: UIViewController {
     }
     
     private func setUI() {
-        view.addSubviews(backButton, topChartsLabel, financeLabel, tableView)
+        view.addSubviews(tableView)
     }
     
     private func setLayout(){
-        backButton.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(60)
-            $0.leading.equalToSuperview().offset(10)
-        }
-        
-        topChartsLabel.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.centerY.equalTo(backButton)
-        }
-        
-        financeLabel.snp.makeConstraints {
-            $0.trailing.equalToSuperview().offset(-20)
-            $0.centerY.equalTo(topChartsLabel)
-        }
         
         tableView.snp.makeConstraints{
             $0.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()
         }
+    }
+    
+    private func setupNavigationBar(){
+        self.navigationItem.title = "인기 차트"
+        let rightItem = UIBarButtonItem(title: "금융", style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = rightItem
     }
 }
 
