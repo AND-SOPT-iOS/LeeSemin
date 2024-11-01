@@ -57,7 +57,7 @@ class TopFree: UIView {
         
         collectionView.do {
             $0.setCollectionViewLayout(flowLayout, animated: true)
-            $0.register(TopPaidFreeCell.self, forCellWithReuseIdentifier: TopPaidFreeCell.identifier)
+            $0.register(TopPaidFreeAppCell.self, forCellWithReuseIdentifier: TopPaidFreeAppCell.identifier)
             $0.delegate = self
             $0.dataSource = self
         }
@@ -100,7 +100,7 @@ extension TopFree: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: TopPaidFreeCell.identifier, for: indexPath) as? TopPaidFreeCell else {
+        guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: TopPaidFreeAppCell.identifier, for: indexPath) as? TopPaidFreeAppCell else {
             return UICollectionViewCell()
         }
         

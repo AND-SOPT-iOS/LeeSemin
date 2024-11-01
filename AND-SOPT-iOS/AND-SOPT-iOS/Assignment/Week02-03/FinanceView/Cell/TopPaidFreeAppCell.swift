@@ -1,5 +1,5 @@
 //
-//  TopPaidFreeCell.swift
+//  TopPaidFreeAppCell.swift
 //  AND-SOPT-iOS
 //
 //  Created by 이세민 on 11/1/24.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class TopPaidFreeCell: UICollectionViewCell {
-    static let identifier = "TopPaidFreeCell"
+class TopPaidFreeAppCell: UICollectionViewCell {
+    static let identifier = "TopPaidFreeAppCell"
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
