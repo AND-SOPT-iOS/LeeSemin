@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class TopPaid: UIView {
     
     private var appList = FinanceAppList.topPaidData

@@ -6,7 +6,9 @@
 //
 
 import UIKit
+
 import SnapKit
+import Then
 
 class Banner: UIView, UIScrollViewDelegate {
     

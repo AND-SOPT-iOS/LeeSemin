@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class TopPaidFreeAppCell: UICollectionViewCell {
     static let identifier = "TopPaidFreeAppCell"
     

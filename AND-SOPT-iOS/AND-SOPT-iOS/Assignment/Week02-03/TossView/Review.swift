@@ -6,7 +6,9 @@
 //
 
 import UIKit
+
 import SnapKit
+import Then
 
 protocol ReviewDelegate: AnyObject {
     func didTapMoreReviewButton()

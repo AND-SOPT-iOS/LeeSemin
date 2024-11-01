@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class FinanceViewController: UIViewController {
     
     private let scrollView = UIScrollView()

@@ -6,7 +6,9 @@
 //
 
 import UIKit
+
 import SnapKit
+import Then
 
 protocol WhatsNewDelegate: AnyObject {
     func didTapWhatsNewButton()

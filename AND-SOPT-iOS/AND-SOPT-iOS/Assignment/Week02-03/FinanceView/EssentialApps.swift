@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class EssentialApps: UIView {
     
     private var appList = FinanceAppList.essentialData

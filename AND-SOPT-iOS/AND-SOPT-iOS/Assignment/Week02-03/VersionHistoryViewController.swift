@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class VersionHistoryViewController: UIViewController {
     
     private let titleLabel: UILabel = {

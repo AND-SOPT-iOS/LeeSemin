@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 protocol TopFreeDelegate: AnyObject {
     func didTapTopFreeButton()
     func didTapTossCell()
