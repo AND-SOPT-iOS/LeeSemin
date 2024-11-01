@@ -56,14 +56,14 @@ class Review: UIView {
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
-        //        scrollView.isPagingEnabled = true
+        scrollView.isPagingEnabled = true
         return scrollView
     }()
     
     private let reviewStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = 15
+        stackView.spacing = 50
         stackView.alignment = .center
         stackView.distribution = .fillEqually
         return stackView
@@ -286,7 +286,6 @@ extension UILabel {
         return label
     }
 }
-
 
 extension UIButton {
     static func createButton(title: String, iconName: String) -> UIButton {
