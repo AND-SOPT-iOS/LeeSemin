@@ -9,6 +9,7 @@ import UIKit
 
 protocol TopFreeDelegate: AnyObject {
     func didTapTopFreeButton()
+    func didTapTossCell()
 }
 
 class TopFree: UIView {
@@ -84,7 +85,14 @@ class TopFree: UIView {
     }
 }
 
-extension TopFree: UICollectionViewDelegate { }
+extension TopFree: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 8 {
+            delegate?.didTapTossCell()
+        }
+    }
+}
+
 extension TopFree: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

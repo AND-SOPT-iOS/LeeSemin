@@ -20,15 +20,15 @@ class AppStoreTossViewController: UIViewController {
     private let developerInfo = DeveloperInfo()
     private let review = Review()
     
-    private let backButton: UIButton = {
-        let button = UIButton()
-        let icon = UIImage(systemName: "chevron.left", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
-        button.setImage(icon, for: .normal)
-        button.setTitle(" 앱", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.semanticContentAttribute = .forceLeftToRight
-        return button
-    }()
+//    private let backButton: UIButton = {
+//        let button = UIButton()
+//        let icon = UIImage(systemName: "chevron.left", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
+//        button.setImage(icon, for: .normal)
+//        button.setTitle(" 앱", for: .normal)
+//        button.setTitleColor(.systemBlue, for: .normal)
+//        button.semanticContentAttribute = .forceLeftToRight
+//        return button
+//    }()
     
     private lazy var firstDividerLine = UIView.createDividerLine
     private lazy var secondDividerLine = UIView.createDividerLine
@@ -52,7 +52,7 @@ class AppStoreTossViewController: UIViewController {
     }
     
     private func setUI() {
-        view.addSubviews(backButton, scrollView)
+        view.addSubviews(scrollView)
         
         scrollView.addSubview(contentView)
         
@@ -60,11 +60,6 @@ class AppStoreTossViewController: UIViewController {
     }
     
     private func setLayout() {
-        backButton.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(60)
-            $0.leading.equalToSuperview().offset(10)
-        }
-        
         scrollView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.left.right.bottom.equalToSuperview()

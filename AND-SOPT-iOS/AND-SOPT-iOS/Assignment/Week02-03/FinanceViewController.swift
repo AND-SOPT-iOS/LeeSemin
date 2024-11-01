@@ -102,4 +102,10 @@ extension FinanceViewController: TopFreeDelegate {
         self.navigationController?.pushViewController(topChartVC, animated: true)
         self.navigationItem.backButtonTitle = "금융"
     }
+    
+    func didTapTossCell() {
+        let appStoreTossVC = AppStoreTossViewController()
+        self.navigationController?.pushViewController(appStoreTossVC, animated: true)
+        self.navigationItem.backButtonTitle = "금융"
+    }
 }
