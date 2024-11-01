@@ -13,6 +13,8 @@ class EssentialAppCell: UICollectionViewCell {
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -39,7 +41,7 @@ class EssentialAppCell: UICollectionViewCell {
         button.layer.cornerRadius = 18
         button.clipsToBounds = true
         button.tintColor = .systemBlue
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .heavy)
         return button
     }()
     
@@ -48,6 +50,7 @@ class EssentialAppCell: UICollectionViewCell {
         label.text = "앱 내 구입"
         label.font = .systemFont(ofSize: 10)
         label.textColor = .lightGray
+        label.isHidden = true
         return label
     }()
     
@@ -69,7 +72,7 @@ class EssentialAppCell: UICollectionViewCell {
         logoImageView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
             $0.leading.equalToSuperview().offset(15)
-            $0.width.height.equalTo(60)
+            $0.width.height.equalTo(65)
         }
         
         titleLabel.snp.makeConstraints {
@@ -85,7 +88,7 @@ class EssentialAppCell: UICollectionViewCell {
         downloadStateButton.snp.makeConstraints{
             $0.trailing.equalToSuperview().offset(-20)
             $0.centerY.equalTo(logoImageView)
-            $0.width.equalTo(90)
+            $0.width.equalTo(88)
             $0.height.equalTo(35)
         }
         
@@ -100,5 +103,6 @@ class EssentialAppCell: UICollectionViewCell {
         titleLabel.text = financeAppList.title
         descriptionLabel.text = financeAppList.description
         downloadStateButton.setTitle(financeAppList.downloadState, for: .normal)
+        inAppPurchasesLabel.isHidden = !financeAppList.isInAppPurchases
     }
 }
