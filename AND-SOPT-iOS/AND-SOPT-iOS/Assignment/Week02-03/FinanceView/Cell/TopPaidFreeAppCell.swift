@@ -112,8 +112,9 @@ class TopPaidFreeAppCell: UICollectionViewCell {
         
         if let rank = financeAppList.rank {
             rankLabel.text = "\(rank)"
+            rankLabel.isHidden = false
         } else {
-            rankLabel.text = nil
+            rankLabel.isHidden = true
         }
     }
 }
