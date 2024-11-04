@@ -11,8 +11,7 @@ import SnapKit
 import Then
 
 class EssentialAppCell: UICollectionViewCell {
-    static let identifier = "EssentialAppCell"
-    
+
     private let logoImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.layer.cornerRadius = 20

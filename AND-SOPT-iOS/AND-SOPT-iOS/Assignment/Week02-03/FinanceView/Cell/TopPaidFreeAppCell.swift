@@ -11,8 +11,7 @@ import SnapKit
 import Then
 
 class TopPaidFreeAppCell: UICollectionViewCell {
-    static let identifier = "TopPaidFreeAppCell"
-    
+
     private let logoImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
         $0.layer.cornerRadius = 20

@@ -11,7 +11,6 @@ import SnapKit
 import Then
 
 class TopChartCell: UITableViewCell {
-    static let identifier: String = "TopChartCell"
     
     private let logoImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit

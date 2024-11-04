@@ -50,6 +50,8 @@
 		76E1C2B02CD90DF10033EE45 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2AF2CD90DF10033EE45 /* ChartCell.swift */; };
 		76E1C2B22CD90E070033EE45 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2B12CD90E070033EE45 /* App.swift */; };
 		76E1C2B42CD90E300033EE45 /* DownloadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2B32CD90E300033EE45 /* DownloadState.swift */; };
+		76E1C2B62CD929410033EE45 /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2B52CD929410033EE45 /* UICollectionViewCell+.swift */; };
+		76E1C2B82CD929D70033EE45 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2B72CD929D70033EE45 /* UITableViewCell+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		76E1C2AF2CD90DF10033EE45 /* ChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
 		76E1C2B12CD90E070033EE45 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		76E1C2B32CD90E300033EE45 /* DownloadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadState.swift; sourceTree = "<group>"; };
+		76E1C2B52CD929410033EE45 /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
+		76E1C2B72CD929D70033EE45 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				760C54562CD0ADCF00502B24 /* UIView+.swift */,
+				76E1C2B52CD929410033EE45 /* UICollectionViewCell+.swift */,
+				76E1C2B72CD929D70033EE45 /* UITableViewCell+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -408,10 +414,12 @@
 				760C54572CD0ADCF00502B24 /* UIView+.swift in Sources */,
 				760C547F2CD2902A00502B24 /* TopPaid.swift in Sources */,
 				76E1C2AC2CD90C820033EE45 /* ColorsViewController.swift in Sources */,
+				76E1C2B82CD929D70033EE45 /* UITableViewCell+.swift in Sources */,
 				760C54222CC6AE3100502B24 /* DeveloperInfo.swift in Sources */,
 				76E1C2B02CD90DF10033EE45 /* ChartCell.swift in Sources */,
 				764FD43E2CD3EC7C00E09ADC /* EssentialAppCell.swift in Sources */,
 				76E1C2AA2CD90C5F0033EE45 /* InputNicknameViewController.swift in Sources */,
+				76E1C2B62CD929410033EE45 /* UICollectionViewCell+.swift in Sources */,
 				7692BC5F2CB9619B00CF5176 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
