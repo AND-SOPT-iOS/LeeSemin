@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class Banner: UIView, UIScrollViewDelegate {
+class Banner: UIView {
     
     private let appSubtitleLabel: UILabel = {
         let label = UILabel()
@@ -54,8 +54,9 @@ class Banner: UIView, UIScrollViewDelegate {
         setUI()
         setLayout()
         setImages()
-        updateLabels(for: 0)
+        
         scrollView.delegate = self
+        updateLabels(for: 0)
     }
     
     required init?(coder: NSCoder) {
@@ -111,6 +112,15 @@ class Banner: UIView, UIScrollViewDelegate {
         }
     }
     
+    private func updateLabels(for index: Int) {
+        let bannerData = BannerData.mockData[index]
+        appSubtitleLabel.text = bannerData.appSubtitle
+        appTitleLabel.text = bannerData.appTitle
+        appDescriptionLabel.text = bannerData.appDescription
+    }
+}
+
+extension Banner: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x / scrollView.frame.width)
         let index = Int(pageIndex)
@@ -118,12 +128,5 @@ class Banner: UIView, UIScrollViewDelegate {
         if index >= 0 && index < BannerData.mockData.count {
             updateLabels(for: index)
         }
-    }
-    
-    private func updateLabels(for index: Int) {
-        let bannerData = BannerData.mockData[index]
-        appSubtitleLabel.text = bannerData.appSubtitle
-        appTitleLabel.text = bannerData.appTitle
-        appDescriptionLabel.text = bannerData.appDescription
     }
 }
