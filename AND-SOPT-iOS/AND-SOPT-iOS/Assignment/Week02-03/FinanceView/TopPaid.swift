@@ -91,19 +91,23 @@ extension TopPaid: UICollectionViewDataSource {
         
         item.bind(appList[indexPath.item])
         
-        let dividerLine = UIView()
-        dividerLine.backgroundColor = .systemGray
+        addDividerLine(to: item, at: indexPath.row)
         
-        if indexPath.row % 3 != 2 {
-            item.addSubview(dividerLine)
+        return item
+    }
+    
+    private func addDividerLine(to cell: TopPaidFreeAppCell, at index: Int) {
+        if index % 3 != 2 {
+            let dividerLine = UIView()
+            dividerLine.backgroundColor = .systemGray
+            cell.addSubview(dividerLine)
+            
             dividerLine.snp.makeConstraints {
                 $0.leading.equalToSuperview().offset(80)
                 $0.trailing.equalToSuperview().offset(-20)
                 $0.height.equalTo(0.4)
-                $0.bottom.equalTo(item)
+                $0.bottom.equalTo(cell)
             }
         }
-        
-        return item
     }
 }

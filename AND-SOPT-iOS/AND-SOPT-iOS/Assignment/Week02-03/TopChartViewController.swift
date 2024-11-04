@@ -78,18 +78,23 @@ extension TopChartViewController: UITableViewDataSource {
         ) as? TopChartCell else { return UITableViewCell() }
         cell.configure(appList[indexPath.item])
         
-        let dividerLine = UIView()
-        dividerLine.backgroundColor = .systemGray
-        
-        
-        cell.addSubview(dividerLine)
-        dividerLine.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(85)
-            $0.trailing.equalToSuperview().offset(-20)
-            $0.height.equalTo(0.4)
-            $0.bottom.equalTo(cell)
-        }
+        addDividerLine(to: cell, at: indexPath.row)
         
         return cell
+    }
+    
+    private func addDividerLine(to cell: TopChartCell, at index: Int) {
+        if index % 3 != 2 {
+            let dividerLine = UIView()
+            dividerLine.backgroundColor = .systemGray
+            cell.addSubview(dividerLine)
+            
+            dividerLine.snp.makeConstraints {
+                $0.leading.equalToSuperview().offset(80)
+                $0.trailing.equalToSuperview().offset(-20)
+                $0.height.equalTo(0.4)
+                $0.bottom.equalTo(cell)
+            }
+        }
     }
 }
