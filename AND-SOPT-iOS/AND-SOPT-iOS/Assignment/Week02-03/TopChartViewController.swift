@@ -55,7 +55,7 @@ class TopChartViewController: UIViewController {
 
 extension TopChartViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 8 {
+        if appList[indexPath.row].title == "토스" {
             let appStoreTossVC = AppStoreTossViewController()
             self.navigationController?.pushViewController(appStoreTossVC, animated: true)
             self.navigationItem.backButtonTitle = "금융"

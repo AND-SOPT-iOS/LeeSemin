@@ -91,7 +91,7 @@ class TopFree: UIView {
 
 extension TopFree: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 8 {
+        if appList[indexPath.row].title == "토스" {
             delegate?.didTapTossCell()
         }
     }
