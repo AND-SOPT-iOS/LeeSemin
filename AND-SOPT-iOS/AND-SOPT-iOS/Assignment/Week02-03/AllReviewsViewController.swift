@@ -21,6 +21,7 @@ class AllReviewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setStyle()
         setUI()
         setLayout()

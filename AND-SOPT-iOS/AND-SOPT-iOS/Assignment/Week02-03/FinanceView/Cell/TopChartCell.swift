@@ -6,57 +6,48 @@
 //
 
 import UIKit
-import SnapKit
 
+import SnapKit
 import Then
 
 class TopChartCell: UITableViewCell {
     static let identifier: String = "TopChartCell"
     
-    private let logoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.layer.cornerRadius = 20
-        imageView.clipsToBounds = true
-        return imageView
-    }()
+    private let logoImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.layer.cornerRadius = 20
+        $0.clipsToBounds = true
+    }
     
-    private let rankLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .bold)
-        label.textColor = .label
-        return label
-    }()
+    private let rankLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 17, weight: .bold)
+        $0.textColor = .label
+    }
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .bold)
-        label.textColor = .label
-        label.numberOfLines = 2
-        return label
-    }()
+    private let titleLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 17, weight: .bold)
+        $0.textColor = .label
+        $0.numberOfLines = 2
+    }
     
-    private let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
-        label.textColor = .lightGray
-        label.numberOfLines = 2
-        return label
-    }()
+    private let descriptionLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 14)
+        $0.textColor = .lightGray
+        $0.numberOfLines = 2
+    }
     
-    private let downloadStateButton: UIButton = {
-        let button = UIButton()
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.backgroundColor = .tertiarySystemGroupedBackground
-        button.layer.cornerRadius = 18
-        button.clipsToBounds = true
-        button.tintColor = .systemBlue
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .heavy)
-        return button
-    }()
+    private let downloadStateButton = UIButton().then {
+        $0.setTitleColor(.systemBlue, for: .normal)
+        $0.backgroundColor = .tertiarySystemGroupedBackground
+        $0.layer.cornerRadius = 18
+        $0.clipsToBounds = true
+        $0.tintColor = .systemBlue
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .heavy)
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         self.selectionStyle = .none
         setUI()
         setLayout()

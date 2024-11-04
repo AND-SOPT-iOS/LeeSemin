@@ -21,6 +21,7 @@ class VersionHistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setStyle()
         setUI()
         setLayout()

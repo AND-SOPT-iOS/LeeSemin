@@ -32,6 +32,7 @@ class FinanceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setDelegates()
         setStyle()
         setUI()

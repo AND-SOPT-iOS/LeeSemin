@@ -28,6 +28,7 @@ class AppStoreTossViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setDelegates()
         setStyle()
         setUI()
