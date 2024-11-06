@@ -101,6 +101,7 @@
 		76E1C2B32CD90E300033EE45 /* DownloadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadState.swift; sourceTree = "<group>"; };
 		76E1C2B52CD929410033EE45 /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
 		76E1C2B72CD929D70033EE45 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
+		76E1C2BE2CDB14E90033EE45 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +242,7 @@
 				7692BC532CB9608500CF5176 /* Assets.xcassets */,
 				7692BC552CB9608500CF5176 /* LaunchScreen.storyboard */,
 				7692BC582CB9608500CF5176 /* Info.plist */,
+				76E1C2BE2CDB14E90033EE45 /* Config.xcconfig */,
 			);
 			path = "AND-SOPT-iOS";
 			sourceTree = "<group>";
@@ -452,6 +454,7 @@
 /* Begin XCBuildConfiguration section */
 		7692BC592CB9608500CF5176 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76E1C2BE2CDB14E90033EE45 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -515,6 +518,7 @@
 		};
 		7692BC5A2CB9608500CF5176 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76E1C2BE2CDB14E90033EE45 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

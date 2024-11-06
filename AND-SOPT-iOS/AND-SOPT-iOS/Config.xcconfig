@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  AND-SOPT-iOS
+//
+//  Created by 이세민 on 11/6/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_URL = http:/$()/211.188.53.75:8080
