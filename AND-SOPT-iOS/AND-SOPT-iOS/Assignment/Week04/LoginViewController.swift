@@ -1,14 +1,14 @@
 //
-//  SignUpViewController.swift
+//  LoginViewController.swift
 //  AND-SOPT-iOS
 //
-//  Created by 이세민 on 11/2/24.
+//  Created by 이세민 on 11/8/24.
 //
 
 import UIKit
 import SnapKit
 
-class SignUpViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     private let userNameTextField: UITextField = {
         let textField = UITextField()
@@ -27,34 +27,27 @@ class SignUpViewController: UIViewController {
         return textField
     }()
     
-    private let hobbyTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Hobby"
-        textField.textColor = .label
-        textField.borderStyle = .roundedRect
-        return textField
-    }()
-    
-    private let signUpButton: UIButton = {
+    private let loginButton: UIButton = {
         let button = UIButton()
-        button.setTitle("유저 등록하기", for: .normal)
+        button.setTitle("로그인", for: .normal)
         button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = .systemGreen
         return button
     }()
     
     private let resultLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label
-        label.text = "모든 항목을 8자 이하로 입력해주세요."
+        label.text = ""
+        label.numberOfLines = 2
         return label
     }()
     
-    private let loginButton: UIButton = {
+    private let signUpButton: UIButton = {
         let button = UIButton()
-        button.setTitle("로그인 바로가기", for: .normal)
+        button.setTitle("유저 등록하러 가기", for: .normal)
         button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = .systemGreen
+        button.backgroundColor = .systemBlue
         return button
     }()
     
@@ -70,8 +63,8 @@ class SignUpViewController: UIViewController {
     }
     
     private func setTargets() {
-        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
     }
     
     private func setStyle() {
@@ -79,7 +72,7 @@ class SignUpViewController: UIViewController {
     }
     
     private func setUI() {
-        view.addSubviews(userNameTextField, passwordTextField, hobbyTextField, signUpButton, resultLabel, loginButton)
+        view.addSubviews(userNameTextField, passwordTextField, loginButton, resultLabel, signUpButton)
     }
     
     private func setLayout() {
@@ -93,51 +86,47 @@ class SignUpViewController: UIViewController {
             $0.horizontalEdges.equalToSuperview().inset(20)
         }
         
-        hobbyTextField.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(20)
-            $0.horizontalEdges.equalToSuperview().inset(20)
-        }
-        
-        signUpButton.snp.makeConstraints {
-            $0.top.equalTo(hobbyTextField.snp.bottom).offset(30)
+        loginButton.snp.makeConstraints {
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(30)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(50)
         }
         
         resultLabel.snp.makeConstraints {
-            $0.top.equalTo(signUpButton.snp.bottom).offset(40)
+            $0.top.equalTo(loginButton.snp.bottom).offset(40)
             $0.centerX.equalToSuperview()
         }
         
-        loginButton.snp.makeConstraints {
+        signUpButton.snp.makeConstraints {
             $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(50)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(50)
         }
     }
     
-    @objc func signUpButtonTapped() {
-        userService.signUp(
-            username: userNameTextField.text!,
-            password: passwordTextField.text!,
-            hobby: hobbyTextField.text!
-        ) { [weak self] result in
-            dump(result)
+    @objc func loginButtonTapped() {
+        userService.login(username: userNameTextField.text!, password: passwordTextField.text!) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 
                 switch result {
-                case .success:
-                    self.resultLabel.text = "회원 등록에 성공했어요."
-                case let .failure(error):
+                case .success(let token):
+                    
+                    Keychain.shared.save(token: token, forKey: "authToken")
+                    self.resultLabel.text = "로그인에 성공했어요."
+                    
+                    let myPageVC = MyPageViewController()
+                    self.navigationController?.pushViewController(myPageVC, animated: true)
+                    
+                case .failure(let error):
                     self.resultLabel.text = error.errorMessage
                 }
             }
         }
     }
     
-    @objc func loginButtonTapped() {
-        let loginVC = LoginViewController()
-        navigationController?.pushViewController(loginVC, animated: true)
+    @objc func signUpButtonTapped() {
+        let signUpVC = SignUpViewController()
+        navigationController?.pushViewController(signUpVC, animated: true)
     }
 }

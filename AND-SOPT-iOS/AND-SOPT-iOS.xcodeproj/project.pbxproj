@@ -54,10 +54,15 @@
 		76E1C2B82CD929D70033EE45 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2B72CD929D70033EE45 /* UITableViewCell+.swift */; };
 		76E1C2BD2CDB14080033EE45 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 76E1C2BC2CDB14080033EE45 /* Alamofire */; };
 		76E1C2C02CDB1A210033EE45 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2BF2CDB1A210033EE45 /* Environment.swift */; };
-		76E1C2C32CDB1A2F0033EE45 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2C12CDB1A2F0033EE45 /* RegisterRequest.swift */; };
+		76E1C2C32CDB1A2F0033EE45 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2C12CDB1A2F0033EE45 /* SignUpRequest.swift */; };
 		76E1C2C42CDB1A2F0033EE45 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2C22CDB1A2F0033EE45 /* NetworkError.swift */; };
 		76E1C2C72CDB1A3B0033EE45 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2C52CDB1A3B0033EE45 /* UserService.swift */; };
 		76E1C2C82CDB1A3B0033EE45 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2C62CDB1A3B0033EE45 /* SignUpViewController.swift */; };
+		76E1C2CB2CDD0D350033EE45 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2CA2CDD0D350033EE45 /* LoginRequest.swift */; };
+		76E1C2CD2CDD0E510033EE45 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2CC2CDD0E510033EE45 /* LoginResponse.swift */; };
+		76E1C2CF2CDD0E7A0033EE45 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2CE2CDD0E7A0033EE45 /* LoginViewController.swift */; };
+		76E1C2D42CDD20DE0033EE45 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2D32CDD20DE0033EE45 /* Keychain.swift */; };
+		76E1C2D62CDD21230033EE45 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2D52CDD21230033EE45 /* MyPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,10 +113,15 @@
 		76E1C2B72CD929D70033EE45 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		76E1C2BE2CDB14E90033EE45 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		76E1C2BF2CDB1A210033EE45 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		76E1C2C12CDB1A2F0033EE45 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		76E1C2C12CDB1A2F0033EE45 /* SignUpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		76E1C2C22CDB1A2F0033EE45 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		76E1C2C52CDB1A3B0033EE45 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		76E1C2C62CDB1A3B0033EE45 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		76E1C2CA2CDD0D350033EE45 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		76E1C2CC2CDD0E510033EE45 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		76E1C2CE2CDD0E7A0033EE45 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		76E1C2D32CDD20DE0033EE45 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		76E1C2D52CDD21230033EE45 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +255,7 @@
 		7692BC492CB9608400CF5176 /* AND-SOPT-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				76E1C2D22CDD1DF90033EE45 /* Network */,
 				76E1C2972CD909570033EE45 /* Practice */,
 				760C54552CD0ADB000502B24 /* Extensions */,
 				7641BCE52CBC479A003D99CE /* Assignment */,
@@ -320,13 +331,25 @@
 		76E1C2BA2CD92F180033EE45 /* Week04 */ = {
 			isa = PBXGroup;
 			children = (
+				76E1C2CE2CDD0E7A0033EE45 /* LoginViewController.swift */,
 				76E1C2C62CDB1A3B0033EE45 /* SignUpViewController.swift */,
-				76E1C2C52CDB1A3B0033EE45 /* UserService.swift */,
-				76E1C2C22CDB1A2F0033EE45 /* NetworkError.swift */,
-				76E1C2C12CDB1A2F0033EE45 /* RegisterRequest.swift */,
-				76E1C2BF2CDB1A210033EE45 /* Environment.swift */,
+				76E1C2D52CDD21230033EE45 /* MyPageViewController.swift */,
 			);
 			path = Week04;
+			sourceTree = "<group>";
+		};
+		76E1C2D22CDD1DF90033EE45 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				76E1C2BF2CDB1A210033EE45 /* Environment.swift */,
+				76E1C2C22CDB1A2F0033EE45 /* NetworkError.swift */,
+				76E1C2C52CDB1A3B0033EE45 /* UserService.swift */,
+				76E1C2C12CDB1A2F0033EE45 /* SignUpRequest.swift */,
+				76E1C2CA2CDD0D350033EE45 /* LoginRequest.swift */,
+				76E1C2CC2CDD0E510033EE45 /* LoginResponse.swift */,
+				76E1C2D32CDD20DE0033EE45 /* Keychain.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,20 +432,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E1C2CF2CDD0E7A0033EE45 /* LoginViewController.swift in Sources */,
 				76E1C2A12CD909AE0033EE45 /* PhotoViewController.swift in Sources */,
 				76E1C29E2CD909900033EE45 /* Photo.swift in Sources */,
+				76E1C2D42CDD20DE0033EE45 /* Keychain.swift in Sources */,
 				760C54832CD2904900502B24 /* TopChartViewController.swift in Sources */,
 				76E1C2B22CD90E070033EE45 /* App.swift in Sources */,
 				762B2AA62CD2A4DA007E0822 /* BannerData.swift in Sources */,
 				76E1C2A42CD90ACD0033EE45 /* FirstMainViewController.swift in Sources */,
 				76E1C2C82CDB1A3B0033EE45 /* SignUpViewController.swift in Sources */,
 				76E1C2AE2CD90DA80033EE45 /* ChartViewController.swift in Sources */,
+				76E1C2D62CDD21230033EE45 /* MyPageViewController.swift in Sources */,
 				764FD4402CD400BB00E09ADC /* FinanceAppList.swift in Sources */,
-				76E1C2C32CDB1A2F0033EE45 /* RegisterRequest.swift in Sources */,
+				76E1C2C32CDB1A2F0033EE45 /* SignUpRequest.swift in Sources */,
 				76E1C2C42CDB1A2F0033EE45 /* NetworkError.swift in Sources */,
 				760C54592CD0C26900502B24 /* DeveloperInfoLabels.swift in Sources */,
 				76E1C2C72CDB1A3B0033EE45 /* UserService.swift in Sources */,
 				760C54172CC6AD2900502B24 /* AppStoreTossViewController.swift in Sources */,
+				76E1C2CB2CDD0D350033EE45 /* LoginRequest.swift in Sources */,
 				76E1C2A82CD90C320033EE45 /* SecondMainViewController.swift in Sources */,
 				760C54812CD2903300502B24 /* TopFree.swift in Sources */,
 				7692BC4F2CB9608400CF5176 /* FindDifferentButtonViewController.swift in Sources */,
@@ -446,6 +473,7 @@
 				760C54262CC6DF2D00502B24 /* VersionHistoryViewController.swift in Sources */,
 				76E1C2C02CDB1A210033EE45 /* Environment.swift in Sources */,
 				760C54572CD0ADCF00502B24 /* UIView+.swift in Sources */,
+				76E1C2CD2CDD0E510033EE45 /* LoginResponse.swift in Sources */,
 				760C547F2CD2902A00502B24 /* TopPaid.swift in Sources */,
 				76E1C2AC2CD90C820033EE45 /* ColorsViewController.swift in Sources */,
 				76E1C2B82CD929D70033EE45 /* UITableViewCell+.swift in Sources */,
