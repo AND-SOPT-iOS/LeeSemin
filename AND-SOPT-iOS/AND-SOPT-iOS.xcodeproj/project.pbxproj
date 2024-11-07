@@ -53,6 +53,11 @@
 		76E1C2B62CD929410033EE45 /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2B52CD929410033EE45 /* UICollectionViewCell+.swift */; };
 		76E1C2B82CD929D70033EE45 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2B72CD929D70033EE45 /* UITableViewCell+.swift */; };
 		76E1C2BD2CDB14080033EE45 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 76E1C2BC2CDB14080033EE45 /* Alamofire */; };
+		76E1C2C02CDB1A210033EE45 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2BF2CDB1A210033EE45 /* Environment.swift */; };
+		76E1C2C32CDB1A2F0033EE45 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2C12CDB1A2F0033EE45 /* RegisterRequest.swift */; };
+		76E1C2C42CDB1A2F0033EE45 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2C22CDB1A2F0033EE45 /* NetworkError.swift */; };
+		76E1C2C72CDB1A3B0033EE45 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2C52CDB1A3B0033EE45 /* UserService.swift */; };
+		76E1C2C82CDB1A3B0033EE45 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2C62CDB1A3B0033EE45 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +107,11 @@
 		76E1C2B52CD929410033EE45 /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
 		76E1C2B72CD929D70033EE45 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		76E1C2BE2CDB14E90033EE45 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		76E1C2BF2CDB1A210033EE45 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		76E1C2C12CDB1A2F0033EE45 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		76E1C2C22CDB1A2F0033EE45 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		76E1C2C52CDB1A3B0033EE45 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		76E1C2C62CDB1A3B0033EE45 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +191,7 @@
 		7641BCE52CBC479A003D99CE /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				76E1C2BA2CD92F180033EE45 /* Week04 */,
 				760C540C2CC6AAF400502B24 /* Week02-03 */,
 				7641BCF72CBE1FF2003D99CE /* Week01 */,
 			);
@@ -250,7 +261,6 @@
 		76E1C2972CD909570033EE45 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
-				76E1C2BA2CD92F180033EE45 /* Week04 */,
 				76E1C29A2CD909740033EE45 /* Week03 */,
 				76E1C2992CD9096F0033EE45 /* Week02 */,
 				76E1C2982CD9096A0033EE45 /* Week01 */,
@@ -310,6 +320,11 @@
 		76E1C2BA2CD92F180033EE45 /* Week04 */ = {
 			isa = PBXGroup;
 			children = (
+				76E1C2C62CDB1A3B0033EE45 /* SignUpViewController.swift */,
+				76E1C2C52CDB1A3B0033EE45 /* UserService.swift */,
+				76E1C2C22CDB1A2F0033EE45 /* NetworkError.swift */,
+				76E1C2C12CDB1A2F0033EE45 /* RegisterRequest.swift */,
+				76E1C2BF2CDB1A210033EE45 /* Environment.swift */,
 			);
 			path = Week04;
 			sourceTree = "<group>";
@@ -400,9 +415,13 @@
 				76E1C2B22CD90E070033EE45 /* App.swift in Sources */,
 				762B2AA62CD2A4DA007E0822 /* BannerData.swift in Sources */,
 				76E1C2A42CD90ACD0033EE45 /* FirstMainViewController.swift in Sources */,
+				76E1C2C82CDB1A3B0033EE45 /* SignUpViewController.swift in Sources */,
 				76E1C2AE2CD90DA80033EE45 /* ChartViewController.swift in Sources */,
 				764FD4402CD400BB00E09ADC /* FinanceAppList.swift in Sources */,
+				76E1C2C32CDB1A2F0033EE45 /* RegisterRequest.swift in Sources */,
+				76E1C2C42CDB1A2F0033EE45 /* NetworkError.swift in Sources */,
 				760C54592CD0C26900502B24 /* DeveloperInfoLabels.swift in Sources */,
+				76E1C2C72CDB1A3B0033EE45 /* UserService.swift in Sources */,
 				760C54172CC6AD2900502B24 /* AppStoreTossViewController.swift in Sources */,
 				76E1C2A82CD90C320033EE45 /* SecondMainViewController.swift in Sources */,
 				760C54812CD2903300502B24 /* TopFree.swift in Sources */,
@@ -425,6 +444,7 @@
 				760C54792CD28E9300502B24 /* FinanceViewController.swift in Sources */,
 				760C54702CD1F02600502B24 /* ReviewData.swift in Sources */,
 				760C54262CC6DF2D00502B24 /* VersionHistoryViewController.swift in Sources */,
+				76E1C2C02CDB1A210033EE45 /* Environment.swift in Sources */,
 				760C54572CD0ADCF00502B24 /* UIView+.swift in Sources */,
 				760C547F2CD2902A00502B24 /* TopPaid.swift in Sources */,
 				76E1C2AC2CD90C820033EE45 /* ColorsViewController.swift in Sources */,
