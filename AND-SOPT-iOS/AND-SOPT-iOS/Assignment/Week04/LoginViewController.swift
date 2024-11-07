@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
         let button = UIButton()
         button.setTitle("로그인", for: .normal)
         button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = .systemGreen
+        button.backgroundColor = UIColor(red: 0.6, green: 0.8, blue: 0.6, alpha: 1.0)
         return button
     }()
     
@@ -39,7 +39,6 @@ class LoginViewController: UIViewController {
         let label = UILabel()
         label.textColor = .label
         label.text = ""
-        label.numberOfLines = 2
         return label
     }()
     
@@ -47,7 +46,7 @@ class LoginViewController: UIViewController {
         let button = UIButton()
         button.setTitle("유저 등록하러 가기", for: .normal)
         button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = UIColor(red: 0.678, green: 0.847, blue: 1.0, alpha: 1.0)
         return button
     }()
     
@@ -115,8 +114,8 @@ class LoginViewController: UIViewController {
                     Keychain.shared.save(token: token, forKey: "authToken")
                     self.resultLabel.text = "로그인에 성공했어요."
                     
-                    let myPageVC = MyPageViewController()
-                    self.navigationController?.pushViewController(myPageVC, animated: true)
+                    let hobbyVC = HobbyViewController()
+                    self.navigationController?.pushViewController(hobbyVC, animated: true)
                     
                 case .failure(let error):
                     self.resultLabel.text = error.errorMessage

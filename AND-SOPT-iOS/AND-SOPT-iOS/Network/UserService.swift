@@ -86,6 +86,66 @@ class UserService {
         }
     }
     
+    func getMyHobby(token: String, completion: @escaping (Result<String, NetworkError>) -> Void) {
+        let url = Environment.baseURL + "/user/my-hobby"
+        
+        let headers: HTTPHeaders = [
+            "token": token
+        ]
+        
+        AF.request(
+            url,
+            method: .get,
+            headers: headers
+        )
+        .validate()
+        .responseDecodable(of: HobbyResponse.self) { response in
+            guard let statusCode = response.response?.statusCode,
+                  let data = response.data
+            else {
+                completion(.failure(.unknownError))
+                return
+            }
+            switch response.result {
+            case .success(let hobbyResponse):
+                completion(.success(hobbyResponse.result.hobby))
+            case .failure:
+                let error = self.handleStatusCode(statusCode, data: data)
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func getUserHobby(userNo: Int, token: String, completion: @escaping (Result<String, NetworkError>) -> Void) {
+        let url = "\(Environment.baseURL)/user/\(userNo)/hobby"
+        
+        let headers: HTTPHeaders = [
+            "token": token
+        ]
+        
+        AF.request(
+            url,
+            method: .get,
+            headers: headers
+        )
+        .validate()
+        .responseDecodable(of: HobbyResponse.self) { response in
+            guard let statusCode = response.response?.statusCode,
+                  let data = response.data
+            else {
+                completion(.failure(.unknownError))
+                return
+            }
+            switch response.result {
+            case .success(let hobbyResponse):
+                completion(.success(hobbyResponse.result.hobby))
+            case .failure:
+                let error = self.handleStatusCode(statusCode, data: data)
+                completion(.failure(error))
+            }
+        }
+    }
+    
     func handleStatusCode(
         _ statusCode: Int,
         data: Data

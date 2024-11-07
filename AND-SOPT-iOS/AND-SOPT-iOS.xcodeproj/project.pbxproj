@@ -62,7 +62,8 @@
 		76E1C2CD2CDD0E510033EE45 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2CC2CDD0E510033EE45 /* LoginResponse.swift */; };
 		76E1C2CF2CDD0E7A0033EE45 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2CE2CDD0E7A0033EE45 /* LoginViewController.swift */; };
 		76E1C2D42CDD20DE0033EE45 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2D32CDD20DE0033EE45 /* Keychain.swift */; };
-		76E1C2D62CDD21230033EE45 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2D52CDD21230033EE45 /* MyPageViewController.swift */; };
+		76E1C2D62CDD21230033EE45 /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2D52CDD21230033EE45 /* HobbyViewController.swift */; };
+		76E1C2D82CDD2F130033EE45 /* HobbyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2D72CDD2F130033EE45 /* HobbyResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,7 +122,8 @@
 		76E1C2CC2CDD0E510033EE45 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		76E1C2CE2CDD0E7A0033EE45 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		76E1C2D32CDD20DE0033EE45 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		76E1C2D52CDD21230033EE45 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		76E1C2D52CDD21230033EE45 /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
+		76E1C2D72CDD2F130033EE45 /* HobbyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,7 +335,7 @@
 			children = (
 				76E1C2CE2CDD0E7A0033EE45 /* LoginViewController.swift */,
 				76E1C2C62CDB1A3B0033EE45 /* SignUpViewController.swift */,
-				76E1C2D52CDD21230033EE45 /* MyPageViewController.swift */,
+				76E1C2D52CDD21230033EE45 /* HobbyViewController.swift */,
 			);
 			path = Week04;
 			sourceTree = "<group>";
@@ -348,6 +350,7 @@
 				76E1C2CA2CDD0D350033EE45 /* LoginRequest.swift */,
 				76E1C2CC2CDD0E510033EE45 /* LoginResponse.swift */,
 				76E1C2D32CDD20DE0033EE45 /* Keychain.swift */,
+				76E1C2D72CDD2F130033EE45 /* HobbyResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -442,7 +445,7 @@
 				76E1C2A42CD90ACD0033EE45 /* FirstMainViewController.swift in Sources */,
 				76E1C2C82CDB1A3B0033EE45 /* SignUpViewController.swift in Sources */,
 				76E1C2AE2CD90DA80033EE45 /* ChartViewController.swift in Sources */,
-				76E1C2D62CDD21230033EE45 /* MyPageViewController.swift in Sources */,
+				76E1C2D62CDD21230033EE45 /* HobbyViewController.swift in Sources */,
 				764FD4402CD400BB00E09ADC /* FinanceAppList.swift in Sources */,
 				76E1C2C32CDB1A2F0033EE45 /* SignUpRequest.swift in Sources */,
 				76E1C2C42CDB1A2F0033EE45 /* NetworkError.swift in Sources */,
@@ -477,6 +480,7 @@
 				760C547F2CD2902A00502B24 /* TopPaid.swift in Sources */,
 				76E1C2AC2CD90C820033EE45 /* ColorsViewController.swift in Sources */,
 				76E1C2B82CD929D70033EE45 /* UITableViewCell+.swift in Sources */,
+				76E1C2D82CDD2F130033EE45 /* HobbyResponse.swift in Sources */,
 				760C54222CC6AE3100502B24 /* DeveloperInfo.swift in Sources */,
 				76E1C2B02CD90DF10033EE45 /* ChartCell.swift in Sources */,
 				764FD43E2CD3EC7C00E09ADC /* EssentialAppCell.swift in Sources */,
