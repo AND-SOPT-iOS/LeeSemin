@@ -66,6 +66,7 @@
 		76E1C2D82CDD2F130033EE45 /* HobbyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2D72CDD2F130033EE45 /* HobbyResponse.swift */; };
 		76E1C2DA2CDD48090033EE45 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2D92CDD48090033EE45 /* UpdateViewController.swift */; };
 		76E1C2DC2CDD533A0033EE45 /* UpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2DB2CDD533A0033EE45 /* UpdateRequest.swift */; };
+		76FC2DD12CDDF0A7000B329B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FC2DD02CDDF0A7000B329B /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		76E1C2D72CDD2F130033EE45 /* HobbyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyResponse.swift; sourceTree = "<group>"; };
 		76E1C2D92CDD48090033EE45 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		76E1C2DB2CDD533A0033EE45 /* UpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateRequest.swift; sourceTree = "<group>"; };
+		76FC2DD02CDDF0A7000B329B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				760C54272CC6DFF000502B24 /* AllReviewsViewController.swift */,
 				760C54782CD28E9300502B24 /* FinanceViewController.swift */,
 				760C54822CD2904900502B24 /* TopChartViewController.swift */,
+				76FC2DD02CDDF0A7000B329B /* TabBarController.swift */,
 			);
 			path = "Week02-03";
 			sourceTree = "<group>";
@@ -197,7 +200,6 @@
 				760C545A2CD0C27500502B24 /* Data */,
 				766C491A2CD4B58100EB165E /* Cell */,
 				760C547A2CD28FF800502B24 /* EssentialApps.swift */,
-				760C547C2CD2900A00502B24 /* Banner.swift */,
 				760C547E2CD2902A00502B24 /* TopPaid.swift */,
 				760C54802CD2903300502B24 /* TopFree.swift */,
 			);
@@ -226,6 +228,7 @@
 		766C491A2CD4B58100EB165E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				760C547C2CD2900A00502B24 /* Banner.swift */,
 				764FD43D2CD3EC7C00E09ADC /* EssentialAppCell.swift */,
 				766C491B2CD4BDE000EB165E /* TopPaidFreeAppCell.swift */,
 				766C491F2CD4CCC700EB165E /* TopChartCell.swift */,
@@ -454,6 +457,7 @@
 				76E1C2D62CDD21230033EE45 /* HobbyViewController.swift in Sources */,
 				764FD4402CD400BB00E09ADC /* FinanceAppList.swift in Sources */,
 				76E1C2DA2CDD48090033EE45 /* UpdateViewController.swift in Sources */,
+				76FC2DD12CDDF0A7000B329B /* TabBarController.swift in Sources */,
 				76E1C2C32CDB1A2F0033EE45 /* SignUpRequest.swift in Sources */,
 				76E1C2C42CDB1A2F0033EE45 /* NetworkError.swift in Sources */,
 				760C54592CD0C26900502B24 /* DeveloperInfoLabels.swift in Sources */,
