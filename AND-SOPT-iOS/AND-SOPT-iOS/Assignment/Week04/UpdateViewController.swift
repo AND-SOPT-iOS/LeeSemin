@@ -36,6 +36,13 @@ class UpdateViewController: UIViewController {
         return button
     }()
     
+    private let resultLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .label
+        label.text = ""
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,7 +61,7 @@ class UpdateViewController: UIViewController {
     }
     
     private func setUI() {
-        view.addSubviews(passwordTextField, hobbyTextField, changeButton)
+        view.addSubviews(passwordTextField, hobbyTextField, changeButton, resultLabel)
     }
     
     private func setLayout() {
@@ -73,11 +80,16 @@ class UpdateViewController: UIViewController {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(50)
         }
+        
+        resultLabel.snp.makeConstraints {
+            $0.top.equalTo(changeButton.snp.bottom).offset(40)
+            $0.centerX.equalToSuperview()
+        }
     }
     
     @objc private func changeButtonTapped() {
         guard let token = Keychain.shared.read(forKey: "authToken") else {
-            print("로그인이 필요합니다.")
+            resultLabel.text = "로그인이 필요합니다."
             return
         }
         
@@ -87,9 +99,9 @@ class UpdateViewController: UIViewController {
                 
                 switch result {
                 case .success:
-                    print("정보가 성공적으로 변경되었습니다.")
+                    self.resultLabel.text = "정보가 성공적으로 변경되었습니다."
                 case .failure(let error):
-                    print("오류 발생: \(error.errorMessage)")
+                    self.resultLabel.text = "오류 발생: \(error.errorMessage)"
                 }
             }
         }

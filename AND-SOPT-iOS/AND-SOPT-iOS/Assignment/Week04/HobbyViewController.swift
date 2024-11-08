@@ -80,6 +80,12 @@ class HobbyViewController: UIViewController {
         fetchMyHobby()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        fetchMyHobby()
+    }
+    
     private func setTargets() {
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         changeButton.addTarget(self, action: #selector(changeButtonTapped), for: .touchUpInside)

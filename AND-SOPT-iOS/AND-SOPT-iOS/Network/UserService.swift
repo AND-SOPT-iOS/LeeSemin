@@ -106,6 +106,7 @@ class UserService {
                 completion(.failure(.unknownError))
                 return
             }
+            
             switch response.result {
             case .success(let hobbyResponse):
                 completion(.success(hobbyResponse.result.hobby))
@@ -136,6 +137,7 @@ class UserService {
                 completion(.failure(.unknownError))
                 return
             }
+            
             switch response.result {
             case .success(let hobbyResponse):
                 completion(.success(hobbyResponse.result.hobby))
@@ -169,21 +171,21 @@ class UserService {
         )
         .validate()
         .response {[weak self] response in
-            guard let statusCode = response.response?.statusCode,
-                  let data = response.data,
-                  let self
+            guard let statusCode = response.response?.statusCode
             else {
                 completion(.failure(.unknownError))
                 return
             }
-            print("Status Code: \(statusCode)")
             
             switch response.result {
             case .success:
                 completion(.success(true))
             case .failure:
-                let error = self.handleStatusCode(statusCode, data: data)
-                completion(.failure(error))
+                if let data = response.data{
+                    let error = self?.handleStatusCode(statusCode, data: data)
+                    completion(.failure(error!))
+                }
+                
             }
         }
     }
