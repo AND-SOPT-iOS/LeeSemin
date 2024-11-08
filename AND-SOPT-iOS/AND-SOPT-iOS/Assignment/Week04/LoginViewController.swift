@@ -31,7 +31,9 @@ class LoginViewController: UIViewController {
         let button = UIButton()
         button.setTitle("로그인", for: .normal)
         button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = UIColor(red: 0.6, green: 0.8, blue: 0.6, alpha: 1.0)
+        button.layer.borderColor = UIColor(red: 0.6, green: 0.8, blue: 0.6, alpha: 1.0).cgColor
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 10
         return button
     }()
     
@@ -46,7 +48,9 @@ class LoginViewController: UIViewController {
         let button = UIButton()
         button.setTitle("유저 등록하러 가기", for: .normal)
         button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = UIColor(red: 0.678, green: 0.847, blue: 1.0, alpha: 1.0)
+        button.layer.borderColor = UIColor(red: 0.678, green: 0.847, blue: 1.0, alpha: 1.0).cgColor
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 10
         return button
     }()
     

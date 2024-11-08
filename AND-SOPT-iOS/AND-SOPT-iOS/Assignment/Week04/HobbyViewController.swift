@@ -30,7 +30,9 @@ class HobbyViewController: UIViewController {
         let button = UIButton()
         button.setTitle("내 정보 변경하러 가기", for: .normal)
         button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = UIColor(red: 0.9, green: 0.6, blue: 0.5, alpha: 1.0)
+        button.layer.borderColor = UIColor(red: 0.9, green: 0.6, blue: 0.5, alpha: 1.0).cgColor
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 10
         return button
     }()
     
@@ -80,6 +82,7 @@ class HobbyViewController: UIViewController {
     
     private func setTargets() {
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+        changeButton.addTarget(self, action: #selector(changeButtonTapped), for: .touchUpInside)
     }
     
     private func setStyle() {
@@ -178,5 +181,10 @@ class HobbyViewController: UIViewController {
         }
         
         fetchOtherHobby(userNo: userNo)
+    }
+    
+    @objc private func changeButtonTapped() {
+        let updateVC = UpdateViewController()
+        navigationController?.pushViewController(updateVC, animated: true)
     }
 }

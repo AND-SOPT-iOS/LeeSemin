@@ -146,6 +146,48 @@ class UserService {
         }
     }
     
+    func updateUserInfo(
+        token: String,
+        hobby: String,
+        password: String,
+        completion: @escaping (Result<Bool, NetworkError>) -> Void
+    ) {
+        let url = Environment.baseURL + "/user"
+        
+        let parameters = UpdateRequest(hobby: hobby, password: password)
+        
+        let headers: HTTPHeaders = [
+            "token": token
+        ]
+        
+        AF.request(
+            url,
+            method: .put,
+            parameters: parameters,
+            encoder: JSONParameterEncoder.default,
+            headers: headers
+        )
+        .validate()
+        .response {[weak self] response in
+            guard let statusCode = response.response?.statusCode,
+                  let data = response.data,
+                  let self
+            else {
+                completion(.failure(.unknownError))
+                return
+            }
+            print("Status Code: \(statusCode)")
+            
+            switch response.result {
+            case .success:
+                completion(.success(true))
+            case .failure:
+                let error = self.handleStatusCode(statusCode, data: data)
+                completion(.failure(error))
+            }
+        }
+    }
+    
     func handleStatusCode(
         _ statusCode: Int,
         data: Data
