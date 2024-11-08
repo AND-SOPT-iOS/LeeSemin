@@ -149,6 +149,7 @@
 		760C540C2CC6AAF400502B24 /* Week02-03 */ = {
 			isa = PBXGroup;
 			children = (
+				76FC2DD22CDE4B71000B329B /* TabBar */,
 				760C54732CD246C900502B24 /* FinanceView */,
 				760C54182CC6AD6A00502B24 /* TossView */,
 				760C54162CC6AD2900502B24 /* AppStoreTossViewController.swift */,
@@ -156,7 +157,6 @@
 				760C54272CC6DFF000502B24 /* AllReviewsViewController.swift */,
 				760C54782CD28E9300502B24 /* FinanceViewController.swift */,
 				760C54822CD2904900502B24 /* TopChartViewController.swift */,
-				76FC2DD02CDDF0A7000B329B /* TabBarController.swift */,
 			);
 			path = "Week02-03";
 			sourceTree = "<group>";
@@ -362,6 +362,14 @@
 				76E1C2DB2CDD533A0033EE45 /* UpdateRequest.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		76FC2DD22CDE4B71000B329B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				76FC2DD02CDDF0A7000B329B /* TabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
