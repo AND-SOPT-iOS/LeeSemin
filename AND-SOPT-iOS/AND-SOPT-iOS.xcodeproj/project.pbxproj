@@ -52,6 +52,21 @@
 		76E1C2B42CD90E300033EE45 /* DownloadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2B32CD90E300033EE45 /* DownloadState.swift */; };
 		76E1C2B62CD929410033EE45 /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2B52CD929410033EE45 /* UICollectionViewCell+.swift */; };
 		76E1C2B82CD929D70033EE45 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2B72CD929D70033EE45 /* UITableViewCell+.swift */; };
+		76E1C2BD2CDB14080033EE45 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 76E1C2BC2CDB14080033EE45 /* Alamofire */; };
+		76E1C2C02CDB1A210033EE45 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2BF2CDB1A210033EE45 /* Environment.swift */; };
+		76E1C2C32CDB1A2F0033EE45 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2C12CDB1A2F0033EE45 /* SignUpRequest.swift */; };
+		76E1C2C42CDB1A2F0033EE45 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2C22CDB1A2F0033EE45 /* NetworkError.swift */; };
+		76E1C2C72CDB1A3B0033EE45 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2C52CDB1A3B0033EE45 /* UserService.swift */; };
+		76E1C2C82CDB1A3B0033EE45 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2C62CDB1A3B0033EE45 /* SignUpViewController.swift */; };
+		76E1C2CB2CDD0D350033EE45 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2CA2CDD0D350033EE45 /* LoginRequest.swift */; };
+		76E1C2CD2CDD0E510033EE45 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2CC2CDD0E510033EE45 /* LoginResponse.swift */; };
+		76E1C2CF2CDD0E7A0033EE45 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2CE2CDD0E7A0033EE45 /* LoginViewController.swift */; };
+		76E1C2D42CDD20DE0033EE45 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2D32CDD20DE0033EE45 /* Keychain.swift */; };
+		76E1C2D62CDD21230033EE45 /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2D52CDD21230033EE45 /* HobbyViewController.swift */; };
+		76E1C2D82CDD2F130033EE45 /* HobbyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2D72CDD2F130033EE45 /* HobbyResponse.swift */; };
+		76E1C2DA2CDD48090033EE45 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2D92CDD48090033EE45 /* UpdateViewController.swift */; };
+		76E1C2DC2CDD533A0033EE45 /* UpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1C2DB2CDD533A0033EE45 /* UpdateRequest.swift */; };
+		76FC2DD12CDDF0A7000B329B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FC2DD02CDDF0A7000B329B /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +115,21 @@
 		76E1C2B32CD90E300033EE45 /* DownloadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadState.swift; sourceTree = "<group>"; };
 		76E1C2B52CD929410033EE45 /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
 		76E1C2B72CD929D70033EE45 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
+		76E1C2BE2CDB14E90033EE45 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		76E1C2BF2CDB1A210033EE45 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		76E1C2C12CDB1A2F0033EE45 /* SignUpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		76E1C2C22CDB1A2F0033EE45 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		76E1C2C52CDB1A3B0033EE45 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		76E1C2C62CDB1A3B0033EE45 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		76E1C2CA2CDD0D350033EE45 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		76E1C2CC2CDD0E510033EE45 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		76E1C2CE2CDD0E7A0033EE45 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		76E1C2D32CDD20DE0033EE45 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		76E1C2D52CDD21230033EE45 /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
+		76E1C2D72CDD2F130033EE45 /* HobbyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyResponse.swift; sourceTree = "<group>"; };
+		76E1C2D92CDD48090033EE45 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		76E1C2DB2CDD533A0033EE45 /* UpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateRequest.swift; sourceTree = "<group>"; };
+		76FC2DD02CDDF0A7000B329B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E1C2BD2CDB14080033EE45 /* Alamofire in Frameworks */,
 				76C19BC92CB98F9800745588 /* SnapKit in Frameworks */,
 				760C545D2CD0D33B00502B24 /* Then in Frameworks */,
 			);
@@ -118,6 +149,7 @@
 		760C540C2CC6AAF400502B24 /* Week02-03 */ = {
 			isa = PBXGroup;
 			children = (
+				76FC2DD22CDE4B71000B329B /* TabBar */,
 				760C54732CD246C900502B24 /* FinanceView */,
 				760C54182CC6AD6A00502B24 /* TossView */,
 				760C54162CC6AD2900502B24 /* AppStoreTossViewController.swift */,
@@ -168,7 +200,6 @@
 				760C545A2CD0C27500502B24 /* Data */,
 				766C491A2CD4B58100EB165E /* Cell */,
 				760C547A2CD28FF800502B24 /* EssentialApps.swift */,
-				760C547C2CD2900A00502B24 /* Banner.swift */,
 				760C547E2CD2902A00502B24 /* TopPaid.swift */,
 				760C54802CD2903300502B24 /* TopFree.swift */,
 			);
@@ -178,6 +209,7 @@
 		7641BCE52CBC479A003D99CE /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				76E1C2BA2CD92F180033EE45 /* Week04 */,
 				760C540C2CC6AAF400502B24 /* Week02-03 */,
 				7641BCF72CBE1FF2003D99CE /* Week01 */,
 			);
@@ -196,6 +228,7 @@
 		766C491A2CD4B58100EB165E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				760C547C2CD2900A00502B24 /* Banner.swift */,
 				764FD43D2CD3EC7C00E09ADC /* EssentialAppCell.swift */,
 				766C491B2CD4BDE000EB165E /* TopPaidFreeAppCell.swift */,
 				766C491F2CD4CCC700EB165E /* TopChartCell.swift */,
@@ -231,6 +264,7 @@
 		7692BC492CB9608400CF5176 /* AND-SOPT-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				76E1C2D22CDD1DF90033EE45 /* Network */,
 				76E1C2972CD909570033EE45 /* Practice */,
 				760C54552CD0ADB000502B24 /* Extensions */,
 				7641BCE52CBC479A003D99CE /* Assignment */,
@@ -239,6 +273,7 @@
 				7692BC532CB9608500CF5176 /* Assets.xcassets */,
 				7692BC552CB9608500CF5176 /* LaunchScreen.storyboard */,
 				7692BC582CB9608500CF5176 /* Info.plist */,
+				76E1C2BE2CDB14E90033EE45 /* Config.xcconfig */,
 			);
 			path = "AND-SOPT-iOS";
 			sourceTree = "<group>";
@@ -302,6 +337,41 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		76E1C2BA2CD92F180033EE45 /* Week04 */ = {
+			isa = PBXGroup;
+			children = (
+				76E1C2CE2CDD0E7A0033EE45 /* LoginViewController.swift */,
+				76E1C2C62CDB1A3B0033EE45 /* SignUpViewController.swift */,
+				76E1C2D52CDD21230033EE45 /* HobbyViewController.swift */,
+				76E1C2D92CDD48090033EE45 /* UpdateViewController.swift */,
+			);
+			path = Week04;
+			sourceTree = "<group>";
+		};
+		76E1C2D22CDD1DF90033EE45 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				76E1C2BF2CDB1A210033EE45 /* Environment.swift */,
+				76E1C2C22CDB1A2F0033EE45 /* NetworkError.swift */,
+				76E1C2C52CDB1A3B0033EE45 /* UserService.swift */,
+				76E1C2C12CDB1A2F0033EE45 /* SignUpRequest.swift */,
+				76E1C2CA2CDD0D350033EE45 /* LoginRequest.swift */,
+				76E1C2CC2CDD0E510033EE45 /* LoginResponse.swift */,
+				76E1C2D32CDD20DE0033EE45 /* Keychain.swift */,
+				76E1C2D72CDD2F130033EE45 /* HobbyResponse.swift */,
+				76E1C2DB2CDD533A0033EE45 /* UpdateRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		76FC2DD22CDE4B71000B329B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				76FC2DD02CDDF0A7000B329B /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,6 +391,7 @@
 			packageProductDependencies = (
 				76C19BC82CB98F9800745588 /* SnapKit */,
 				760C545C2CD0D33B00502B24 /* Then */,
+				76E1C2BC2CDB14080033EE45 /* Alamofire */,
 			);
 			productName = "Seminar-UIKit";
 			productReference = 7692BC472CB9608400CF5176 /* AND-SOPT-iOS.app */;
@@ -353,6 +424,7 @@
 			packageReferences = (
 				76C19BC72CB98F9800745588 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				760C545B2CD0D33B00502B24 /* XCRemoteSwiftPackageReference "Then" */,
+				76E1C2BB2CDB14080033EE45 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 7692BC482CB9608400CF5176 /* Products */;
 			projectDirPath = "";
@@ -380,16 +452,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E1C2CF2CDD0E7A0033EE45 /* LoginViewController.swift in Sources */,
 				76E1C2A12CD909AE0033EE45 /* PhotoViewController.swift in Sources */,
 				76E1C29E2CD909900033EE45 /* Photo.swift in Sources */,
+				76E1C2D42CDD20DE0033EE45 /* Keychain.swift in Sources */,
 				760C54832CD2904900502B24 /* TopChartViewController.swift in Sources */,
 				76E1C2B22CD90E070033EE45 /* App.swift in Sources */,
 				762B2AA62CD2A4DA007E0822 /* BannerData.swift in Sources */,
 				76E1C2A42CD90ACD0033EE45 /* FirstMainViewController.swift in Sources */,
+				76E1C2C82CDB1A3B0033EE45 /* SignUpViewController.swift in Sources */,
 				76E1C2AE2CD90DA80033EE45 /* ChartViewController.swift in Sources */,
+				76E1C2D62CDD21230033EE45 /* HobbyViewController.swift in Sources */,
 				764FD4402CD400BB00E09ADC /* FinanceAppList.swift in Sources */,
+				76E1C2DA2CDD48090033EE45 /* UpdateViewController.swift in Sources */,
+				76FC2DD12CDDF0A7000B329B /* TabBarController.swift in Sources */,
+				76E1C2C32CDB1A2F0033EE45 /* SignUpRequest.swift in Sources */,
+				76E1C2C42CDB1A2F0033EE45 /* NetworkError.swift in Sources */,
 				760C54592CD0C26900502B24 /* DeveloperInfoLabels.swift in Sources */,
+				76E1C2DC2CDD533A0033EE45 /* UpdateRequest.swift in Sources */,
+				76E1C2C72CDB1A3B0033EE45 /* UserService.swift in Sources */,
 				760C54172CC6AD2900502B24 /* AppStoreTossViewController.swift in Sources */,
+				76E1C2CB2CDD0D350033EE45 /* LoginRequest.swift in Sources */,
 				76E1C2A82CD90C320033EE45 /* SecondMainViewController.swift in Sources */,
 				760C54812CD2903300502B24 /* TopFree.swift in Sources */,
 				7692BC4F2CB9608400CF5176 /* FindDifferentButtonViewController.swift in Sources */,
@@ -411,10 +494,13 @@
 				760C54792CD28E9300502B24 /* FinanceViewController.swift in Sources */,
 				760C54702CD1F02600502B24 /* ReviewData.swift in Sources */,
 				760C54262CC6DF2D00502B24 /* VersionHistoryViewController.swift in Sources */,
+				76E1C2C02CDB1A210033EE45 /* Environment.swift in Sources */,
 				760C54572CD0ADCF00502B24 /* UIView+.swift in Sources */,
+				76E1C2CD2CDD0E510033EE45 /* LoginResponse.swift in Sources */,
 				760C547F2CD2902A00502B24 /* TopPaid.swift in Sources */,
 				76E1C2AC2CD90C820033EE45 /* ColorsViewController.swift in Sources */,
 				76E1C2B82CD929D70033EE45 /* UITableViewCell+.swift in Sources */,
+				76E1C2D82CDD2F130033EE45 /* HobbyResponse.swift in Sources */,
 				760C54222CC6AE3100502B24 /* DeveloperInfo.swift in Sources */,
 				76E1C2B02CD90DF10033EE45 /* ChartCell.swift in Sources */,
 				764FD43E2CD3EC7C00E09ADC /* EssentialAppCell.swift in Sources */,
@@ -440,6 +526,7 @@
 /* Begin XCBuildConfiguration section */
 		7692BC592CB9608500CF5176 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76E1C2BE2CDB14E90033EE45 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -503,6 +590,7 @@
 		};
 		7692BC5A2CB9608500CF5176 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76E1C2BE2CDB14E90033EE45 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -651,6 +739,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		76E1C2BB2CDB14080033EE45 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -663,6 +759,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 76C19BC72CB98F9800745588 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		76E1C2BC2CDB14080033EE45 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76E1C2BB2CDB14080033EE45 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
